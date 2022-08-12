@@ -181,16 +181,37 @@ private:
     std::string m_string;
 };
 
+//LogEvent
+LogEvent::LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level,
+             const char* file, int32_t line, uint32_t elapse, 
+             uint32_t thread_id, uint32_t fiber_id, uint64_t time, 
+             const std::string& thread_name)
+        :m_file(file)
+        ,m_line(line)
+        ,m_elapse(elapse)
+        ,m_threadId(thread_id)
+        ,m_fiberId(fiber_id)
+        ,m_time(time)
+        ,m_threadName(thread_name)
+        ,m_logger(logger)
+        ,m_level(level) {
+}
 
 
 // Logger的实现
-Logger::Logger(const std::string& name) {
-
+Logger::Logger(const std::string& name) 
+    :m_name(name)
+    ,m_level(LogLevel::DEBUG) {
+    m_formatter.reset(new LogFormatter("%d [%p] %f %l %m %n"));
 }
 
 void Logger::addAppender(LogAppender::ptr appender) {
+    if(!appender ->getFormatter()) {
+        appender->m_formatter = m_formatter;
+    }
     m_appenders.push_back(appender);
 }
+
 void Logger::delAppender(LogAppender::ptr appender) {
     for(auto it = m_appenders.begin(); it != m_appenders.end(); ++it){
         if(*it == appender) {
@@ -296,6 +317,7 @@ void StdoutLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level leve
 //LogFormatter
 LogFormatter::LogFormatter(const std::string& pattern) 
 :m_pattern(pattern) {
+    init();
 }
 
 //format函数的作用在于根据输入的信息返回格式化日志文本
@@ -443,7 +465,9 @@ void LogFormatter::init() {
                 m_items.push_back(it->second(std::get<1>(i)));
             }
         } 
+        std::cout << "(" << std::get<0>(i) << ") - (" << std::get<1>(i) << ") - (" << std::get<2>(i) << ")" << std::endl;
     }
+    std::cout << m_items.size() << std::endl;
 }
 
 

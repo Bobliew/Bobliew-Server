@@ -136,7 +136,7 @@ private:
     LogLevel::Level m_level;                                         //日志级别
     LogAppender::ptr m_ptr; 
     std::list<LogAppender::ptr> m_appenders;
-
+    LogFormatter::ptr m_formatter;
     Logger::ptr m_root;                                              //主日志器
 };
 

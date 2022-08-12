@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bobliew/data/bobliew/bobliew/log.h
+bits/stdint-uintn.h
+-
+cctype
+-
+fstream
+-
+string
+-
+memory
+-
+stdint.h
+-
+list
+-
+sstream
+-
+fstream
+-
+vector
+-
+
+/home/bobliew/data/bobliew/tests/test.cc
+iostream
+-
+../bobliew/log.h
+/home/bobliew/data/bobliew/bobliew/log.h
+
