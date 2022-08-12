@@ -14,6 +14,8 @@
 //正式部署后,appder会根据输入的level来决定打印的内容.
 
 
+
+
 namespace bobliew{
 
 
@@ -54,6 +56,19 @@ LogLevel::Level LogLevel::FromString(const std::string& str) {
     XX(FATAL, FATAL);
     return LogLevel::UNKNOW;
 #undef XX
+}
+
+LogEventWrap::LogEventWrap(LogEvent::ptr e)
+    :m_event(e) {
+}
+
+LogEventWrap::~LogEventWrap() {
+    m_event->getLogger()->log(m_event->getLevel(), m_event);
+}
+
+
+std::stringstream& LogEventWrap::getSS() {
+    return m_event->getSS();
 }
 
 //各种FormatItem的子类
@@ -465,9 +480,9 @@ void LogFormatter::init() {
                 m_items.push_back(it->second(std::get<1>(i)));
             }
         } 
-        std::cout << "(" << std::get<0>(i) << ") - (" << std::get<1>(i) << ") - (" << std::get<2>(i) << ")" << std::endl;
+        //std::cout << "(" << std::get<0>(i) << ") - (" << std::get<1>(i) << ") - (" << std::get<2>(i) << ")" << std::endl;
     }
-    std::cout << m_items.size() << std::endl;
+    //std::cout << m_items.size() << std::endl;
 }
 
 

@@ -14,6 +14,44 @@
 #include <vector>
 
 
+/**
+ * @brief 使用流式方式将日志级别level的日志写入到logger
+ */
+#define BOBLIEW_LOG_LEVEL(logger, level) \
+    if(logger->getLevel() <= level) \
+        bobliew::LogEventWrap(bobliew::LogEvent::ptr(new bobliew::LogEvent(logger, level, __FILE__,\
+                        __LINE__, 0, 1, 2, time(0), "Test_name"))).getSS()
+//bobliew::Thread::getName()
+
+//utli
+/**
+ * @brief 使用流式方式将日志级别debug的日志写入到logger
+ */
+#define BOBLIEW_LOG_DEBUG(logger) BOBLIEW_LOG_LEVEL(logger, bobliew::LogLevel::DEBUG)
+
+/**
+ * @brief 使用流式方式将日志级别info的日志写入到logger
+ */
+#define BOBLIEW_LOG_INFO(logger) BOBLIEW_LOG_LEVEL(logger, bobliew::LogLevel::INFO)
+
+/**
+ * @brief 使用流式方式将日志级别warn的日志写入到logger
+ */
+#define BOBLIEW_LOG_WARN(logger) BOBLIEW_LOG_LEVEL(logger, bobliew::LogLevel::WARN)
+
+/**
+ * @brief 使用流式方式将日志级别error的日志写入到logger
+ */
+#define BOBLIEW_LOG_ERROR(logger) BOBLIEW_LOG_LEVEL(logger, bobliew::LogLevel::ERROR)
+
+/**
+ * @brief 使用流式方式将日志级别fatal的日志写入到logger
+ */
+#define BOBLIEW_LOG_FATAL(logger) BOBLIEW_LOG_LEVEL(logger, bobliew::LogLevel::FATAL)
+
+
+
+
 namespace bobliew{
 class Logger;
 class LoggerManager;
@@ -73,6 +111,19 @@ private:
     LogLevel::Level m_level;
 };
 
+
+class LogEventWrap {
+public:
+    //构造函数
+    LogEventWrap(LogEvent::ptr e);
+    ~LogEventWrap();
+
+    LogEvent::ptr getEvent() const { return m_event;}
+    std::stringstream& getSS();
+private:
+    LogEvent::ptr m_event;
+
+};
 
 class LogFormatter {
 public:
