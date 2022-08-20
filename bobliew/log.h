@@ -3,8 +3,10 @@
 
 
 #include <bits/stdint-uintn.h>
+#include "singleton.h"
 #include <cctype>
 #include <fstream>
+#include <map>
 #include <string>
 #include <memory>
 #include <stdint.h>
@@ -50,7 +52,7 @@
 #define BOBLIEW_LOG_FATAL(logger) BOBLIEW_LOG_LEVEL(logger, bobliew::LogLevel::FATAL)
 
 
-
+#define BOBLIEW_LOG_ROOT() bobliew::LoggerMgr::GetInstance()->getRoot()
 
 namespace bobliew{
 class Logger;
@@ -160,6 +162,8 @@ public:
 
     void setFormatter(LogFormatter::ptr val) { m_formatter = val;}
     LogFormatter::ptr getFormatter() const { return m_formatter;}
+
+    void setLevel(LogLevel::Level val) { m_level = val;}
 protected:
     LogLevel::Level m_level = LogLevel::DEBUG;
     LogFormatter::ptr m_formatter;
@@ -167,6 +171,7 @@ protected:
 
 //日志器
 class Logger : public std::enable_shared_from_this<Logger>{
+friend class LoggerManager;
 public:
     typedef std::shared_ptr<Logger> ptr;
 
@@ -183,12 +188,12 @@ public:
     LogLevel::Level getLevel() const{return m_level;}
     void setLevel(LogLevel::Level val) {m_level = val;}
 private:
+    Logger::ptr m_root;                                             //主日志器
     std::string m_name;                                              //日志名称
     LogLevel::Level m_level;                                         //日志级别
     LogAppender::ptr m_ptr; 
     std::list<LogAppender::ptr> m_appenders;
     LogFormatter::ptr m_formatter;
-    Logger::ptr m_root;                                              //主日志器
 };
 
 
@@ -212,6 +217,22 @@ private:
     uint64_t m_lastTime = 0;
 };
 
+class LoggerManager{
+public:
+    LoggerManager();
+    Logger::ptr getLogger(const std::string& name);
+
+    void init();
+
+    Logger::ptr getRoot() const {return m_root;}
+    std::string toYamlString();
+private:
+    std::map<std::string, Logger::ptr> m_loggers;
+    Logger::ptr m_root;
+
+};
+
+typedef bobliew::Singleton<LoggerManager> LoggerMgr;
 
 }
 

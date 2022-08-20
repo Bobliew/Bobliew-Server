@@ -114,17 +114,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named test_config
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+test_config: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_config
+.PHONY : test_config
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+test_config/fast:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
+.PHONY : test_config/fast
 
 #=============================================================================
 # Target rules for targets named bobliew
@@ -138,6 +138,33 @@ bobliew: cmake_check_build_system
 bobliew/fast:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/build
 .PHONY : bobliew/fast
+
+bobliew/config.o: bobliew/config.cc.o
+
+.PHONY : bobliew/config.o
+
+# target to build an object file
+bobliew/config.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/config.cc.o
+.PHONY : bobliew/config.cc.o
+
+bobliew/config.i: bobliew/config.cc.i
+
+.PHONY : bobliew/config.i
+
+# target to preprocess a source file
+bobliew/config.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/config.cc.i
+.PHONY : bobliew/config.cc.i
+
+bobliew/config.s: bobliew/config.cc.s
+
+.PHONY : bobliew/config.s
+
+# target to generate assembly for a file
+bobliew/config.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/config.cc.s
+.PHONY : bobliew/config.cc.s
 
 bobliew/log.o: bobliew/log.cc.o
 
@@ -166,32 +193,32 @@ bobliew/log.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/log.cc.s
 .PHONY : bobliew/log.cc.s
 
-tests/test.o: tests/test.cc.o
+tests/test_config.o: tests/test_config.cc.o
 
-.PHONY : tests/test.o
+.PHONY : tests/test_config.o
 
 # target to build an object file
-tests/test.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.o
-.PHONY : tests/test.cc.o
+tests/test_config.cc.o:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.o
+.PHONY : tests/test_config.cc.o
 
-tests/test.i: tests/test.cc.i
+tests/test_config.i: tests/test_config.cc.i
 
-.PHONY : tests/test.i
+.PHONY : tests/test_config.i
 
 # target to preprocess a source file
-tests/test.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.i
-.PHONY : tests/test.cc.i
+tests/test_config.cc.i:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.i
+.PHONY : tests/test_config.cc.i
 
-tests/test.s: tests/test.cc.s
+tests/test_config.s: tests/test_config.cc.s
 
-.PHONY : tests/test.s
+.PHONY : tests/test_config.s
 
 # target to generate assembly for a file
-tests/test.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.s
-.PHONY : tests/test.cc.s
+tests/test_config.cc.s:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
+.PHONY : tests/test_config.cc.s
 
 # Help Target
 help:
@@ -200,15 +227,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... test_config"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... bobliew"
+	@echo "... bobliew/config.o"
+	@echo "... bobliew/config.i"
+	@echo "... bobliew/config.s"
 	@echo "... bobliew/log.o"
 	@echo "... bobliew/log.i"
 	@echo "... bobliew/log.s"
-	@echo "... tests/test.o"
-	@echo "... tests/test.i"
-	@echo "... tests/test.s"
+	@echo "... tests/test_config.o"
+	@echo "... tests/test_config.i"
+	@echo "... tests/test_config.s"
 .PHONY : help
 
 

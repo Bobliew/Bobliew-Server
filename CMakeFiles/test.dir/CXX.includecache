@@ -9,9 +9,13 @@
 /home/bobliew/data/bobliew/bobliew/log.h
 bits/stdint-uintn.h
 -
+singleton.h
+/home/bobliew/data/bobliew/bobliew/singleton.h
 cctype
 -
 fstream
+-
+map
 -
 string
 -
@@ -26,6 +30,10 @@ sstream
 fstream
 -
 vector
+-
+
+/home/bobliew/data/bobliew/bobliew/singleton.h
+memory
 -
 
 /home/bobliew/data/bobliew/tests/test.cc

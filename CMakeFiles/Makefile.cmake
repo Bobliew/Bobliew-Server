@@ -45,6 +45,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/test.dir/DependInfo.cmake"
+  "CMakeFiles/test_config.dir/DependInfo.cmake"
   "CMakeFiles/bobliew.dir/DependInfo.cmake"
   )

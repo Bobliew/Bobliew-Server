@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC  -rdynamic -O -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function  -shared -Wl,-soname,libbobliew.so -o lib/libbobliew.so CMakeFiles/bobliew.dir/bobliew/log.cc.o 
+/usr/bin/c++ -fPIC  -rdynamic -O -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function  -shared -Wl,-soname,libbobliew.so -o lib/libbobliew.so CMakeFiles/bobliew.dir/bobliew/log.cc.o CMakeFiles/bobliew.dir/bobliew/config.cc.o   -L/home/bobliew/build/yaml-cpp 

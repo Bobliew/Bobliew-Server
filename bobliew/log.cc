@@ -268,6 +268,7 @@ void Logger::fatal(LogEvent::ptr event) {
 //FileLogAppender 的实现
 FileLogAppender::FileLogAppender(const std::string& filename)
 :m_filename(filename) {
+    reopen();
 }
 
 void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) {
@@ -485,6 +486,27 @@ void LogFormatter::init() {
     //std::cout << m_items.size() << std::endl;
 }
 
+LoggerManager::LoggerManager() {
+    m_root.reset(new Logger);
+    m_root->addAppender(LogAppender::ptr(new StdoutLogAppender));
+    m_loggers[m_root->m_name] = m_root;
+    init();
+}
 
+Logger::ptr LoggerManager::getLogger(const std::string& name) {
 
+    auto it = m_loggers.find(name);
+    if(it != m_loggers.end()) {
+        return it->second;
+    }
+
+    Logger::ptr logger(new Logger(name));
+    logger->m_root = m_root;
+    m_loggers[name] = logger;
+    return logger;
+}
+
+void LoggerManager::init() {
+
+}
 }

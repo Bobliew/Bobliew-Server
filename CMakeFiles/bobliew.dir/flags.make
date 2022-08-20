@@ -6,5 +6,5 @@ CXX_FLAGS =  -rdynamic -O -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unuse
 
 CXX_DEFINES = -Dbobliew_EXPORTS
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build 
 
