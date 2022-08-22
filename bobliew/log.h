@@ -53,6 +53,13 @@
 
 
 #define BOBLIEW_LOG_ROOT() bobliew::LoggerMgr::GetInstance()->getRoot()
+#define BOBLIEW_LOG_NAME(name) bobliew::LoggerMgr::GetInstance()->getLogger(name)
+
+//log的一般写法
+// bobliew::Logger g_logger = 
+//  bobliew::LoggerMgr::GetInstance()->getLogger(name);
+//  BOBLIEW_LOG_INFO(g_logger) << "xxx log";
+//  优点在于找日志的过程是静态的，如果没定义，就会返回root
 
 namespace bobliew{
 class Logger;
@@ -133,7 +140,6 @@ public:
     LogFormatter(const std::string& pattern);
     std::string format(std::shared_ptr<Logger> logger, LogLevel::Level level,LogEvent::ptr event);
     std::ostream& format(std::ostream& ofs, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event);
-public:
     class FormatItem {
     public:
         typedef std::shared_ptr<FormatItem> ptr;
@@ -144,6 +150,8 @@ public:
     void init();
     //返回是否存在错误
     bool isError() const { return m_error;}
+    //返回日志模板
+    const std::string getPattern() const { return m_pattern;}
 private:
     std::string m_pattern;
     std::vector<FormatItem::ptr> m_items;
@@ -162,10 +170,14 @@ public:
 
     void setFormatter(LogFormatter::ptr val) { m_formatter = val;}
     LogFormatter::ptr getFormatter() const { return m_formatter;}
-
+    virtual std::string toYamlString() = 0;
     void setLevel(LogLevel::Level val) { m_level = val;}
 protected:
+    //是否有自己的日志格式器
+    bool m_hasFormatter = false;
     LogLevel::Level m_level = LogLevel::DEBUG;
+    
+    //日志格式器
     LogFormatter::ptr m_formatter;
 };
 
@@ -177,7 +189,6 @@ public:
 
     Logger(const std::string& name="root");
     void log(LogLevel::Level level, const LogEvent::ptr event);
-
     void debug(LogEvent::ptr event);
     void info(LogEvent::ptr event);
     void warn(LogEvent::ptr event);
@@ -187,6 +198,11 @@ public:
     void delAppender(LogAppender::ptr appender);
     LogLevel::Level getLevel() const{return m_level;}
     void setLevel(LogLevel::Level val) {m_level = val;}
+    void setFormatter(LogFormatter::ptr val);
+    void setFormatter(const std::string& val);
+    LogFormatter::ptr getFormatter();
+    std::string toYamlString();
+    void clearAppenders();
 private:
     Logger::ptr m_root;                                             //主日志器
     std::string m_name;                                              //日志名称
@@ -202,6 +218,7 @@ class StdoutLogAppender : public LogAppender {
 public:
     typedef std::shared_ptr<StdoutLogAppender> ptr;
     void log(Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event) override;
+    std::string toYamlString() override;
 };
 
 class FileLogAppender : public LogAppender {
@@ -209,7 +226,7 @@ public:
     typedef std::shared_ptr<FileLogAppender> ptr;
     FileLogAppender(const std::string& filename);
     void log(Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event) override;
-
+    std::string toYamlString() override;
     bool reopen();
 private:
     std::string m_filename;

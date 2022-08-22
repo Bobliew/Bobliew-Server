@@ -3,20 +3,19 @@
 
 namespace bobliew{
 
-
-Config::ConfigVarMap Config::s_datas;
-
 ConfigVarBase::ptr Config::LookupBase(const std::string& name) {
-    auto it = s_datas.find(name);
-    return it == s_datas.end() ? nullptr : it -> second;
+    auto it = GetDatas().find(name);
+    return it == GetDatas().end() ? nullptr : it -> second;
 }
 
+
+//ListAllmember通过递归将所有的node值都加进一个string利用.进行分隔
 static void ListAllMember(const std::string& prefix,
                            const YAML::Node& node,
                           std::list<std::pair<std::string, const YAML::Node>> & output) {
     if(prefix.find_first_not_of("abcdefghijklmnopqrstuvwxyz._0123456789") !=
         std::string::npos) {
-        BOBLIEW_LOG_ERROR(BOBLIEW_LOG_ROOT()) << "Config invalid name:" << prefix 
+        BOBLIEW_LOG_ERROR(BOBLIEW_LOG_ROOT()) << "Configinvalid name:" << prefix 
             << ":" << node;
     }
     output.push_back(std::make_pair(prefix, node));

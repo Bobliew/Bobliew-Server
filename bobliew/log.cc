@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 #include <time.h>
-
+#include "config.h"
 //主要逻辑level>m_level.
 //DEBUG<INFO<WARN<ERROR<FATAL 
 //正式部署后,appder会根据输入的level来决定打印的内容.
@@ -38,6 +38,8 @@ const char* LogLevel::ToString(LogLevel::Level level) {
     return "UNKNOW";
 }
 
+
+//增加XX的大小写判定
 LogLevel::Level LogLevel::FromString(const std::string& str) {
 #define XX(level, v)\
     if(str == #v) {\
@@ -236,6 +238,50 @@ void Logger::delAppender(LogAppender::ptr appender) {
     }
 }
 
+void Logger::setFormatter(LogFormatter::ptr val) {
+    m_formatter = val;
+    //将没有被初始化的appender按照m_formatter初始化。
+    for(auto& i : m_appenders) {
+        if(!i->m_hasFormatter) {
+            i->m_formatter = m_formatter;
+        }
+    }
+}
+
+void Logger::setFormatter(const std::string& val) {
+    std::cout<<"---"<< val << std::endl;
+    //
+    bobliew::LogFormatter::ptr new_val(new bobliew::LogFormatter(val));
+    //根据相关判断，如果val的格式是不正确的，isError就会返回true
+    if(new_val->isError()) {
+        std::cout << "Logger setFormatter name = "<< m_name
+            << "value= " << val <<" invalid formatter"
+            << std::endl;
+        return;
+    }
+    setFormatter(new_val); //不能用空指针来调用函数，必须需要实例化。
+}
+
+std::string Logger::toYamlString() {
+    YAML::Node node;
+    node["name"] = m_name;
+    if(m_level != LogLevel::UNKNOW) {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if(m_formatter) {
+        node["formatter"] = m_formatter->getPattern();
+    }
+    for(auto& i : m_appenders) {
+        node["appenders"].push_back(YAML::Load(i->toYamlString()));
+    }
+    std::stringstream ss;
+    ss << node;
+    return ss.str();
+}
+
+void Logger::clearAppenders() {
+    m_appenders.clear();
+}
 
 void Logger::log(LogLevel::Level level, const LogEvent::ptr event) {
     if(level >= m_level) {
@@ -281,9 +327,24 @@ void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level,
         }
         //后续上锁
         if(!m_formatter->format(m_filestream, logger, level, event)){
-            std::cout << "error" << std::endl;
+            std::cout << "error of formatter " << std::endl;
         }
     }
+}
+
+std::string FileLogAppender::toYamlString() {
+    YAML::Node node;
+    node["type"] = "FileLogAppender";
+    node["file"] = m_filename;
+    if(m_level != LogLevel::UNKNOW) {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if(m_hasFormatter && m_formatter) {
+        node["formatter"] = m_formatter -> getPattern();
+    }
+    std::stringstream ss;
+    ss<<node;
+    return ss.str();
 }
 
 bool FileLogAppender::reopen() {
@@ -304,6 +365,21 @@ void StdoutLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level leve
         //还没加入线程池模块 后续应该在此处上锁 
         m_formatter->format(std::cout, logger, level, event);
     }
+}
+
+std::string StdoutLogAppender::toYamlString() {
+    YAML::Node node;
+    node["type"] = "StdoutLogAppender";
+    if(m_level != LogLevel::UNKNOW) {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if(m_hasFormatter && m_formatter) {
+        node["formatter"] = m_formatter->getPattern();
+    }
+    std::stringstream ss;
+    ss << node;
+    return ss.str();
+
 }
 
 //这是基于Log4j的日志框架,通过不同的appender,会将同一条日志输出到不同的目的地.
@@ -506,7 +582,207 @@ Logger::ptr LoggerManager::getLogger(const std::string& name) {
     return logger;
 }
 
-void LoggerManager::init() {
+struct LogAppenderDefine{
+    int type = 0; //1file 2stdout;
+    LogLevel::Level level = LogLevel::UNKNOW;
+    std::string formatter;
+    std::string file;
 
+    bool operator==(const LogAppenderDefine& oth) const{
+        return type == oth.type
+        && level == oth.level
+        && formatter == oth.formatter
+        && file == oth.file;
+    }
+};
+
+struct LogDefine{
+    std::string name;
+    LogLevel::Level level = LogLevel::UNKNOW;
+    std::string formatter;
+    std::vector<LogAppenderDefine> appenders;
+    
+    bool operator==(const LogDefine& oth) const {
+        return name == oth.name
+        && level == oth.level
+        && formatter == oth.formatter
+        && appenders == oth.appenders;
+    }
+
+    bool operator<(const LogDefine& oth) const {
+        return name<oth.name;
+    }
+
+    bool isValid() const {
+        return !name.empty();
+    }
+};
+
+bobliew::ConfigVar<std::set<LogDefine>>::ptr g_log_defines = 
+    bobliew::Config::Lookup("logs", std::set< LogDefine>(), "logs config");
+
+template<>
+class LexicalCast<std::string, LogDefine> {
+public:
+    LogDefine operator()(const std::string& v) {
+        YAML::Node n = YAML::Load(v);
+        LogDefine ld;
+        if(!n["name"].IsDefined()) {
+            std::cout<<"log config error: name is null, "<< n
+                << std::endl;
+            throw std::logic_error("log config name is null");
+        }
+        ld.name = n["name"].as<std::string>();
+        ld.level = LogLevel::FromString(n["level"].IsDefined()? n["level"].as<std::string>() : "");
+        if(n["formatter"].IsDefined()) {
+            ld.formatter = n["formatter"].as<std::string>();
+        }
+        
+        if(n["appenders"].IsDefined()) {
+            for(size_t x = 0; x<n["appenders"].size(); ++x) {
+                auto a = n["appenders"][x];
+                if(!a["type"].IsDefined()) {
+                    std::cout<< "log config error: appender type is null, " << 
+                        a << std::endl;
+                    continue;
+                }
+                std::string type = a["type"].as<std::string>();
+                LogAppenderDefine lad;
+                //添加了对logappenderdefine的level层级。
+                lad.level = LogLevel::FromString(a["level"].IsDefined()? a["level"].as<std::string>() : "");
+                if(type == "FileLogAppender") {
+                    lad.type = 1;
+                    if(!a["file"].IsDefined()) {
+                        std::cout<<"log config error: FileLogAppender file is null"
+                            << a << std::endl;
+                        continue;
+                    }
+                    lad.file = a["file"].as<std::string>();
+                    if(a["formatter"].IsDefined()) {
+                        lad.formatter = a["fomatter"].as<std::string> ();
+                    }
+
+                } else if(type == "StdoutLogAppender") {
+                    lad.type = 2;
+                    if(a["formatter"].IsDefined()) {
+                        lad.formatter = a["fomatter"].as<std::string> ();
+                    }
+                }
+                ld.appenders.push_back(lad);
+            }
+        }
+        return ld;
+    }
+};
+
+
+template<>
+class LexicalCast<LogDefine, std::string> {
+public:
+    std::string operator()(const LogDefine& i) {
+        YAML::Node n;
+        n["name"] = i.name;
+        if(i.level != LogLevel::UNKNOW) {
+            n["level"] = LogLevel::ToString(i.level);
+        }
+        if(!i.formatter.empty()) {
+            n["formatter"] = i.formatter;
+        }
+
+        for(auto& a : i.appenders) {
+            YAML::Node na;
+            if(a.type == 1) {
+                na["type"] = "FileLogAppender";
+                na["file"] = a.file;
+            } else if(a.type == 2) {
+                na["type"] = "StdoutLogAppender";
+            }
+            if(a.level != LogLevel::UNKNOW) {
+                na["level"] = LogLevel::ToString(a.level);
+            }
+            if(!a.formatter.empty()) {
+                na["formatter"] = a.formatter;
+            }
+            n["appenders"].push_back(na);
+        }    
+        std::stringstream ss;
+        ss<<n;
+        return ss.str();
+    }
+
+};
+
+struct LogIniter {
+    LogIniter () {
+        g_log_defines->
+            addListener([](const std::set<LogDefine>& old_value, 
+                           const std::set<LogDefine>& new_value) {
+                            BOBLIEW_LOG_INFO(BOBLIEW_LOG_ROOT()) << "on_logger_conf_changed";
+                            for(auto& i : new_value) {
+                                auto it = old_value.find(i);
+                                bobliew::Logger::ptr logger;
+                                if(it == old_value.end()){
+                                    //搜索不到意味着是新增的
+                                    logger = BOBLIEW_LOG_NAME(i.name);
+                                } else {
+                                    //冷知识set内部是通过重构operator <来实现的，
+                                    //所以可以用等号来判断同一位置的i是否是经过修改的，
+                                    //因为修改可能不单单包括name。
+                                    if(!(i == *it)) {
+                                        logger = BOBLIEW_LOG_NAME(i.name);
+                                    } else {
+                                        continue;
+                                    }
+                                }
+                                //对于后序的操作，无论是新增还是修改都是需要设置level和可能的formatter
+                                logger->setLevel(i.level);
+
+                                if(!i.formatter.empty()) {
+                                    logger->setFormatter(i.formatter);
+                                }
+
+                                logger->clearAppenders();
+                                for(auto& a : i.appenders) {
+                                    bobliew::LogAppender::ptr ap;
+                                    if(a.type==1) {
+                                        ap.reset(new FileLogAppender(a.file));
+                                    } else if(a.type == 2) {
+                                        ap.reset(new StdoutLogAppender);
+                                    }
+                                    ap->setLevel(a.level);
+                                    logger->addAppender(ap);
+                                }
+                            }
+                            //删除操作 对于存在于newvalue，但是不存在与oldvalue的 logDefine进行删除
+                            for(auto& i: old_value) {
+                                auto it = new_value.find(i);
+                                if(it == new_value.end()) {
+                                    auto logger = BOBLIEW_LOG_NAME(i.name);
+                                    //通过设置0level和清除输出目的，达到类似删除的效果，
+                                    logger->setLevel((LogLevel::Level) 0);
+                                    logger->clearAppenders();
+                                }
+                            }
+
+                        });
+    }
+
+};
+
+static LogIniter __log_init;
+//全局对象的构造是在main函数之前的，所以这会确保全期的数据都会被记录。
+
+std::string LoggerManager::toYamlString() {
+    YAML::Node node;
+    for(auto& i :m_loggers) {
+        node.push_back(YAML::Load(i.second->toYamlString()));
+    }
+    std::stringstream ss;
+    ss <<node;
+    return ss.str();
+
+}
+
+void LoggerManager::init() {
 }
 }

@@ -5,8 +5,11 @@ CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/config.cc
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/log.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/util.h
 
+CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.cc
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/util.h
 
