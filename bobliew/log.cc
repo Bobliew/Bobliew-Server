@@ -18,22 +18,21 @@
 
 namespace bobliew{
 
-
 //利用宏将枚举量level转化为字符串
 const char* LogLevel::ToString(LogLevel::Level level) {
     switch(level) {
 #define XX(name)\
-    case LogLevel::name:\
-        return #name;\
-        break;    
-    XX(DEBUG);
-    XX(INFO);
-    XX(WARN);
-    XX(ERROR);
-    XX(FATAL);
-#undef XX
-    default:
-        return "UNKNOW";
+            case LogLevel::name:\
+                return #name;\
+                break;    
+        XX(DEBUG);
+        XX(INFO);
+        XX(WARN);
+        XX(ERROR);
+        XX(FATAL);
+        #undef XX
+        default:
+            return "UNKNOW";
     }
     return "UNKNOW";
 }
@@ -42,9 +41,9 @@ const char* LogLevel::ToString(LogLevel::Level level) {
 //增加XX的大小写判定
 LogLevel::Level LogLevel::FromString(const std::string& str) {
 #define XX(level, v)\
-    if(str == #v) {\
-        return LogLevel::level;\
-    }
+        if(str == #v) {\
+            return LogLevel::level;\
+        }
     XX(DEBUG, debug);
     XX(INFO, info);
     XX(WARN, warn);
@@ -57,11 +56,11 @@ LogLevel::Level LogLevel::FromString(const std::string& str) {
     XX(ERROR, ERROR);
     XX(FATAL, FATAL);
     return LogLevel::UNKNOW;
-#undef XX
+    #undef XX
 }
 
 LogEventWrap::LogEventWrap(LogEvent::ptr e)
-    :m_event(e) {
+:m_event(e) {
 }
 
 LogEventWrap::~LogEventWrap() {
@@ -134,7 +133,7 @@ public:
 class DateTimeFormatItem : public LogFormatter::FormatItem {
 public:
     DateTimeFormatItem(const std::string& format = "%Y-%m-%d %H:%M:%S")
-        :m_format(format) {
+    :m_format(format) {
         if(m_format.empty()) {
             m_format = "%Y-%m-%d %H:%M:%S";
         }
@@ -180,7 +179,7 @@ public:
 class StringFormatItem : public LogFormatter::FormatItem {
 public:
     StringFormatItem(const std::string& str)
-        :m_string(str) {}
+    :m_string(str) {}
     void format(std::ostream& os, Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event) override {
         os << m_string;
     } 
@@ -200,18 +199,18 @@ private:
 
 //LogEvent
 LogEvent::LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level,
-             const char* file, int32_t line, uint32_t elapse, 
-             uint32_t thread_id, uint32_t fiber_id, uint64_t time, 
-             const std::string& thread_name)
-        :m_file(file)
-        ,m_line(line)
-        ,m_elapse(elapse)
-        ,m_threadId(thread_id)
-        ,m_fiberId(fiber_id)
-        ,m_time(time)
-        ,m_threadName(thread_name)
-        ,m_logger(logger)
-        ,m_level(level) {
+                   const char* file, int32_t line, uint32_t elapse, 
+                   uint32_t thread_id, uint32_t fiber_id, uint64_t time, 
+                   const std::string& thread_name)
+    :m_file(file)
+    ,m_line(line)
+    ,m_elapse(elapse)
+    ,m_threadId(thread_id)
+    ,m_fiberId(fiber_id)
+    ,m_time(time)
+    ,m_threadName(thread_name)
+    ,m_logger(logger)
+    ,m_level(level) {
 }
 
 
@@ -289,11 +288,11 @@ void Logger::log(LogLevel::Level level, const LogEvent::ptr event) {
         //后续需要加上锁
         if(!m_appenders.empty()) {
             for(auto& i : m_appenders) {
-            //这里的i是LogAppender类型,所以使用的log函数是m_appenders下的.
+                //这里的i是LogAppender类型,所以使用的log函数是m_appenders下的.
                 i->log(self, level, event);
             }
         } else if(m_root) {
-        //是否可以利用shared from this 来替代m_root
+            //是否可以利用shared from this 来替代m_root
             m_root->log(level, event);
         }
     }
@@ -301,14 +300,19 @@ void Logger::log(LogLevel::Level level, const LogEvent::ptr event) {
 
 
 void Logger::debug(LogEvent::ptr event) {
+    log(LogLevel::DEBUG, event);
 }
 void Logger::info(LogEvent::ptr event) {
+    log(LogLevel::INFO, event);
 }
 void Logger::warn(LogEvent::ptr event) {
+    log(LogLevel::WARN, event);
 }
 void Logger::error(LogEvent::ptr event) {
+    log(LogLevel::ERROR, event);
 }
 void Logger::fatal(LogEvent::ptr event) {
+    log(LogLevel::FATAL, event);
 }
 
 //FileLogAppender 的实现
@@ -385,7 +389,7 @@ std::string StdoutLogAppender::toYamlString() {
 //这是基于Log4j的日志框架,通过不同的appender,会将同一条日志输出到不同的目的地.
 //例如初步写的file和stdout.下面简要记录一下会实现的功能.
 //需要注意的是因为这相当利用C++进行模仿,因此可能会与实际的Log4j存在差异.
-    /**
+/**
      * @brief 构造函数
      * @param[in] pattern 格式模板
      * @details 
@@ -413,7 +417,7 @@ LogFormatter::LogFormatter(const std::string& pattern)
 }
 
 //format函数的作用在于根据输入的信息返回格式化日志文本
-    /**
+/**
      * @brief 返回格式化日志文本
      * @param[in] logger 日志器
      * @param[in] level 日志级别
@@ -461,7 +465,7 @@ void LogFormatter::init() {
         size_t n = i + 1;
         int fmt_status = 0;//解析格式的标志,中括号内外的解析方式有差异. 
         size_t fmt_begin =0;//用于后续substr的记录.
-        
+
         std::string str;//str负责处理存在中括号前的内容(名称),如果整个数组都不存在中括号,
         std::string fmt;//fmt用于记录中括号内的内容(解析内容).
         //中括号里面的是特定格式的内容内容,这样的操作对于正常的m_pattern来说,已经结束了
@@ -471,7 +475,7 @@ void LogFormatter::init() {
             //(默认为遇到%),这说明从i+1到当前块没有中括号的情况,因此可以直接添加元素到str中,然后结束循环.
             //
             if(!fmt_status && (!isalpha(m_pattern[n]) && 
-               m_pattern[n]!='{' && m_pattern[n] != '}')) {
+                m_pattern[n]!='{' && m_pattern[n] != '}')) {
                 str = m_pattern.substr(i+1, n-i-1);
                 break;
             }
@@ -484,7 +488,7 @@ void LogFormatter::init() {
                     ++n;
                     continue;
                 }
-            //当处于中括号中时
+                //当处于中括号中时
             }else if(fmt_status == 1) {
                 if(m_pattern[n] == '}') {
                     fmt = m_pattern.substr(fmt_begin+1, n-fmt_begin-1);
@@ -500,7 +504,7 @@ void LogFormatter::init() {
                 }
             }
         }
-       //根据fmt_status和nstr来确定是否存在未处理的内容.
+        //根据fmt_status和nstr来确定是否存在未处理的内容.
         if(fmt_status ==0) {
             if(!nstr.empty()) {
                 //nstr储存括号外的内容
@@ -523,11 +527,11 @@ void LogFormatter::init() {
 
     //通过这个map将不同的字母和命令联系起来
     static std::map<std::string, std::function<FormatItem::ptr(const std::string& str)>> s_format_items = {
-    #define XX(str, C)\
+#define XX(str, C)\
         {#str, [](const std::string& fmt) { return FormatItem::ptr(new C(fmt));}}
-        //上面的宏用于
-        //后续将各种FormatItem进行完善后,补全宏
-        XX(m, MessageFormatItem),
+    //上面的宏用于
+    //后续将各种FormatItem进行完善后,补全宏
+    XX(m, MessageFormatItem),
         XX(p, LevelFormatItem),
         XX(r, ElapseFormatItem),
         XX(c, NameFormatItem),
@@ -539,11 +543,11 @@ void LogFormatter::init() {
         XX(T, TabFormatItem),
         XX(F, FiberIdFormatItem),
         XX(N, ThreadNameFormatItem),
-    #undef XX
+        #undef XX
     };
-    
+
     for(auto& i : vec) {
-    //如果 tupls <2> ==0,这部分内容其实不需要进行处理,因为都是nstr(无关信息)和fmt_status==1(一部分错误格式)时候的场景.
+        //如果 tupls <2> ==0,这部分内容其实不需要进行处理,因为都是nstr(无关信息)和fmt_status==1(一部分错误格式)时候的场景.
         if(std::get<2>(i) == 0) {
             m_items.push_back(FormatItem::ptr(new StringFormatItem(std::get<0>(i))));
         } else {
@@ -601,7 +605,7 @@ struct LogDefine{
     LogLevel::Level level = LogLevel::UNKNOW;
     std::string formatter;
     std::vector<LogAppenderDefine> appenders;
-    
+
     bool operator==(const LogDefine& oth) const {
         return name == oth.name
         && level == oth.level
@@ -637,7 +641,7 @@ public:
         if(n["formatter"].IsDefined()) {
             ld.formatter = n["formatter"].as<std::string>();
         }
-        
+
         if(n["appenders"].IsDefined()) {
             for(size_t x = 0; x<n["appenders"].size(); ++x) {
                 auto a = n["appenders"][x];

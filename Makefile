@@ -127,6 +127,19 @@ test_config/fast:
 .PHONY : test_config/fast
 
 #=============================================================================
+# Target rules for targets named test_thread
+
+# Build rule for target.
+test_thread: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_thread
+.PHONY : test_thread
+
+# fast build rule for target.
+test_thread/fast:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
+.PHONY : test_thread/fast
+
+#=============================================================================
 # Target rules for targets named bobliew
 
 # Build rule for target.
@@ -193,6 +206,60 @@ bobliew/log.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/log.cc.s
 .PHONY : bobliew/log.cc.s
 
+bobliew/thread.o: bobliew/thread.cc.o
+
+.PHONY : bobliew/thread.o
+
+# target to build an object file
+bobliew/thread.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/thread.cc.o
+.PHONY : bobliew/thread.cc.o
+
+bobliew/thread.i: bobliew/thread.cc.i
+
+.PHONY : bobliew/thread.i
+
+# target to preprocess a source file
+bobliew/thread.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/thread.cc.i
+.PHONY : bobliew/thread.cc.i
+
+bobliew/thread.s: bobliew/thread.cc.s
+
+.PHONY : bobliew/thread.s
+
+# target to generate assembly for a file
+bobliew/thread.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/thread.cc.s
+.PHONY : bobliew/thread.cc.s
+
+bobliew/util.o: bobliew/util.cc.o
+
+.PHONY : bobliew/util.o
+
+# target to build an object file
+bobliew/util.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util.cc.o
+.PHONY : bobliew/util.cc.o
+
+bobliew/util.i: bobliew/util.cc.i
+
+.PHONY : bobliew/util.i
+
+# target to preprocess a source file
+bobliew/util.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util.cc.i
+.PHONY : bobliew/util.cc.i
+
+bobliew/util.s: bobliew/util.cc.s
+
+.PHONY : bobliew/util.s
+
+# target to generate assembly for a file
+bobliew/util.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util.cc.s
+.PHONY : bobliew/util.cc.s
+
 tests/test_config.o: tests/test_config.cc.o
 
 .PHONY : tests/test_config.o
@@ -220,6 +287,33 @@ tests/test_config.cc.s:
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
 .PHONY : tests/test_config.cc.s
 
+tests/test_thread.o: tests/test_thread.cc.o
+
+.PHONY : tests/test_thread.o
+
+# target to build an object file
+tests/test_thread.cc.o:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.o
+.PHONY : tests/test_thread.cc.o
+
+tests/test_thread.i: tests/test_thread.cc.i
+
+.PHONY : tests/test_thread.i
+
+# target to preprocess a source file
+tests/test_thread.cc.i:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.i
+.PHONY : tests/test_thread.cc.i
+
+tests/test_thread.s: tests/test_thread.cc.s
+
+.PHONY : tests/test_thread.s
+
+# target to generate assembly for a file
+tests/test_thread.cc.s:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.s
+.PHONY : tests/test_thread.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -229,6 +323,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test_config"
 	@echo "... edit_cache"
+	@echo "... test_thread"
 	@echo "... bobliew"
 	@echo "... bobliew/config.o"
 	@echo "... bobliew/config.i"
@@ -236,9 +331,18 @@ help:
 	@echo "... bobliew/log.o"
 	@echo "... bobliew/log.i"
 	@echo "... bobliew/log.s"
+	@echo "... bobliew/thread.o"
+	@echo "... bobliew/thread.i"
+	@echo "... bobliew/thread.s"
+	@echo "... bobliew/util.o"
+	@echo "... bobliew/util.i"
+	@echo "... bobliew/util.s"
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"
+	@echo "... tests/test_thread.o"
+	@echo "... tests/test_thread.i"
+	@echo "... tests/test_thread.s"
 .PHONY : help
 
 

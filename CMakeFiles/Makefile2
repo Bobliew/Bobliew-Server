@@ -57,6 +57,7 @@ CMAKE_BINARY_DIR = /home/bobliew/data/bobliew
 
 # The main recursive "all" target.
 all: CMakeFiles/test_config.dir/all
+all: CMakeFiles/test_thread.dir/all
 all: CMakeFiles/bobliew.dir/all
 
 .PHONY : all
@@ -68,6 +69,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/test_config.dir/clean
+clean: CMakeFiles/test_thread.dir/clean
 clean: CMakeFiles/bobliew.dir/clean
 
 .PHONY : clean
@@ -79,12 +81,12 @@ clean: CMakeFiles/bobliew.dir/clean
 CMakeFiles/test_config.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/depend
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=4,5 "Built target test_config"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=6,7 "Built target test_config"
 .PHONY : CMakeFiles/test_config.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_config.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_config.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 0
 .PHONY : CMakeFiles/test_config.dir/rule
@@ -100,18 +102,45 @@ CMakeFiles/test_config.dir/clean:
 .PHONY : CMakeFiles/test_config.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test_thread.dir
+
+# All Build rule for target.
+CMakeFiles/test_thread.dir/all: CMakeFiles/bobliew.dir/all
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/depend
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=8,9 "Built target test_thread"
+.PHONY : CMakeFiles/test_thread.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_thread.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_thread.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 0
+.PHONY : CMakeFiles/test_thread.dir/rule
+
+# Convenience name for target.
+test_thread: CMakeFiles/test_thread.dir/rule
+
+.PHONY : test_thread
+
+# clean rule for target.
+CMakeFiles/test_thread.dir/clean:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/clean
+.PHONY : CMakeFiles/test_thread.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/bobliew.dir
 
 # All Build rule for target.
 CMakeFiles/bobliew.dir/all:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/depend
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=1,2,3 "Built target bobliew"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=1,2,3,4,5 "Built target bobliew"
 .PHONY : CMakeFiles/bobliew.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/bobliew.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/bobliew.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 0
 .PHONY : CMakeFiles/bobliew.dir/rule

@@ -14,15 +14,15 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
-
-
+#include "util.h"
+#include "thread.h"
 /**
  * @brief 使用流式方式将日志级别level的日志写入到logger
  */
 #define BOBLIEW_LOG_LEVEL(logger, level) \
     if(logger->getLevel() <= level) \
         bobliew::LogEventWrap(bobliew::LogEvent::ptr(new bobliew::LogEvent(logger, level, __FILE__,\
-                        __LINE__, 0, 1, 2, time(0), "Test_name"))).getSS()
+                        __LINE__, 0,bobliew::GetThreadId(),bobliew::GetFiberId(), time(0), bobliew::Thread::GetName()))).getSS()
 //bobliew::Thread::getName()
 
 //utli
