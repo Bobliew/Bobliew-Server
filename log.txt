@@ -1,4 +1,2 @@
-2022-08-22 11:30:32	hello system
-
-2022-08-22 11:30:32 - hello system
-
+2022-08-23 20:26:38	bobliew bobliew
+2022-08-23 20:26:38	ERROR logger

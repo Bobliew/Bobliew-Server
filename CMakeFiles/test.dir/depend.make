@@ -3,5 +3,7 @@
 
 CMakeFiles/test.dir/tests/test.cc.o: bobliew/log.h
 CMakeFiles/test.dir/tests/test.cc.o: bobliew/singleton.h
+CMakeFiles/test.dir/tests/test.cc.o: bobliew/thread.h
+CMakeFiles/test.dir/tests/test.cc.o: bobliew/util.h
 CMakeFiles/test.dir/tests/test.cc.o: tests/test.cc
 

@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_configs
+
+# Build rule for target.
+test_configs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_configs
+.PHONY : test_configs
+
+# fast build rule for target.
+test_configs/fast:
+	$(MAKE) -f CMakeFiles/test_configs.dir/build.make CMakeFiles/test_configs.dir/build
+.PHONY : test_configs/fast
+
+#=============================================================================
 # Target rules for targets named test_config
 
 # Build rule for target.
@@ -138,6 +151,19 @@ test_thread: cmake_check_build_system
 test_thread/fast:
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
 .PHONY : test_thread/fast
+
+#=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
 
 #=============================================================================
 # Target rules for targets named bobliew
@@ -260,6 +286,33 @@ bobliew/util.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util.cc.s
 .PHONY : bobliew/util.cc.s
 
+tests/test.o: tests/test.cc.o
+
+.PHONY : tests/test.o
+
+# target to build an object file
+tests/test.cc.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.o
+.PHONY : tests/test.cc.o
+
+tests/test.i: tests/test.cc.i
+
+.PHONY : tests/test.i
+
+# target to preprocess a source file
+tests/test.cc.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.i
+.PHONY : tests/test.cc.i
+
+tests/test.s: tests/test.cc.s
+
+.PHONY : tests/test.s
+
+# target to generate assembly for a file
+tests/test.cc.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cc.s
+.PHONY : tests/test.cc.s
+
 tests/test_config.o: tests/test_config.cc.o
 
 .PHONY : tests/test_config.o
@@ -286,6 +339,33 @@ tests/test_config.s: tests/test_config.cc.s
 tests/test_config.cc.s:
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
 .PHONY : tests/test_config.cc.s
+
+tests/test_configs.o: tests/test_configs.cc.o
+
+.PHONY : tests/test_configs.o
+
+# target to build an object file
+tests/test_configs.cc.o:
+	$(MAKE) -f CMakeFiles/test_configs.dir/build.make CMakeFiles/test_configs.dir/tests/test_configs.cc.o
+.PHONY : tests/test_configs.cc.o
+
+tests/test_configs.i: tests/test_configs.cc.i
+
+.PHONY : tests/test_configs.i
+
+# target to preprocess a source file
+tests/test_configs.cc.i:
+	$(MAKE) -f CMakeFiles/test_configs.dir/build.make CMakeFiles/test_configs.dir/tests/test_configs.cc.i
+.PHONY : tests/test_configs.cc.i
+
+tests/test_configs.s: tests/test_configs.cc.s
+
+.PHONY : tests/test_configs.s
+
+# target to generate assembly for a file
+tests/test_configs.cc.s:
+	$(MAKE) -f CMakeFiles/test_configs.dir/build.make CMakeFiles/test_configs.dir/tests/test_configs.cc.s
+.PHONY : tests/test_configs.cc.s
 
 tests/test_thread.o: tests/test_thread.cc.o
 
@@ -321,9 +401,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... test_configs"
 	@echo "... test_config"
 	@echo "... edit_cache"
 	@echo "... test_thread"
+	@echo "... test"
 	@echo "... bobliew"
 	@echo "... bobliew/config.o"
 	@echo "... bobliew/config.i"
@@ -337,9 +419,15 @@ help:
 	@echo "... bobliew/util.o"
 	@echo "... bobliew/util.i"
 	@echo "... bobliew/util.s"
+	@echo "... tests/test.o"
+	@echo "... tests/test.i"
+	@echo "... tests/test.s"
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"
+	@echo "... tests/test_configs.o"
+	@echo "... tests/test_configs.i"
+	@echo "... tests/test_configs.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"

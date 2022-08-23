@@ -222,13 +222,16 @@ Logger::Logger(const std::string& name)
 }
 
 void Logger::addAppender(LogAppender::ptr appender) {
+    MutexType::Lock lock(m_mutex); 
     if(!appender ->getFormatter()) {
+        MutexType::Lock ll(appender->m_mutex);
         appender->m_formatter = m_formatter;
     }
     m_appenders.push_back(appender);
 }
 
 void Logger::delAppender(LogAppender::ptr appender) {
+    MutexType::Lock lock(m_mutex);
     for(auto it = m_appenders.begin(); it != m_appenders.end(); ++it){
         if(*it == appender) {
             m_appenders.erase(it);
@@ -236,15 +239,21 @@ void Logger::delAppender(LogAppender::ptr appender) {
         }
     }
 }
-
 void Logger::setFormatter(LogFormatter::ptr val) {
-    m_formatter = val;
+    {MutexType::Lock lock(m_mutex);
+    m_formatter = val;}
     //将没有被初始化的appender按照m_formatter初始化。
     for(auto& i : m_appenders) {
+        MutexType::Lock lock(m_mutex);
         if(!i->m_hasFormatter) {
             i->m_formatter = m_formatter;
         }
     }
+}
+
+LogFormatter::ptr Logger::getFormatter() {
+    MutexType::Lock lock(m_mutex);
+    return m_formatter;
 }
 
 void Logger::setFormatter(const std::string& val) {
@@ -262,6 +271,7 @@ void Logger::setFormatter(const std::string& val) {
 }
 
 std::string Logger::toYamlString() {
+    MutexType::Lock lock(m_mutex);
     YAML::Node node;
     node["name"] = m_name;
     if(m_level != LogLevel::UNKNOW) {
@@ -285,7 +295,7 @@ void Logger::clearAppenders() {
 void Logger::log(LogLevel::Level level, const LogEvent::ptr event) {
     if(level >= m_level) {
         auto self = shared_from_this();
-        //后续需要加上锁
+        MutexType::Lock lock(m_mutex);
         if(!m_appenders.empty()) {
             for(auto& i : m_appenders) {
                 //这里的i是LogAppender类型,所以使用的log函数是m_appenders下的.
@@ -318,11 +328,12 @@ void Logger::fatal(LogEvent::ptr event) {
 //FileLogAppender 的实现
 FileLogAppender::FileLogAppender(const std::string& filename)
 :m_filename(filename) {
+    MutexType::Lock lock(m_mutex);
     reopen();
 }
 
 void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) {
-    //后续在添加线程池后需要上锁
+    MutexType::Lock lock(m_mutex);
     if(level >= m_level) {
         uint64_t now = event->getTime();
         if(now >= (m_lastTime + 3)) {
@@ -337,6 +348,7 @@ void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level,
 }
 
 std::string FileLogAppender::toYamlString() {
+    MutexType::Lock lock(m_mutex);
     YAML::Node node;
     node["type"] = "FileLogAppender";
     node["file"] = m_filename;
@@ -366,12 +378,13 @@ bool FileLogAppender::reopen() {
 
 void StdoutLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event) {
     if(level >= m_level) {
-        //还没加入线程池模块 后续应该在此处上锁 
+        MutexType::Lock lock(m_mutex);
         m_formatter->format(std::cout, logger, level, event);
     }
 }
 
 std::string StdoutLogAppender::toYamlString() {
+    MutexType::Lock lock(m_mutex);
     YAML::Node node;
     node["type"] = "StdoutLogAppender";
     if(m_level != LogLevel::UNKNOW) {
@@ -415,6 +428,12 @@ LogFormatter::LogFormatter(const std::string& pattern)
 :m_pattern(pattern) {
     init();
 }
+
+LogFormatter::ptr LogAppender::getFormatter() {
+    MutexType::Lock lock(m_mutex);
+    return m_formatter;
+}
+
 
 //format函数的作用在于根据输入的信息返回格式化日志文本
 /**
@@ -574,7 +593,7 @@ LoggerManager::LoggerManager() {
 }
 
 Logger::ptr LoggerManager::getLogger(const std::string& name) {
-
+    MutexType::Lock lock(m_mutex);
     auto it = m_loggers.find(name);
     if(it != m_loggers.end()) {
         return it->second;
@@ -777,6 +796,7 @@ static LogIniter __log_init;
 //全局对象的构造是在main函数之前的，所以这会确保全期的数据都会被记录。
 
 std::string LoggerManager::toYamlString() {
+    MutexType::Lock lock(m_mutex);
     YAML::Node node;
     for(auto& i :m_loggers) {
         node.push_back(YAML::Load(i.second->toYamlString()));

@@ -1,5 +1,7 @@
 /home/bobliew/data/bobliew/CMakeFiles/rebuild_cache.dir
+/home/bobliew/data/bobliew/CMakeFiles/test_configs.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_config.dir
 /home/bobliew/data/bobliew/CMakeFiles/edit_cache.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_thread.dir
+/home/bobliew/data/bobliew/CMakeFiles/test.dir
 /home/bobliew/data/bobliew/CMakeFiles/bobliew.dir

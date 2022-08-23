@@ -163,20 +163,21 @@ private:
 class LogAppender {
 friend class Logger;
 public:
+    typedef Spinlock MutexType;
     typedef std::shared_ptr<LogAppender> ptr;
     virtual ~LogAppender(){}
 
     virtual void log(std::shared_ptr<Logger> logger,LogLevel::Level level, LogEvent::ptr event) = 0;
 
     void setFormatter(LogFormatter::ptr val) { m_formatter = val;}
-    LogFormatter::ptr getFormatter() const { return m_formatter;}
+    LogFormatter::ptr getFormatter(); 
     virtual std::string toYamlString() = 0;
     void setLevel(LogLevel::Level val) { m_level = val;}
 protected:
     //是否有自己的日志格式器
     bool m_hasFormatter = false;
     LogLevel::Level m_level = LogLevel::DEBUG;
-    
+    MutexType m_mutex;
     //日志格式器
     LogFormatter::ptr m_formatter;
 };
@@ -185,6 +186,7 @@ protected:
 class Logger : public std::enable_shared_from_this<Logger>{
 friend class LoggerManager;
 public:
+    typedef Spinlock MutexType;
     typedef std::shared_ptr<Logger> ptr;
 
     Logger(const std::string& name="root");
@@ -204,6 +206,7 @@ public:
     std::string toYamlString();
     void clearAppenders();
 private:
+    MutexType m_mutex;
     Logger::ptr m_root;                                             //主日志器
     std::string m_name;                                              //日志名称
     LogLevel::Level m_level;                                         //日志级别
@@ -236,6 +239,7 @@ private:
 
 class LoggerManager{
 public:
+    typedef Spinlock MutexType;
     LoggerManager();
     Logger::ptr getLogger(const std::string& name);
 
@@ -244,6 +248,7 @@ public:
     Logger::ptr getRoot() const {return m_root;}
     std::string toYamlString();
 private:
+    MutexType m_mutex;
     std::map<std::string, Logger::ptr> m_loggers;
     Logger::ptr m_root;
 

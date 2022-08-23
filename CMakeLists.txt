@@ -31,11 +31,23 @@ set(LIB_LIB
     yaml-cpp
     )
 
+add_executable(test tests/test.cc)
+add_dependencies(test bobliew)
+force_redefine_file_macro_for_sources(test)
+target_link_libraries(test ${LIB_LIB})
+
 
 add_executable(test_config tests/test_config.cc)
 add_dependencies(test_config bobliew)
 force_redefine_file_macro_for_sources(test_config)
 target_link_libraries(test_config ${LIB_LIB})
+
+add_executable(test_configs tests/test_configs.cc)
+add_dependencies(test_configs bobliew)
+force_redefine_file_macro_for_sources(test_configs)
+target_link_libraries(test_configs ${LIB_LIB})
+
+
 
 add_executable(test_thread tests/test_thread.cc)
 add_dependencies(test_thread bobliew)
