@@ -124,16 +124,6 @@ atomic
 list
 -
 
-/home/bobliew/data/bobliew/bobliew/scheduler.cc
-scheduler.h
-/home/bobliew/data/bobliew/bobliew/scheduler.h
-log.h
-/home/bobliew/data/bobliew/bobliew/log.h
-macro.h
-/home/bobliew/data/bobliew/bobliew/macro.h
-util.h
-/home/bobliew/data/bobliew/bobliew/util.h
-
 /home/bobliew/data/bobliew/bobliew/scheduler.h
 boost/concept_check.hpp
 -

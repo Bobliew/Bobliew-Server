@@ -16,7 +16,7 @@ static std::atomic<uint64_t> s_fiber_id {0};
 static std::atomic<uint64_t> s_fiber_count {0};
 
 static ConfigVar<uint32_t>::ptr g_fiber_stack_size = 
-    Config::Lookup<uint32_t>("fiber.stack_size", 128 * 1024, "fiber stack size");
+    Config::Lookup<uint32_t>("fiber.stack_size", 1024 * 1024, "fiber stack size");
 
 //子协程-记录当前协程
 static thread_local Fiber* t_fiber = nullptr;
@@ -142,7 +142,7 @@ void Fiber::swapIn() {
 void Fiber::call() {
     SetThis(this);
     m_state = EXEC;
-    if(swapcontext(&Scheduler::GetMainFiber()->m_ctx, &m_ctx)) {
+    if(swapcontext(&t_threadFiber->m_ctx, &m_ctx)) {
         BOBLIEW_ASSERT2(false, "swapcontext");
     }
 
@@ -153,7 +153,7 @@ void Fiber::call() {
 //然后子协程的地址就会发生交换。
 void Fiber::swapOut() {
     SetThis(Scheduler::GetMainFiber());
-    if(swapcontext(&m_ctx, &Scheduler::GetMainFiber()->m_ctx)) {
+    if(swapcontext(&m_ctx,&Scheduler::GetMainFiber()->m_ctx)) {
         BOBLIEW_ASSERT2(false, "swapcontext out")
     }
 }

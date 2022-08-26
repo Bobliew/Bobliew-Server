@@ -109,18 +109,27 @@ void Scheduler::stop() {
     } else {
         BOBLIEW_ASSERT(GetThis() != this);
     }
-    if(m_rootFiber) {
-        m_rootFiber->call();
-    }
+
     m_stopping = true;
     for(size_t i = 0; i < m_threadCount; ++i) {
     //tickle唤醒线程，等待他们完成
         tickle();
     }
+    if(m_rootFiber) {
+        tickle();
+    }
+    if(!stopping()) {
+        m_rootFiber->call();
+    }
 
-
-
-    
+    std::vector<Thread::ptr> thrs;
+    {
+        MutexType::Lock lock(m_mutex);
+        thrs.swap(m_threads);
+    }
+    for(auto& i: thrs){
+        i->join();
+    }
 }
 
 bool Scheduler::stopping(){
