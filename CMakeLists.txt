@@ -18,6 +18,8 @@ set(LIB_SRC
     bobliew/config.cc
     bobliew/util.cc
     bobliew/thread.cc
+    bobliew/fiber.cc
+    bobliew/scheduler.cc
     )
 
 add_library(bobliew SHARED ${LIB_SRC})
@@ -47,12 +49,27 @@ add_dependencies(test_configs bobliew)
 force_redefine_file_macro_for_sources(test_configs)
 target_link_libraries(test_configs ${LIB_LIB})
 
-
+add_executable(test_util tests/test_util.cc)
+add_dependencies(test_util bobliew)
+force_redefine_file_macro_for_sources(test_util)
+target_link_libraries(test_util ${LIB_LIB})
 
 add_executable(test_thread tests/test_thread.cc)
 add_dependencies(test_thread bobliew)
 force_redefine_file_macro_for_sources(test_thread)
 target_link_libraries(test_thread ${LIB_LIB})
+
+add_executable(test_scheduler tests/test_scheduler.cc)
+add_dependencies(test_scheduler bobliew)
+force_redefine_file_macro_for_sources(test_scheduler)
+target_link_libraries(test_scheduler ${LIB_LIB})
+
+
+
+add_executable(test_fiber tests/test_fiber.cc)
+add_dependencies(test_fiber bobliew)
+force_redefine_file_macro_for_sources(test_fiber)
+target_link_libraries(test_fiber ${LIB_LIB})
 
 
 

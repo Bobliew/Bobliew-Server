@@ -16,3 +16,7 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/thread.cc.o_DEFINES = __FILE__="bobliew/thread.cc"
 
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/fiber.cc.o_DEFINES = __FILE__="bobliew/fiber.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o_DEFINES = __FILE__="bobliew/scheduler.cc"
+

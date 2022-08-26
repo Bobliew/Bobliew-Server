@@ -8,10 +8,31 @@ CMakeFiles/bobliew.dir/bobliew/config.cc.o
  /home/bobliew/data/bobliew/bobliew/singleton.h
  /home/bobliew/data/bobliew/bobliew/thread.h
  /home/bobliew/data/bobliew/bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o
+ /home/bobliew/data/bobliew/bobliew/config.h
+ /home/bobliew/data/bobliew/bobliew/fiber.cc
+ /home/bobliew/data/bobliew/bobliew/fiber.h
+ /home/bobliew/data/bobliew/bobliew/log.h
+ /home/bobliew/data/bobliew/bobliew/macro.h
+ /home/bobliew/data/bobliew/bobliew/mutex.h
+ /home/bobliew/data/bobliew/bobliew/scheduler.h
+ /home/bobliew/data/bobliew/bobliew/singleton.h
+ /home/bobliew/data/bobliew/bobliew/thread.h
+ /home/bobliew/data/bobliew/bobliew/util.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o
  /home/bobliew/data/bobliew/bobliew/config.h
  /home/bobliew/data/bobliew/bobliew/log.cc
  /home/bobliew/data/bobliew/bobliew/log.h
+ /home/bobliew/data/bobliew/bobliew/singleton.h
+ /home/bobliew/data/bobliew/bobliew/thread.h
+ /home/bobliew/data/bobliew/bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o
+ /home/bobliew/data/bobliew/bobliew/fiber.h
+ /home/bobliew/data/bobliew/bobliew/log.h
+ /home/bobliew/data/bobliew/bobliew/macro.h
+ /home/bobliew/data/bobliew/bobliew/mutex.h
+ /home/bobliew/data/bobliew/bobliew/scheduler.cc
+ /home/bobliew/data/bobliew/bobliew/scheduler.h
  /home/bobliew/data/bobliew/bobliew/singleton.h
  /home/bobliew/data/bobliew/bobliew/thread.h
  /home/bobliew/data/bobliew/bobliew/util.h
@@ -22,5 +43,9 @@ CMakeFiles/bobliew.dir/bobliew/thread.cc.o
  /home/bobliew/data/bobliew/bobliew/thread.h
  /home/bobliew/data/bobliew/bobliew/util.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o
+ /home/bobliew/data/bobliew/bobliew/fiber.h
+ /home/bobliew/data/bobliew/bobliew/log.h
+ /home/bobliew/data/bobliew/bobliew/singleton.h
+ /home/bobliew/data/bobliew/bobliew/thread.h
  /home/bobliew/data/bobliew/bobliew/util.cc
  /home/bobliew/data/bobliew/bobliew/util.h

@@ -111,6 +111,10 @@ stdlib.h
 -
 sys/syscall.h
 -
+vector
+-
+string
+-
 
 /home/bobliew/data/bobliew/tests/test_thread.cc
 ../bobliew/thread.h

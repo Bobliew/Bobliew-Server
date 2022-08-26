@@ -135,6 +135,10 @@ stdlib.h
 -
 sys/syscall.h
 -
+vector
+-
+string
+-
 
 /home/bobliew/data/bobliew/tests/test_config.cc
 ../bobliew/config.h

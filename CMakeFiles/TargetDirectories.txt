@@ -1,4 +1,7 @@
+/home/bobliew/data/bobliew/CMakeFiles/test_scheduler.dir
 /home/bobliew/data/bobliew/CMakeFiles/rebuild_cache.dir
+/home/bobliew/data/bobliew/CMakeFiles/test_util.dir
+/home/bobliew/data/bobliew/CMakeFiles/test_fiber.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_configs.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_config.dir
 /home/bobliew/data/bobliew/CMakeFiles/edit_cache.dir

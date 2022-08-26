@@ -10,14 +10,22 @@
 #include <cxxabi.h>
 #include <stdlib.h>
 #include <sys/syscall.h>
-
+#include <vector>
+#include <string>
 
 namespace bobliew {
 
 
 
 pid_t GetThreadId();
-uint32_t GetFiberId();
+uint64_t GetFiberId();
+
+
+void Backtrace(std::vector<std::string>& bt, int size, int skip);
+
+std::string BackTracetoString(int size, int skip, const std::string prefix = " ");
+
+
 
 
 template<class T>

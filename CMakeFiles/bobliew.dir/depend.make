@@ -8,6 +8,17 @@ CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/util.h
 
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/config.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/fiber.cc
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/fiber.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/macro.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/mutex.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/scheduler.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/util.h
+
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.cc
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.h
@@ -15,12 +26,26 @@ CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/util.h
 
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/fiber.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/macro.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/mutex.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/scheduler.cc
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/scheduler.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/util.h
+
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/log.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/thread.cc
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/util.h
 
+CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/fiber.h
+CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util.cc
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util.h
 

@@ -28,7 +28,10 @@ Semaphore::~Semaphore() {
 }
 
 void Semaphore::wait() {
+    //如果信号箱大于零，则递减继续，如果信号箱等于零，
+    //则调用阻塞直到信号量上升到大于0.
     //sen_wait将信号值减一
+    //成功后返回0.
     if(sem_wait(&m_semaphore)) {
         throw std::logic_error("sem_wait error");
     }
