@@ -19,6 +19,19 @@ CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/util.h
 
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/bobliew.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/config.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/fiber.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/iomanager.cc
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/iomanager.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/macro.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/mutex.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/scheduler.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/util.h
+
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.cc
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.h

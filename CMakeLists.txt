@@ -20,6 +20,7 @@ set(LIB_SRC
     bobliew/thread.cc
     bobliew/fiber.cc
     bobliew/scheduler.cc
+    bobliew/iomanager.cc
     )
 
 add_library(bobliew SHARED ${LIB_SRC})
@@ -70,6 +71,13 @@ add_executable(test_fiber tests/test_fiber.cc)
 add_dependencies(test_fiber bobliew)
 force_redefine_file_macro_for_sources(test_fiber)
 target_link_libraries(test_fiber ${LIB_LIB})
+
+
+
+add_executable(test_iomanager tests/test_iomanager.cc)
+add_dependencies(test_iomanager bobliew)
+force_redefine_file_macro_for_sources(test_iomanager)
+target_link_libraries(test_iomanager ${LIB_LIB})
 
 
 

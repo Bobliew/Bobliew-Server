@@ -24,7 +24,7 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
         BOBLIEW_ASSERT(GetThis() == nullptr);
         t_scheduler = this;
 
-        m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));
+        m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, use_caller));
         bobliew::Thread::SetName(m_name);
         //在一个线程里面生成一个调度器，再把当前线程放进调度器里，
         //他的主协程将不再是这个线程的主协程，而是执行run方法的主协程。
@@ -119,7 +119,9 @@ void Scheduler::stop() {
         tickle();
     }
     if(!stopping()) {
+        if(m_rootThread != -1){
         m_rootFiber->call();
+        }
     }
 
     std::vector<Thread::ptr> thrs;
@@ -239,6 +241,7 @@ void Scheduler::run() {
             //将带有cb函数的协程传入
             cb_fiber->swapIn();
             --m_activeThreadCount;
+            //处理换出来的函数
             if(cb_fiber->getState() == Fiber::READY) {
                 schedule(cb_fiber);
                 //意外和结束情况，直接reset成nullptr就行
@@ -271,10 +274,6 @@ void Scheduler::run() {
         }
     }
 }
-
-
-
-
 
 
 

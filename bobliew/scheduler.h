@@ -77,7 +77,7 @@ virtual void idle();
 void setThis();
 void run();
 
-
+bool hasIdleThreads() { return m_idleThreadCount > 0;}
 private:
 template<class FiberOrCb>
 bool scheduleNoLock(FiberOrCb fc, int thread) {
@@ -124,7 +124,7 @@ private:
         }
     };
 
-private:
+protected:
 //潜在的优化，可以用map来记录
 // 类似 map<pid_t, std::list<FiberANdThread>之类的结构来定位对应的协程池
 // 如果协程池内部的协程指定了对应线程来运行，那么需要将这个协程移动到对应key的

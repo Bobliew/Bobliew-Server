@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_iomanager
+
+# Build rule for target.
+test_iomanager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_iomanager
+.PHONY : test_iomanager
+
+# fast build rule for target.
+test_iomanager/fast:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
+.PHONY : test_iomanager/fast
+
+#=============================================================================
 # Target rules for targets named test_scheduler
 
 # Build rule for target.
@@ -270,6 +283,33 @@ bobliew/fiber.s: bobliew/fiber.cc.s
 bobliew/fiber.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/fiber.cc.s
 .PHONY : bobliew/fiber.cc.s
+
+bobliew/iomanager.o: bobliew/iomanager.cc.o
+
+.PHONY : bobliew/iomanager.o
+
+# target to build an object file
+bobliew/iomanager.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o
+.PHONY : bobliew/iomanager.cc.o
+
+bobliew/iomanager.i: bobliew/iomanager.cc.i
+
+.PHONY : bobliew/iomanager.i
+
+# target to preprocess a source file
+bobliew/iomanager.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/iomanager.cc.i
+.PHONY : bobliew/iomanager.cc.i
+
+bobliew/iomanager.s: bobliew/iomanager.cc.s
+
+.PHONY : bobliew/iomanager.s
+
+# target to generate assembly for a file
+bobliew/iomanager.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/iomanager.cc.s
+.PHONY : bobliew/iomanager.cc.s
 
 bobliew/log.o: bobliew/log.cc.o
 
@@ -487,6 +527,33 @@ tests/test_fiber.cc.s:
 	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
 .PHONY : tests/test_fiber.cc.s
 
+tests/test_iomanager.o: tests/test_iomanager.cc.o
+
+.PHONY : tests/test_iomanager.o
+
+# target to build an object file
+tests/test_iomanager.cc.o:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o
+.PHONY : tests/test_iomanager.cc.o
+
+tests/test_iomanager.i: tests/test_iomanager.cc.i
+
+.PHONY : tests/test_iomanager.i
+
+# target to preprocess a source file
+tests/test_iomanager.cc.i:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.i
+.PHONY : tests/test_iomanager.cc.i
+
+tests/test_iomanager.s: tests/test_iomanager.cc.s
+
+.PHONY : tests/test_iomanager.s
+
+# target to generate assembly for a file
+tests/test_iomanager.cc.s:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.s
+.PHONY : tests/test_iomanager.cc.s
+
 tests/test_scheduler.o: tests/test_scheduler.cc.o
 
 .PHONY : tests/test_scheduler.o
@@ -574,6 +641,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... test_iomanager"
 	@echo "... test_scheduler"
 	@echo "... rebuild_cache"
 	@echo "... test_util"
@@ -590,6 +658,9 @@ help:
 	@echo "... bobliew/fiber.o"
 	@echo "... bobliew/fiber.i"
 	@echo "... bobliew/fiber.s"
+	@echo "... bobliew/iomanager.o"
+	@echo "... bobliew/iomanager.i"
+	@echo "... bobliew/iomanager.s"
 	@echo "... bobliew/log.o"
 	@echo "... bobliew/log.i"
 	@echo "... bobliew/log.s"
@@ -614,6 +685,9 @@ help:
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"
+	@echo "... tests/test_iomanager.o"
+	@echo "... tests/test_iomanager.i"
+	@echo "... tests/test_iomanager.s"
 	@echo "... tests/test_scheduler.o"
 	@echo "... tests/test_scheduler.i"
 	@echo "... tests/test_scheduler.s"

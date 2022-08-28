@@ -27,7 +27,7 @@
 
 //utli
 /**
- * @brief 使用流式方式将日志级别debug的日志写入到logger
+ * @brief 使用流式方式将日志级别debug的日志写入到
  */
 #define BOBLIEW_LOG_DEBUG(logger) BOBLIEW_LOG_LEVEL(logger, bobliew::LogLevel::DEBUG)
 
