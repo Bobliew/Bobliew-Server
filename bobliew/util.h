@@ -12,6 +12,7 @@
 #include <sys/syscall.h>
 #include <vector>
 #include <string>
+#include <sys/time.h>
 
 namespace bobliew {
 
@@ -35,9 +36,10 @@ const char* TypetoName() {
 }
 
 
+//时间相关
+uint64_t GetCurrentMS();
+uint64_t GetCurrentUS();
+
+
 }
-
-
-
-
 #endif

@@ -47,7 +47,6 @@ void test_1() {
     std::cout<< "EPOLLIN = "<< EPOLLIN <<" EPOLLOUT= "<<EPOLLOUT<<std::endl;
     bobliew::IOManager iom;
     iom.schedule(&test_fiber);
-
 }
 
 int main(int argc, char** argv) {
