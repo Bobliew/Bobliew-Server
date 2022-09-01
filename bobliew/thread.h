@@ -9,12 +9,13 @@
 #include <pthread.h>
 #include <semaphore.h>
 #include <stdint.h>
+#include "noncopyable.h"
 //c++17可以通过 shared_mutex使用读写锁
 //使用读写锁的原因，很多数据读多写少，如果都用同样的锁，可能会造成性能损失。
 //另一派观点认为读写锁开销过大，这取决于现实的开发
 namespace bobliew {
 
-class Semaphore {
+class Semaphore : Noncopyable{
 public:
     Semaphore(uint32_t count = 0);
     ~Semaphore();
@@ -66,7 +67,7 @@ private:
 };
 
 
-class Mutex{
+class Mutex: Noncopyable{
 public:
     typedef ScopedLockImpl<Mutex> Lock;
     Mutex() {
@@ -147,7 +148,7 @@ private:
     bool m_locked;
 };
 
-class RWMutex{
+class RWMutex : Noncopyable{
 public:
 typedef ReadScopedLockImpl<RWMutex> ReadLock;
 typedef WriteScopedLockImpl<RWMutex> WriteLock;
@@ -175,7 +176,7 @@ private:
 
 
 //测试用空锁
-class NULLMutex{
+class NULLMutex : Noncopyable{
 public:
     typedef ScopedLockImpl<NULLMutex> Lock;
     NULLMutex() {}
@@ -189,7 +190,7 @@ public:
 };
 
 //测试用空锁
-class NULLRWMutex{
+class NULLRWMutex : Noncopyable{
 public:
     typedef ReadScopedLockImpl<NULLRWMutex> ReadLock;
     typedef WriteScopedLockImpl<NULLRWMutex> WriteLock;
@@ -205,7 +206,7 @@ public:
 };
 
 //尝试几次后会到cpu挂起
-class Spinlock {
+class Spinlock : Noncopyable{
 public:
     typedef ScopedLockImpl<Spinlock> Lock;
 
@@ -225,7 +226,7 @@ private:
     pthread_spinlock_t m_mutex;
 };
 
-class CASLock {
+class CASLock : Noncopyable{
 public:
     CASLock() {
         m_mutex.clear();

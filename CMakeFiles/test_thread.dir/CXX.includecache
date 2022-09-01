@@ -70,6 +70,8 @@ util.h
 thread.h
 /home/bobliew/data/bobliew/bobliew/thread.h
 
+/home/bobliew/data/bobliew/bobliew/noncopyable.h
+
 /home/bobliew/data/bobliew/bobliew/singleton.h
 memory
 -
@@ -91,6 +93,8 @@ semaphore.h
 -
 stdint.h
 -
+noncopyable.h
+/home/bobliew/data/bobliew/bobliew/noncopyable.h
 
 /home/bobliew/data/bobliew/bobliew/util.h
 pthread.h

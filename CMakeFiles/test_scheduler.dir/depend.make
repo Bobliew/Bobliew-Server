@@ -4,9 +4,11 @@
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/bobliew.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/config.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/fiber.h
+CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/hook.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/log.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/macro.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/mutex.h
+CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/noncopyable.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/scheduler.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/singleton.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/thread.h

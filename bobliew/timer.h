@@ -96,6 +96,7 @@ private:
     std::set<Timer::ptr, Timer::Comparator> m_timers;
     // 是否触发onTimeerInsertedAtFront
     bool m_tickled = false;
+    //上次执行的事件
     uint64_t m_previousTime = 0;
 };
 

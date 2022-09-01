@@ -4,6 +4,7 @@
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o
  /home/bobliew/data/bobliew/bobliew/config.h
  /home/bobliew/data/bobliew/bobliew/log.h
+ /home/bobliew/data/bobliew/bobliew/noncopyable.h
  /home/bobliew/data/bobliew/bobliew/singleton.h
  /home/bobliew/data/bobliew/bobliew/thread.h
  /home/bobliew/data/bobliew/bobliew/util.h

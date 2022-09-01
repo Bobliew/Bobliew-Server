@@ -4,9 +4,17 @@
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/config.cc
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/util.h
+
+CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o: bobliew/fd_manager.cc
+CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o: bobliew/fd_manager.h
+CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o: bobliew/hook.h
+CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o: bobliew/noncopyable.h
+CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o: bobliew/thread.h
 
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/fiber.cc
@@ -14,35 +22,59 @@ CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/fiber.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/log.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/macro.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/mutex.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/scheduler.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/util.h
 
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/bobliew.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/config.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/fd_manager.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/fiber.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/hook.cc
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/hook.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/iomanager.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/macro.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/mutex.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/noncopyable.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/scheduler.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/timer.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/util.h
+
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/bobliew.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/fiber.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/hook.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/iomanager.cc
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/iomanager.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/log.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/macro.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/mutex.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/scheduler.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/timer.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/util.h
 
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.cc
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/util.h
 
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/fiber.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/hook.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/log.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/macro.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/mutex.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/scheduler.cc
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/scheduler.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/singleton.h
@@ -50,13 +82,23 @@ CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/util.h
 
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/thread.cc
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/util.h
 
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/noncopyable.h
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/timer.cc
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/timer.h
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/util.h
+
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/fiber.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util.cc

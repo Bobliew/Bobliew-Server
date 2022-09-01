@@ -1,3 +1,4 @@
+/home/bobliew/data/bobliew/CMakeFiles/test_hook.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_iomanager.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_scheduler.dir
 /home/bobliew/data/bobliew/CMakeFiles/rebuild_cache.dir

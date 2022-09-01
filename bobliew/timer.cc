@@ -1,24 +1,27 @@
 #include "timer.h"
 #include "thread.h"
 #include "util.h"
+#include "log.h"
 
 namespace bobliew {
 
+bobliew::Logger::ptr x_logger = BOBLIEW_LOG_ROOT();
+
 bool Timer::Comparator::operator()(const Timer::ptr& lhs, 
                                    const Timer::ptr& rhs) const {
-    if(!lhs && !rhs) {
+    if(!lhs->m_next && !rhs->m_next) {
         return false;
     }
-    if(!lhs) {
+    if(!lhs->m_next) {
         return true;
     }
-    if(!rhs) {
+    if(!rhs->m_next) {
         return false;
     }
-    if(lhs < rhs) {
+    if(lhs->m_next < rhs->m_next) {
         return true;
     }
-    if(rhs < lhs) {
+    if(rhs->m_next < lhs->m_next) {
         return false;
     }
     return lhs.get() < rhs.get();
@@ -48,9 +51,11 @@ TimerManager::~TimerManager() {
 Timer::ptr TimerManager::addTimer(uint64_t ms, std::function<void()> cb, 
                                   bool recurring) {
     // 新建一个timmer，然后将这个timer放进timmermanager
+    BOBLIEW_LOG_DEBUG(x_logger) << "test!!!!!!!!!!!!!!111";
     Timer::ptr timer (new Timer(ms, cb, recurring, this));
     RWMutexType::WriteLock lock(m_mutex);
     addTimer(timer, lock);
+    BOBLIEW_LOG_DEBUG(x_logger)<<"Added!!!!!!!!!!!!!!!!!!"<<"ms:"<<ms;
     return timer;
 
 }
@@ -58,6 +63,8 @@ Timer::ptr TimerManager::addTimer(uint64_t ms, std::function<void()> cb,
 void TimerManager::addTimer(Timer::ptr val, RWMutexType::WriteLock& lock) {
     auto it = m_timers.insert(val).first;
     //如果m_tickled已经为true，说明已经调用过ontimer
+    //如果m_timers是第一个，那说明之前也没调用过
+    //分开addtimer 在hook里面
     bool at_front = (it == m_timers.begin()) && !m_tickled;
     if(at_front){
         m_tickled = true;
@@ -120,11 +127,12 @@ void TimerManager::listExpireCb(std::vector<std::function<void()>>& cbs) {
     }
     Timer::ptr now_timer(new Timer(now_ms));
     auto it = rollover ? m_timers.end() : m_timers.lower_bound(now_timer);
+    BOBLIEW_LOG_DEBUG(x_logger)<< "nowtimer:    " << now_timer;
     while(it != m_timers.end() && (*it)->m_next == now_ms) {
         ++it;
     }
-    
     expired.insert(expired.begin(), m_timers.begin(), it);
+    BOBLIEW_LOG_DEBUG(x_logger)<< "1:    " << expired[0]->m_ms << "2: ";
     m_timers.erase(m_timers.begin(), it);
     cbs.reserve(expired.size());
 

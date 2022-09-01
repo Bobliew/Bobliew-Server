@@ -4,9 +4,11 @@
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/bobliew.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/config.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/fiber.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/hook.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/log.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/macro.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/mutex.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/noncopyable.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/scheduler.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/singleton.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: bobliew/thread.h

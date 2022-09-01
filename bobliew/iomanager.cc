@@ -267,8 +267,15 @@ IOManager* IOManager::GetThis() {
 //借用 epoll_wait 方法
 //返回是否可以停止
 bool IOManager::stopping() {
-    return Scheduler::stopping()
-        && m_pendingEventCount == 0;
+    uint64_t timeout = 0;
+    return stopping(timeout);
+}
+
+bool IOManager::stopping(uint64_t& timeout) {
+    timeout = getNextTimer();
+    return timeout == ~0ull
+            && m_pendingEventCount ==0
+            && Scheduler::stopping();
 }
 
 //通知协程调度器有任务生成
@@ -298,14 +305,28 @@ void IOManager::idle() {
     });
 
     while(true) {
-        if(stopping()) {
+        uint64_t next_timeout = 0;
+        if(stopping(next_timeout)) {
             BOBLIEW_LOG_INFO(g_logger) << "name = " << m_name << "idle stopping exit";
             break;
-        }
+        } 
 
         int rt = 0;
         do {
+            //毫秒数
             static const int MAX_TIMEOUT = 3000;
+            //存在下一个定时器
+            if(next_timeout != ~0ull) {
+                next_timeout = (int)next_timeout > MAX_TIMEOUT ? 
+                    MAX_TIMEOUT :next_timeout;
+                //如果已经有了设定好的next_timeout,我们还是要取next_timeout和
+                //MAX_TIMEOUT之间的较小值。
+            } else {
+                next_timeout = MAX_TIMEOUT;
+                //如果next_TIMEOUT为0，那idle的时间还是设定好的
+            }
+        
+
             //epoll wait等待一个描述符为m_epfd的epoll instance，
             //events指向缓冲区，前面已经创建好了的epoll_event数组
             //等到达到了最大数量，就会将储存好的送到缓冲区。
@@ -314,7 +335,7 @@ void IOManager::idle() {
             //一直要求处于非阻塞的状态。
             //用处：idle是在list空闲的时候运行的，用来收集可能的来自其他协程需要
             //处理的epoll instance，
-            rt = epoll_wait(m_epfd, events, 64, MAX_TIMEOUT);
+            rt = epoll_wait(m_epfd, events, MAX_EVNETS, (int)next_timeout);
 
             // epoll_wait()的返回值，正常情况下会返回收集到的文件描述数量，
             // 0代表没有收集到任何， -1说明出现错误，如果错误为没有收集到任何而
@@ -328,6 +349,14 @@ void IOManager::idle() {
                 break;
             }
         } while(true);
+
+        //将定时器的回调函数schedule进协程
+        std::vector<std::function<void()> > cbs;
+        listExpireCb(cbs);
+        if(!cbs.empty()) {
+            schedule(cbs.begin(), cbs.end());
+            cbs.clear();
+        }
 
 //开始处理收集到的epoll instance
 //read(int fd, void *buf, size_t count)
@@ -447,6 +476,11 @@ void IOManager::FdContext::triggerEvent(IOManager::Event event) {
     }
     ctx.scheduler = nullptr;
     return;
+}
+
+
+void IOManager::onTimerInsertedAtFront() {
+    tickle();
 }
 
 }

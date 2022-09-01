@@ -12,6 +12,8 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/config.cc.o_DEFINES = __FILE__="bobliew/config.cc"
 
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o_DEFINES = __FILE__="bobliew/fd_manager.cc"
+
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/util.cc.o_DEFINES = __FILE__="bobliew/util.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/thread.cc.o_DEFINES = __FILE__="bobliew/thread.cc"
@@ -20,5 +22,9 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o_DEFINES = __FILE__="bobliew/scheduler.cc"
 
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/timer.cc.o_DEFINES = __FILE__="bobliew/timer.cc"
+
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o_DEFINES = __FILE__="bobliew/iomanager.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/hook.cc.o_DEFINES = __FILE__="bobliew/hook.cc"
 

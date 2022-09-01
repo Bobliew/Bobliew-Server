@@ -4,10 +4,12 @@
 #include "bobliew.h"
 #include "fiber.h"
 #include <sys/epoll.h>
+#include "timer.h"
+
 
 namespace bobliew {
 
-class IOManager : public Scheduler {
+class IOManager : public Scheduler , public TimerManager{
 
 public:
     typedef std::shared_ptr<IOManager> ptr;
@@ -58,13 +60,16 @@ public:
 
 protected:
     //返回是否可以停止
-    virtual bool stopping() override;
-
+    bool stopping() override;
+    //根据最近发出的定时器时间间隔来判断是否可以停止
+    bool stopping(uint64_t& timeout);
     //通知协程调度器有任务生成
-    virtual void tickle() override;
+    void tickle() override;
 
     //协程无任务可调度的时候执行idle线程
-    virtual void idle() override;
+    void idle() override;
+
+    void onTimerInsertedAtFront() override;
 
     void contextResize(size_t size);
 
@@ -83,8 +88,6 @@ private:
     RWMutexType m_mutex;
     //储存上下文的数组
     std::vector<FdContext*> m_fdContexts;
-
-
 };
 
 

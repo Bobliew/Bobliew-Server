@@ -1,4 +1,5 @@
 #include "scheduler.h"
+#include "hook.h"
 #include "log.h"
 #include "macro.h"
 #include "util.h"
@@ -159,6 +160,7 @@ void Scheduler::idle(){
 
 void Scheduler::run() {
     BOBLIEW_LOG_INFO(g_logger) << "run";
+    set_hook_enable(true);
 
     setThis();
     //如果当前线程id和储存的不一致，说明还没有建立scheduler的主协程，通过GetThis

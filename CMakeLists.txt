@@ -10,17 +10,22 @@ include_directories(.)
 include_directories(~/build)
 
 link_directories(~/build/yaml-cpp)
+#link_directories(/apps/bobliew/lib)
+#link_directories(/apps/bobliew/lib64)
 
 find_library(PTHREAD pthread)
 
 set(LIB_SRC
     bobliew/log.cc
     bobliew/config.cc
+    bobliew/fd_manager.cc
     bobliew/util.cc
     bobliew/thread.cc
     bobliew/fiber.cc
     bobliew/scheduler.cc
+    bobliew/timer.cc
     bobliew/iomanager.cc
+    bobliew/hook.cc
     )
 
 add_library(bobliew SHARED ${LIB_SRC})
@@ -29,55 +34,62 @@ force_redefine_file_macro_for_sources(bobliew) #__FILE__
 #SET_TARGET_PROPERTIES (bobliew_static PROPERTIES OUTPUT_NAME "bobliew")
 
 set(LIB_LIB
-    bobliew
-    pthread
-    yaml-cpp
+        dl
+        bobliew
+        pthread
+        yaml-cpp
     )
 
 add_executable(test tests/test.cc)
 add_dependencies(test bobliew)
 force_redefine_file_macro_for_sources(test)
-target_link_libraries(test ${LIB_LIB})
+target_link_libraries(test ${LIB_LIB} dl)
 
 
 add_executable(test_config tests/test_config.cc)
 add_dependencies(test_config bobliew)
 force_redefine_file_macro_for_sources(test_config)
-target_link_libraries(test_config ${LIB_LIB})
+target_link_libraries(test_config ${LIB_LIB} dl)
 
 add_executable(test_configs tests/test_configs.cc)
 add_dependencies(test_configs bobliew)
 force_redefine_file_macro_for_sources(test_configs)
-target_link_libraries(test_configs ${LIB_LIB})
+target_link_libraries(test_configs ${LIB_LIB} dl)
 
 add_executable(test_util tests/test_util.cc)
 add_dependencies(test_util bobliew)
 force_redefine_file_macro_for_sources(test_util)
-target_link_libraries(test_util ${LIB_LIB})
+target_link_libraries(test_util ${LIB_LIB} dl)
 
 add_executable(test_thread tests/test_thread.cc)
 add_dependencies(test_thread bobliew)
 force_redefine_file_macro_for_sources(test_thread)
-target_link_libraries(test_thread ${LIB_LIB})
+target_link_libraries(test_thread ${LIB_LIB} dl)
 
 add_executable(test_scheduler tests/test_scheduler.cc)
 add_dependencies(test_scheduler bobliew)
 force_redefine_file_macro_for_sources(test_scheduler)
-target_link_libraries(test_scheduler ${LIB_LIB})
+target_link_libraries(test_scheduler ${LIB_LIB} dl)
 
 
 
 add_executable(test_fiber tests/test_fiber.cc)
 add_dependencies(test_fiber bobliew)
 force_redefine_file_macro_for_sources(test_fiber)
-target_link_libraries(test_fiber ${LIB_LIB})
+target_link_libraries(test_fiber ${LIB_LIB} dl)
 
 
 
 add_executable(test_iomanager tests/test_iomanager.cc)
 add_dependencies(test_iomanager bobliew)
 force_redefine_file_macro_for_sources(test_iomanager)
-target_link_libraries(test_iomanager ${LIB_LIB})
+target_link_libraries(test_iomanager ${LIB_LIB} dl)
+
+
+add_executable(test_hook tests/test_hook.cc)
+add_dependencies(test_hook bobliew)
+force_redefine_file_macro_for_sources(test_hook)
+target_link_libraries(test_hook ${LIB_LIB} dl)
 
 
 

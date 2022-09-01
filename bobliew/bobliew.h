@@ -5,6 +5,7 @@
 #include "log.h"
 #include "fiber.h"
 #include "singleton.h"
+#include "hook.h"
 #include "scheduler.h"
 #include "thread.h"
 #include "util.h"

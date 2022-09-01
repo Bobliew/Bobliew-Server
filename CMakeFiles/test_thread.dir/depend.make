@@ -3,6 +3,7 @@
 
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/config.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/log.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/noncopyable.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/singleton.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/thread.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/util.h

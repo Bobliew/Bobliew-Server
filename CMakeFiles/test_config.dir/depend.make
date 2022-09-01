@@ -4,6 +4,7 @@
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/config.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/log.cc
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/log.h
+CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/noncopyable.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/singleton.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/thread.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/util.h

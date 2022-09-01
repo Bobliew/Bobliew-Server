@@ -41,6 +41,16 @@ void test_fiber() {
 }
 
 
+void test_timer() {
+    bobliew::IOManager iom(2);
+    bobliew::Timer::ptr timer = iom.addTimer(1000, [&timer](){
+        BOBLIEW_LOG_INFO(g_logger) << "hello timer";
+        static int i = 0;
+        if(++i==5){
+            timer->cancel();
+        }
+    }, true);
+}
 
 
 void test_1() {
@@ -50,6 +60,6 @@ void test_1() {
 }
 
 int main(int argc, char** argv) {
-    test_1();
+    test_timer();
     return 0;
 }

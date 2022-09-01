@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_hook
+
+# Build rule for target.
+test_hook: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_hook
+.PHONY : test_hook
+
+# fast build rule for target.
+test_hook/fast:
+	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
+.PHONY : test_hook/fast
+
+#=============================================================================
 # Target rules for targets named test_iomanager
 
 # Build rule for target.
@@ -257,6 +270,33 @@ bobliew/config.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/config.cc.s
 .PHONY : bobliew/config.cc.s
 
+bobliew/fd_manager.o: bobliew/fd_manager.cc.o
+
+.PHONY : bobliew/fd_manager.o
+
+# target to build an object file
+bobliew/fd_manager.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o
+.PHONY : bobliew/fd_manager.cc.o
+
+bobliew/fd_manager.i: bobliew/fd_manager.cc.i
+
+.PHONY : bobliew/fd_manager.i
+
+# target to preprocess a source file
+bobliew/fd_manager.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.i
+.PHONY : bobliew/fd_manager.cc.i
+
+bobliew/fd_manager.s: bobliew/fd_manager.cc.s
+
+.PHONY : bobliew/fd_manager.s
+
+# target to generate assembly for a file
+bobliew/fd_manager.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.s
+.PHONY : bobliew/fd_manager.cc.s
+
 bobliew/fiber.o: bobliew/fiber.cc.o
 
 .PHONY : bobliew/fiber.o
@@ -283,6 +323,33 @@ bobliew/fiber.s: bobliew/fiber.cc.s
 bobliew/fiber.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/fiber.cc.s
 .PHONY : bobliew/fiber.cc.s
+
+bobliew/hook.o: bobliew/hook.cc.o
+
+.PHONY : bobliew/hook.o
+
+# target to build an object file
+bobliew/hook.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/hook.cc.o
+.PHONY : bobliew/hook.cc.o
+
+bobliew/hook.i: bobliew/hook.cc.i
+
+.PHONY : bobliew/hook.i
+
+# target to preprocess a source file
+bobliew/hook.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/hook.cc.i
+.PHONY : bobliew/hook.cc.i
+
+bobliew/hook.s: bobliew/hook.cc.s
+
+.PHONY : bobliew/hook.s
+
+# target to generate assembly for a file
+bobliew/hook.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/hook.cc.s
+.PHONY : bobliew/hook.cc.s
 
 bobliew/iomanager.o: bobliew/iomanager.cc.o
 
@@ -391,6 +458,33 @@ bobliew/thread.s: bobliew/thread.cc.s
 bobliew/thread.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/thread.cc.s
 .PHONY : bobliew/thread.cc.s
+
+bobliew/timer.o: bobliew/timer.cc.o
+
+.PHONY : bobliew/timer.o
+
+# target to build an object file
+bobliew/timer.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/timer.cc.o
+.PHONY : bobliew/timer.cc.o
+
+bobliew/timer.i: bobliew/timer.cc.i
+
+.PHONY : bobliew/timer.i
+
+# target to preprocess a source file
+bobliew/timer.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/timer.cc.i
+.PHONY : bobliew/timer.cc.i
+
+bobliew/timer.s: bobliew/timer.cc.s
+
+.PHONY : bobliew/timer.s
+
+# target to generate assembly for a file
+bobliew/timer.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/timer.cc.s
+.PHONY : bobliew/timer.cc.s
 
 bobliew/util.o: bobliew/util.cc.o
 
@@ -527,6 +621,33 @@ tests/test_fiber.cc.s:
 	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
 .PHONY : tests/test_fiber.cc.s
 
+tests/test_hook.o: tests/test_hook.cc.o
+
+.PHONY : tests/test_hook.o
+
+# target to build an object file
+tests/test_hook.cc.o:
+	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.o
+.PHONY : tests/test_hook.cc.o
+
+tests/test_hook.i: tests/test_hook.cc.i
+
+.PHONY : tests/test_hook.i
+
+# target to preprocess a source file
+tests/test_hook.cc.i:
+	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.i
+.PHONY : tests/test_hook.cc.i
+
+tests/test_hook.s: tests/test_hook.cc.s
+
+.PHONY : tests/test_hook.s
+
+# target to generate assembly for a file
+tests/test_hook.cc.s:
+	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.s
+.PHONY : tests/test_hook.cc.s
+
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 
 .PHONY : tests/test_iomanager.o
@@ -641,6 +762,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... test_hook"
 	@echo "... test_iomanager"
 	@echo "... test_scheduler"
 	@echo "... rebuild_cache"
@@ -655,9 +777,15 @@ help:
 	@echo "... bobliew/config.o"
 	@echo "... bobliew/config.i"
 	@echo "... bobliew/config.s"
+	@echo "... bobliew/fd_manager.o"
+	@echo "... bobliew/fd_manager.i"
+	@echo "... bobliew/fd_manager.s"
 	@echo "... bobliew/fiber.o"
 	@echo "... bobliew/fiber.i"
 	@echo "... bobliew/fiber.s"
+	@echo "... bobliew/hook.o"
+	@echo "... bobliew/hook.i"
+	@echo "... bobliew/hook.s"
 	@echo "... bobliew/iomanager.o"
 	@echo "... bobliew/iomanager.i"
 	@echo "... bobliew/iomanager.s"
@@ -670,6 +798,9 @@ help:
 	@echo "... bobliew/thread.o"
 	@echo "... bobliew/thread.i"
 	@echo "... bobliew/thread.s"
+	@echo "... bobliew/timer.o"
+	@echo "... bobliew/timer.i"
+	@echo "... bobliew/timer.s"
 	@echo "... bobliew/util.o"
 	@echo "... bobliew/util.i"
 	@echo "... bobliew/util.s"
@@ -685,6 +816,9 @@ help:
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"
+	@echo "... tests/test_hook.o"
+	@echo "... tests/test_hook.i"
+	@echo "... tests/test_hook.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"

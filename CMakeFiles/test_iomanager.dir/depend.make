@@ -4,13 +4,16 @@
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/bobliew.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/config.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/fiber.h
+CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/hook.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/iomanager.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/log.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/macro.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/mutex.h
+CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/noncopyable.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/scheduler.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/singleton.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/thread.h
+CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/timer.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/util.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: tests/test_iomanager.cc
 
