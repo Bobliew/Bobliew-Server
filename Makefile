@@ -243,6 +243,33 @@ bobliew/fast:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/build
 .PHONY : bobliew/fast
 
+bobliew/address.o: bobliew/address.cc.o
+
+.PHONY : bobliew/address.o
+
+# target to build an object file
+bobliew/address.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/address.cc.o
+.PHONY : bobliew/address.cc.o
+
+bobliew/address.i: bobliew/address.cc.i
+
+.PHONY : bobliew/address.i
+
+# target to preprocess a source file
+bobliew/address.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/address.cc.i
+.PHONY : bobliew/address.cc.i
+
+bobliew/address.s: bobliew/address.cc.s
+
+.PHONY : bobliew/address.s
+
+# target to generate assembly for a file
+bobliew/address.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/address.cc.s
+.PHONY : bobliew/address.cc.s
+
 bobliew/config.o: bobliew/config.cc.o
 
 .PHONY : bobliew/config.o
@@ -774,6 +801,9 @@ help:
 	@echo "... test_thread"
 	@echo "... test"
 	@echo "... bobliew"
+	@echo "... bobliew/address.o"
+	@echo "... bobliew/address.i"
+	@echo "... bobliew/address.s"
 	@echo "... bobliew/config.o"
 	@echo "... bobliew/config.i"
 	@echo "... bobliew/config.s"

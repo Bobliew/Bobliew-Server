@@ -10,6 +10,8 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/log.cc.o_DEFINES = __FILE__="bobliew/log.cc"
 
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/address.cc.o_DEFINES = __FILE__="bobliew/address.cc"
+
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/config.cc.o_DEFINES = __FILE__="bobliew/config.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o_DEFINES = __FILE__="bobliew/fd_manager.cc"

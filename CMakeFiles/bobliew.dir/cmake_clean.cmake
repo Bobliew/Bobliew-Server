@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/bobliew.dir/bobliew/address.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/config.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/fiber.cc.o"

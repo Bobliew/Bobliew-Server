@@ -17,6 +17,7 @@ find_library(PTHREAD pthread)
 
 set(LIB_SRC
     bobliew/log.cc
+    bobliew/address.cc
     bobliew/config.cc
     bobliew/fd_manager.cc
     bobliew/util.cc
