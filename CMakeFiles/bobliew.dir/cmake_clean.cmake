@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/bobliew.dir/bobliew/address.cc.o"
+  "CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/config.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/fiber.cc.o"
@@ -10,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/bobliew.dir/bobliew/thread.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/timer.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/util.cc.o"
+  "CMakeFiles/bobliew.dir/http/http.cc.o"
   "lib/libbobliew.pdb"
   "lib/libbobliew.so"
 )

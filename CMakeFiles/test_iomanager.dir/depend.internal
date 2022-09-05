@@ -16,4 +16,7 @@ CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o
  /home/bobliew/data/bobliew/bobliew/thread.h
  /home/bobliew/data/bobliew/bobliew/timer.h
  /home/bobliew/data/bobliew/bobliew/util.h
+ /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
+ /home/bobliew/data/bobliew/bobliew/util/hash_util.h
+ /home/bobliew/data/bobliew/bobliew/util/json_util.h
  /home/bobliew/data/bobliew/tests/test_iomanager.cc

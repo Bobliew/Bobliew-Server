@@ -9,6 +9,22 @@ CMakeFiles/bobliew.dir/bobliew/address.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/address.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/address.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/address.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/address.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/address.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/address.cc.o: bobliew/util/json_util.h
+
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/bytearray.cc
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/bytearray.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/endian.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/macro.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/noncopyable.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/bytearray.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/config.cc
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/config.h
@@ -17,6 +33,9 @@ CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/config.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o: bobliew/fd_manager.cc
 CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o: bobliew/fd_manager.h
@@ -36,6 +55,9 @@ CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/scheduler.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/fiber.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/bobliew.h
 CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/config.h
@@ -53,6 +75,9 @@ CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/timer.h
 CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/hook.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/bobliew.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/config.h
@@ -69,6 +94,9 @@ CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/timer.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/config.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/log.cc
@@ -77,6 +105,9 @@ CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/noncopyable.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/log.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/fiber.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/hook.h
@@ -89,6 +120,9 @@ CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/scheduler.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/log.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/noncopyable.h
@@ -96,6 +130,9 @@ CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/thread.cc
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/thread.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/log.h
 CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/noncopyable.h
@@ -104,6 +141,9 @@ CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/timer.cc
 CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/timer.h
 CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/timer.cc.o: bobliew/util/json_util.h
 
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/fiber.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/log.h
@@ -112,4 +152,14 @@ CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/singleton.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/thread.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util.cc
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util/json_util.h
+
+CMakeFiles/bobliew.dir/http/http.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/http/http.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/http/http.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/http/http.cc.o: bobliew/util/json_util.h
+CMakeFiles/bobliew.dir/http/http.cc.o: http/http.cc
+CMakeFiles/bobliew.dir/http/http.cc.o: http/http.h
 

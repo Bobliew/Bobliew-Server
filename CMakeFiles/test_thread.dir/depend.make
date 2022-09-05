@@ -7,5 +7,8 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/noncopyable.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/singleton.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/thread.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/util.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/util/hash_util.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: bobliew/util/json_util.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: tests/test_thread.cc
 

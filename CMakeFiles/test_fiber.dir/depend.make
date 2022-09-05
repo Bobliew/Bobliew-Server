@@ -13,5 +13,8 @@ CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: bobliew/scheduler.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: bobliew/singleton.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: bobliew/thread.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: bobliew/util.h
+CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: bobliew/util/hash_util.h
+CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: bobliew/util/json_util.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: tests/test_fiber.cc
 

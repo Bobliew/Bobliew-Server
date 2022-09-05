@@ -7,6 +7,7 @@
 #include <ifaddrs.h>
 #include <stddef.h>
 #include <arpa/inet.h>
+//先大概处理一下格式IPV4，6
 
 bobliew::Logger::ptr x_logger = BOBLIEW_LOG_ROOT();
 namespace bobliew {
@@ -24,6 +25,7 @@ static uint32_t CountBytes(T value) {
     }
     return result;
 }
+
 
 Address::ptr Address::LookupAny
 (const std::string& host, int family, int type, int protocol) {
@@ -228,6 +230,35 @@ bool Address::operator!=(const Address& rhs) const {
     return !(*this == rhs);
 }
 
+IPAddress::ptr IPAddress::Create(const char* address, uint16_t port) {
+    addrinfo hints, *results;
+    memset(&hints, 0, sizeof(addrinfo));
+
+    hints.ai_flags = AI_NUMERICHOST;
+    hints.ai_family = AF_UNSPEC;
+
+    int error = getaddrinfo(address, NULL, &hints, &results);
+    if(error) {
+        BOBLIEW_LOG_DEBUG(x_logger) << "IPAddress::Create(" << address
+            << ", " << port << ") error=" << error
+            << " errno=" << errno << " errstr=" << strerror(errno);
+        return nullptr;
+    }
+
+    try {
+        IPAddress::ptr result = std::dynamic_pointer_cast<IPAddress>(
+                Address::Create(results->ai_addr, (socklen_t)results->ai_addrlen));
+        if(result) {
+            result->setPPort(port);
+        }
+        freeaddrinfo(results);
+        return result;
+    } catch (...) {
+        freeaddrinfo(results);
+        return nullptr;
+    }
+}
+
 
 //IPV4Address
 IPV4Address::ptr IPV4Address::Create(const char* address, uint16_t port) {
@@ -302,7 +333,7 @@ IPAddress::ptr IPV4Address::subnetMask(uint32_t prefix_len) {
     sockaddr_in subnet;
     memset(&subnet, 0, sizeof(subnet));
     subnet.sin_family = AF_INET;
-    subnet.sin_addr.s_addr = -byteswapOnLittleEndian(CreateMask<uint32_t>(prefix_len));
+    subnet.sin_addr.s_addr = ~byteswapOnLittleEndian(CreateMask<uint32_t>(prefix_len));
     return IPV4Address::ptr(new IPV4Address(subnet));
 }
 

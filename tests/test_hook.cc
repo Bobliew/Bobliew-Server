@@ -5,6 +5,7 @@
 #include <sys/socket.h>
 #include <fcntl.h>
 #include <arpa/inet.h>
+#include <json/json.h>
 #include <unistd.h>
 #include <sys/epoll.h>
 

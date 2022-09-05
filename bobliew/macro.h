@@ -7,6 +7,14 @@
 #include "util.h"
 
 
+#if defined __GNUC__ || defined __llvm__
+#define BOBLIEW_LIKELY(x) __builtin_expect(!!(x), 1)
+#define BOBLIEW_UNLIKELY(x) __builtin_expect(!!(x),0)
+#else
+#define BOBLIEW_LIKELY(x)   (x)
+#define BOBLIEW_UNLIKELY(x) (x)
+#endif
+
 
 #define BOBLIEW_ASSERT(x) \
     if(!(x)) {\

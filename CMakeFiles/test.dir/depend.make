@@ -6,5 +6,8 @@ CMakeFiles/test.dir/tests/test.cc.o: bobliew/noncopyable.h
 CMakeFiles/test.dir/tests/test.cc.o: bobliew/singleton.h
 CMakeFiles/test.dir/tests/test.cc.o: bobliew/thread.h
 CMakeFiles/test.dir/tests/test.cc.o: bobliew/util.h
+CMakeFiles/test.dir/tests/test.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/test.dir/tests/test.cc.o: bobliew/util/hash_util.h
+CMakeFiles/test.dir/tests/test.cc.o: bobliew/util/json_util.h
 CMakeFiles/test.dir/tests/test.cc.o: tests/test.cc
 

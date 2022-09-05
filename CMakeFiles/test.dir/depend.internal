@@ -7,4 +7,7 @@ CMakeFiles/test.dir/tests/test.cc.o
  /home/bobliew/data/bobliew/bobliew/singleton.h
  /home/bobliew/data/bobliew/bobliew/thread.h
  /home/bobliew/data/bobliew/bobliew/util.h
+ /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
+ /home/bobliew/data/bobliew/bobliew/util/hash_util.h
+ /home/bobliew/data/bobliew/bobliew/util/json_util.h
  /home/bobliew/data/bobliew/tests/test.cc

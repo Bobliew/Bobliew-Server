@@ -14,10 +14,15 @@ link_directories(~/build/yaml-cpp)
 #link_directories(/apps/bobliew/lib64)
 
 find_library(PTHREAD pthread)
+find_package(Protobuf)
+if(Protobuf_FOUND)
+    include_directories(${Protobuf_INCLUDE_DIRS})
+endif()
 
 set(LIB_SRC
     bobliew/log.cc
     bobliew/address.cc
+    bobliew/bytearray.cc
     bobliew/config.cc
     bobliew/fd_manager.cc
     bobliew/util.cc
@@ -27,6 +32,7 @@ set(LIB_SRC
     bobliew/timer.cc
     bobliew/iomanager.cc
     bobliew/hook.cc
+    http/http.cc
     )
 
 add_library(bobliew SHARED ${LIB_SRC})
@@ -92,6 +98,15 @@ add_dependencies(test_hook bobliew)
 force_redefine_file_macro_for_sources(test_hook)
 target_link_libraries(test_hook ${LIB_LIB} dl)
 
+add_executable(test_address tests/test_address.cc)
+add_dependencies(test_address bobliew)
+force_redefine_file_macro_for_sources(test_address)
+target_link_libraries(test_address ${LIB_LIB} dl)
+
+add_executable(test_bytearray tests/test_bytearray.cc)
+add_dependencies(test_bytearray bobliew)
+force_redefine_file_macro_for_sources(test_bytearray)
+target_link_libraries(test_bytearray ${LIB_LIB} dl)
 
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

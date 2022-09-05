@@ -15,5 +15,8 @@ CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/singleton.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/thread.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/timer.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/util.h
+CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/util/hash_util.h
+CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: bobliew/util/json_util.h
 CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o: tests/test_iomanager.cc
 

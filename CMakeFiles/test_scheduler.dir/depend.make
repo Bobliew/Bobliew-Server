@@ -13,5 +13,8 @@ CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/scheduler.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/singleton.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/thread.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/util.h
+CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/util/hash_util.h
+CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: bobliew/util/json_util.h
 CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o: tests/test_scheduler.cc
 

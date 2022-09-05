@@ -16,4 +16,7 @@ CMakeFiles/test_hook.dir/tests/test_hook.cc.o
  /home/bobliew/data/bobliew/bobliew/thread.h
  /home/bobliew/data/bobliew/bobliew/timer.h
  /home/bobliew/data/bobliew/bobliew/util.h
+ /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
+ /home/bobliew/data/bobliew/bobliew/util/hash_util.h
+ /home/bobliew/data/bobliew/bobliew/util/json_util.h
  /home/bobliew/data/bobliew/tests/test_hook.cc

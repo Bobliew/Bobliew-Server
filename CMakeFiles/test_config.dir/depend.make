@@ -8,5 +8,8 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/noncopyable.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/singleton.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/thread.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/util.h
+CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/util/hash_util.h
+CMakeFiles/test_config.dir/tests/test_config.cc.o: bobliew/util/json_util.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc
 
