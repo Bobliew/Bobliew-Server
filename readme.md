@@ -1,10 +1,10 @@
 # BOBLiewServer
-基于C++的服务器。
+A server.
 
-
-### Ref
 
 
 ### Others
-我的neovim配置：
+My nvim config:
+<https://github.com/Bobliew/nvim_config_Bobliew>
+
 
