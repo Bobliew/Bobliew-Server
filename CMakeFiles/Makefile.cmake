@@ -66,4 +66,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test_iomanager.dir/DependInfo.cmake"
   "CMakeFiles/bobliew.dir/DependInfo.cmake"
   "CMakeFiles/test_hook.dir/DependInfo.cmake"
+  "CMakeFiles/test_http.dir/DependInfo.cmake"
   )

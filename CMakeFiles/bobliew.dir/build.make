@@ -216,18 +216,44 @@ CMakeFiles/bobliew.dir/bobliew/hook.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bobliew.dir/bobliew/hook.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"bobliew/hook.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobliew/data/bobliew/bobliew/hook.cc -o CMakeFiles/bobliew.dir/bobliew/hook.cc.s
 
-CMakeFiles/bobliew.dir/http/http.cc.o: CMakeFiles/bobliew.dir/flags.make
-CMakeFiles/bobliew.dir/http/http.cc.o: http/http.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/bobliew.dir/http/http.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bobliew.dir/http/http.cc.o -c /home/bobliew/data/bobliew/http/http.cc
+CMakeFiles/bobliew.dir/bobliew/http/http.cc.o: CMakeFiles/bobliew.dir/flags.make
+CMakeFiles/bobliew.dir/bobliew/http/http.cc.o: bobliew/http/http.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/bobliew.dir/bobliew/http/http.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"bobliew/http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bobliew.dir/bobliew/http/http.cc.o -c /home/bobliew/data/bobliew/bobliew/http/http.cc
 
-CMakeFiles/bobliew.dir/http/http.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bobliew.dir/http/http.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobliew/data/bobliew/http/http.cc > CMakeFiles/bobliew.dir/http/http.cc.i
+CMakeFiles/bobliew.dir/bobliew/http/http.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bobliew.dir/bobliew/http/http.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"bobliew/http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobliew/data/bobliew/bobliew/http/http.cc > CMakeFiles/bobliew.dir/bobliew/http/http.cc.i
 
-CMakeFiles/bobliew.dir/http/http.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bobliew.dir/http/http.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobliew/data/bobliew/http/http.cc -o CMakeFiles/bobliew.dir/http/http.cc.s
+CMakeFiles/bobliew.dir/bobliew/http/http.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bobliew.dir/bobliew/http/http.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"bobliew/http/http.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobliew/data/bobliew/bobliew/http/http.cc -o CMakeFiles/bobliew.dir/bobliew/http/http.cc.s
+
+CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o: CMakeFiles/bobliew.dir/flags.make
+CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o: bobliew/http/httpclient_parser.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"bobliew/http/httpclient_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o -c /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.cc
+
+CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"bobliew/http/httpclient_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.cc > CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.i
+
+CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"bobliew/http/httpclient_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.cc -o CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.s
+
+CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o: CMakeFiles/bobliew.dir/flags.make
+CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o: bobliew/http/http11_parser.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"bobliew/http/http11_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o -c /home/bobliew/data/bobliew/bobliew/http/http11_parser.cc
+
+CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"bobliew/http/http11_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bobliew/data/bobliew/bobliew/http/http11_parser.cc > CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.i
+
+CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"bobliew/http/http11_parser.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bobliew/data/bobliew/bobliew/http/http11_parser.cc -o CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.s
 
 # Object files for target bobliew
 bobliew_OBJECTS = \
@@ -243,7 +269,9 @@ bobliew_OBJECTS = \
 "CMakeFiles/bobliew.dir/bobliew/timer.cc.o" \
 "CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o" \
 "CMakeFiles/bobliew.dir/bobliew/hook.cc.o" \
-"CMakeFiles/bobliew.dir/http/http.cc.o"
+"CMakeFiles/bobliew.dir/bobliew/http/http.cc.o" \
+"CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o" \
+"CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o"
 
 # External object files for target bobliew
 bobliew_EXTERNAL_OBJECTS =
@@ -260,10 +288,12 @@ lib/libbobliew.so: CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o
 lib/libbobliew.so: CMakeFiles/bobliew.dir/bobliew/timer.cc.o
 lib/libbobliew.so: CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o
 lib/libbobliew.so: CMakeFiles/bobliew.dir/bobliew/hook.cc.o
-lib/libbobliew.so: CMakeFiles/bobliew.dir/http/http.cc.o
+lib/libbobliew.so: CMakeFiles/bobliew.dir/bobliew/http/http.cc.o
+lib/libbobliew.so: CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o
+lib/libbobliew.so: CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o
 lib/libbobliew.so: CMakeFiles/bobliew.dir/build.make
 lib/libbobliew.so: CMakeFiles/bobliew.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library lib/libbobliew.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX shared library lib/libbobliew.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bobliew.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

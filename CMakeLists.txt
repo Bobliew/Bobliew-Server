@@ -32,7 +32,9 @@ set(LIB_SRC
     bobliew/timer.cc
     bobliew/iomanager.cc
     bobliew/hook.cc
-    http/http.cc
+    bobliew/http/http.cc
+    bobliew/http/httpclient_parser.cc
+    bobliew/http/http11_parser.cc
     )
 
 add_library(bobliew SHARED ${LIB_SRC})
@@ -107,6 +109,12 @@ add_executable(test_bytearray tests/test_bytearray.cc)
 add_dependencies(test_bytearray bobliew)
 force_redefine_file_macro_for_sources(test_bytearray)
 target_link_libraries(test_bytearray ${LIB_LIB} dl)
+
+
+add_executable(test_http tests/test_http.cc)
+add_dependencies(test_http bobliew)
+force_redefine_file_macro_for_sources(test_http)
+target_link_libraries(test_http ${LIB_LIB} dl)
 
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

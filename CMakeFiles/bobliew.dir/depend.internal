@@ -79,6 +79,21 @@ CMakeFiles/bobliew.dir/bobliew/hook.cc.o
  /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
  /home/bobliew/data/bobliew/bobliew/util/hash_util.h
  /home/bobliew/data/bobliew/bobliew/util/json_util.h
+CMakeFiles/bobliew.dir/bobliew/http/http.cc.o
+ /home/bobliew/data/bobliew/bobliew/http/http.cc
+ /home/bobliew/data/bobliew/bobliew/http/http.h
+ /home/bobliew/data/bobliew/bobliew/util.h
+ /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
+ /home/bobliew/data/bobliew/bobliew/util/hash_util.h
+ /home/bobliew/data/bobliew/bobliew/util/json_util.h
+CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o
+ /home/bobliew/data/bobliew/bobliew/http/http11_common.h
+ /home/bobliew/data/bobliew/bobliew/http/http11_parser.cc
+ /home/bobliew/data/bobliew/bobliew/http/http11_parser.h
+CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o
+ /home/bobliew/data/bobliew/bobliew/http/http11_common.h
+ /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.cc
+ /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.h
 CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o
  /home/bobliew/data/bobliew/bobliew/bobliew.h
  /home/bobliew/data/bobliew/bobliew/config.h
@@ -156,10 +171,3 @@ CMakeFiles/bobliew.dir/bobliew/util.cc.o
  /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
  /home/bobliew/data/bobliew/bobliew/util/hash_util.h
  /home/bobliew/data/bobliew/bobliew/util/json_util.h
-CMakeFiles/bobliew.dir/http/http.cc.o
- /home/bobliew/data/bobliew/bobliew/util.h
- /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
- /home/bobliew/data/bobliew/bobliew/util/hash_util.h
- /home/bobliew/data/bobliew/bobliew/util/json_util.h
- /home/bobliew/data/bobliew/http/http.cc
- /home/bobliew/data/bobliew/http/http.h

@@ -10,13 +10,15 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/bobliew/data/bobliew/bobliew/fd_manager.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/fd_manager.cc.o"
   "/home/bobliew/data/bobliew/bobliew/fiber.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/fiber.cc.o"
   "/home/bobliew/data/bobliew/bobliew/hook.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/hook.cc.o"
+  "/home/bobliew/data/bobliew/bobliew/http/http.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/http/http.cc.o"
+  "/home/bobliew/data/bobliew/bobliew/http/http11_parser.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o"
+  "/home/bobliew/data/bobliew/bobliew/http/httpclient_parser.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o"
   "/home/bobliew/data/bobliew/bobliew/iomanager.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o"
   "/home/bobliew/data/bobliew/bobliew/log.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/log.cc.o"
   "/home/bobliew/data/bobliew/bobliew/scheduler.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o"
   "/home/bobliew/data/bobliew/bobliew/thread.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/thread.cc.o"
   "/home/bobliew/data/bobliew/bobliew/timer.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/timer.cc.o"
   "/home/bobliew/data/bobliew/bobliew/util.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/util.cc.o"
-  "/home/bobliew/data/bobliew/http/http.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/http/http.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
