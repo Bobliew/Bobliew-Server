@@ -498,6 +498,33 @@ bobliew/http/http11_parser.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.s
 .PHONY : bobliew/http/http11_parser.cc.s
 
+bobliew/http/http_parser.o: bobliew/http/http_parser.cc.o
+
+.PHONY : bobliew/http/http_parser.o
+
+# target to build an object file
+bobliew/http/http_parser.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o
+.PHONY : bobliew/http/http_parser.cc.o
+
+bobliew/http/http_parser.i: bobliew/http/http_parser.cc.i
+
+.PHONY : bobliew/http/http_parser.i
+
+# target to preprocess a source file
+bobliew/http/http_parser.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.i
+.PHONY : bobliew/http/http_parser.cc.i
+
+bobliew/http/http_parser.s: bobliew/http/http_parser.cc.s
+
+.PHONY : bobliew/http/http_parser.s
+
+# target to generate assembly for a file
+bobliew/http/http_parser.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.s
+.PHONY : bobliew/http/http_parser.cc.s
+
 bobliew/http/httpclient_parser.o: bobliew/http/httpclient_parser.cc.o
 
 .PHONY : bobliew/http/httpclient_parser.o
@@ -1056,6 +1083,9 @@ help:
 	@echo "... bobliew/http/http11_parser.o"
 	@echo "... bobliew/http/http11_parser.i"
 	@echo "... bobliew/http/http11_parser.s"
+	@echo "... bobliew/http/http_parser.o"
+	@echo "... bobliew/http/http_parser.i"
+	@echo "... bobliew/http/http_parser.s"
 	@echo "... bobliew/http/httpclient_parser.o"
 	@echo "... bobliew/http/httpclient_parser.i"
 	@echo "... bobliew/http/httpclient_parser.s"

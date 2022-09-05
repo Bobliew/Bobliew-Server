@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/bobliew.dir/bobliew/hook.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/http/http.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o"
+  "CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/log.cc.o"

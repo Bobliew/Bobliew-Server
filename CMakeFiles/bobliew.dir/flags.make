@@ -38,3 +38,5 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o_DEFINES = __FILE__="bobliew/http/http11_parser.cc"
 
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o_DEFINES = __FILE__="bobliew/http/http_parser.cc"
+

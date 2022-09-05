@@ -15,7 +15,7 @@ HttpMethod StringToHttpMethod(const std::string& m) {
     return HttpMethod::INVALID_METHOD;
 }
 
-HttpMethod CharToHttpMethod(const char* m) {
+HttpMethod CharsToHttpMethod(const char* m) {
 #define XX(num, name, string)\
     if(strncmp(#string, m, strlen(#string)) == 0) {\
         return HttpMethod::name;\

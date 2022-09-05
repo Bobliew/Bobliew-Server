@@ -35,6 +35,7 @@ set(LIB_SRC
     bobliew/http/http.cc
     bobliew/http/httpclient_parser.cc
     bobliew/http/http11_parser.cc
+    bobliew/http/http_parser.cc
     )
 
 add_library(bobliew SHARED ${LIB_SRC})

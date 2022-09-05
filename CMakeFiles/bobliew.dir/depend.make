@@ -90,6 +90,22 @@ CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o: bobliew/http/http11_comm
 CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o: bobliew/http/http11_parser.cc
 CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o: bobliew/http/http11_parser.h
 
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/config.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/http/http.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/http/http11_common.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/http/http11_parser.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/http/http_parser.cc
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/http/http_parser.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/http/httpclient_parser.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/noncopyable.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o: bobliew/util/json_util.h
+
 CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o: bobliew/http/http11_common.h
 CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o: bobliew/http/httpclient_parser.cc
 CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o: bobliew/http/httpclient_parser.h
