@@ -49,7 +49,7 @@ private:
 
 class HttpResponseParser {
 public:
-    typedef std::shared_ptr<HttpRequestParser> ptr;
+    typedef std::shared_ptr<HttpResponseParser> ptr;
     // interprets a byte stream according to the HTTP specification
     HttpResponseParser();
     size_t execute(char* data, size_t len, bool chunck);

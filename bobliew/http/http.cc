@@ -298,6 +298,7 @@ const std::string& domain, bool secure) {
     m_cookies.push_back(ss.str());
 }
 
+
 std::ostream& HttpResponse::dump(std::ostream& os) const {
     os << "HTTP/"
        << ((uint32_t)(m_version >> 4))
@@ -326,6 +327,13 @@ std::ostream& HttpResponse::dump(std::ostream& os) const {
         os << "\r\n";
     }
     return os;
+}
+
+
+std::string HttpResponse::toString() const {
+    std::stringstream ss;
+    dump(ss);
+    return ss.str();
 }
 
 std::ostream& operator<<(std::ostream& os, const HttpRequest& req) {

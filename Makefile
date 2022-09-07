@@ -114,6 +114,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_parser
+
+# Build rule for target.
+test_parser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_parser
+.PHONY : test_parser
+
+# fast build rule for target.
+test_parser/fast:
+	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
+.PHONY : test_parser/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -957,6 +970,33 @@ tests/test_iomanager.cc.s:
 	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.s
 .PHONY : tests/test_iomanager.cc.s
 
+tests/test_parser.o: tests/test_parser.cc.o
+
+.PHONY : tests/test_parser.o
+
+# target to build an object file
+tests/test_parser.cc.o:
+	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.o
+.PHONY : tests/test_parser.cc.o
+
+tests/test_parser.i: tests/test_parser.cc.i
+
+.PHONY : tests/test_parser.i
+
+# target to preprocess a source file
+tests/test_parser.cc.i:
+	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.i
+.PHONY : tests/test_parser.cc.i
+
+tests/test_parser.s: tests/test_parser.cc.s
+
+.PHONY : tests/test_parser.s
+
+# target to generate assembly for a file
+tests/test_parser.cc.s:
+	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/tests/test_parser.cc.s
+.PHONY : tests/test_parser.cc.s
+
 tests/test_scheduler.o: tests/test_scheduler.cc.o
 
 .PHONY : tests/test_scheduler.o
@@ -1046,6 +1086,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test_parser"
 	@echo "... test"
 	@echo "... test_thread"
 	@echo "... test_config"
@@ -1134,6 +1175,9 @@ help:
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"
+	@echo "... tests/test_parser.o"
+	@echo "... tests/test_parser.i"
+	@echo "... tests/test_parser.s"
 	@echo "... tests/test_scheduler.o"
 	@echo "... tests/test_scheduler.i"
 	@echo "... tests/test_scheduler.s"

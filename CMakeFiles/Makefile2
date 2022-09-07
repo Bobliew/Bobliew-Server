@@ -56,6 +56,7 @@ CMAKE_BINARY_DIR = /home/bobliew/data/bobliew
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test_parser.dir/all
 all: CMakeFiles/test.dir/all
 all: CMakeFiles/test_thread.dir/all
 all: CMakeFiles/test_config.dir/all
@@ -78,6 +79,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test_parser.dir/clean
 clean: CMakeFiles/test.dir/clean
 clean: CMakeFiles/test_thread.dir/clean
 clean: CMakeFiles/test_config.dir/clean
@@ -93,6 +95,33 @@ clean: CMakeFiles/test_hook.dir/clean
 clean: CMakeFiles/test_http.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_parser.dir
+
+# All Build rule for target.
+CMakeFiles/test_parser.dir/all: CMakeFiles/bobliew.dir/all
+	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/depend
+	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=36,37 "Built target test_parser"
+.PHONY : CMakeFiles/test_parser.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_parser.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 19
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_parser.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 0
+.PHONY : CMakeFiles/test_parser.dir/rule
+
+# Convenience name for target.
+test_parser: CMakeFiles/test_parser.dir/rule
+
+.PHONY : test_parser
+
+# clean rule for target.
+CMakeFiles/test_parser.dir/clean:
+	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/clean
+.PHONY : CMakeFiles/test_parser.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/test.dir
@@ -128,7 +157,7 @@ CMakeFiles/test.dir/clean:
 CMakeFiles/test_thread.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/depend
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=38,39 "Built target test_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=40,41 "Built target test_thread"
 .PHONY : CMakeFiles/test_thread.dir/all
 
 # Build rule for subdir invocation for target.
@@ -290,7 +319,7 @@ CMakeFiles/test_address.dir/clean:
 CMakeFiles/test_util.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/depend
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=40,41 "Built target test_util"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=42,43 "Built target test_util"
 .PHONY : CMakeFiles/test_util.dir/all
 
 # Build rule for subdir invocation for target.
@@ -317,7 +346,7 @@ CMakeFiles/test_util.dir/clean:
 CMakeFiles/test_scheduler.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/depend
 	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=36,37 "Built target test_scheduler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=38,39 "Built target test_scheduler"
 .PHONY : CMakeFiles/test_scheduler.dir/all
 
 # Build rule for subdir invocation for target.

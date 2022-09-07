@@ -4,7 +4,7 @@ project(bobliew)
 include (cmake/utils.cmake)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
-set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined")
+set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O0 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined")
 
 include_directories(.)
 include_directories(~/build)
@@ -37,7 +37,6 @@ set(LIB_SRC
     bobliew/http/http11_parser.cc
     bobliew/http/http_parser.cc
     )
-
 add_library(bobliew SHARED ${LIB_SRC})
 force_redefine_file_macro_for_sources(bobliew) #__FILE__
 #add_library(bobliew_static STATIC ${LIB_SRC})
@@ -116,6 +115,11 @@ add_executable(test_http tests/test_http.cc)
 add_dependencies(test_http bobliew)
 force_redefine_file_macro_for_sources(test_http)
 target_link_libraries(test_http ${LIB_LIB} dl)
+
+add_executable(test_parser tests/test_parser.cc)
+add_dependencies(test_parser bobliew)
+force_redefine_file_macro_for_sources(test_parser)
+target_link_libraries(test_parser ${LIB_LIB} dl)
 
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
