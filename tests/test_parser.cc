@@ -1,5 +1,6 @@
 #include "../bobliew/http/http_parser.h"
 #include "../bobliew/log.h"
+#include "../bobliew/socket.h"
 
 static bobliew::Logger::ptr g_logger = BOBLIEW_LOG_ROOT();
 

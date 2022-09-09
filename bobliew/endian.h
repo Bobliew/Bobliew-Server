@@ -43,24 +43,24 @@ byteswap(T value) {
 //大端模式：数据的低位保存在高地址
 //小端模式：数据的低位保存在低地址
 template<class T>
-T byteswapOnLittleEndian(T t) {
+T byteswapOnBigEndian(T t) {
     return byteswap(t);
 }
 
 template<class T>
-T byteswapOnBigEndian(T t) {
+T byteswapOnLittleEndian(T t) {
     return t;
 }
 >
 #else
 //此时BYTE_ORDER = BOBLIEW_LITTLE_ENDIAN
 template<class T>
-T byteswapOnLittleEndian(T t) {
+T byteswapOnBigEndian(T t) {
     return t;
 }
 
 template<class T>
-T byteswapOnBigEndian(T t) {
+T byteswapOnLittleEndian(T t) {
     return byteswap(t);
 }
 #endif

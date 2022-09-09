@@ -79,6 +79,16 @@ bool Address::Lookup
     }
     //检查node service
     if(node.empty()) {
+        service = (const char*)memchr(host.c_str(), ':', host.size());
+        if(service) {
+            if(!memchr(service + 1, ':', host.c_str() + host.size() - service - 1)) {
+                node = host.substr(0, service - host.c_str());
+                ++service;
+            }
+        }
+    }
+
+    if(node.empty()) {
         node = host;
     }
     int error = getaddrinfo(node.c_str(), service, &hints, &results);

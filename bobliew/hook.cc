@@ -96,7 +96,7 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
     if(!bobliew::t_hook_enable){
         return fun(fd, std::forward<Args>(args)...);
     }
-    BOBLIEW_LOG_DEBUG(g_logger) <<"do_io<"<< hook_fun_name<<">";
+    //BOBLIEW_LOG_DEBUG(g_logger) <<"do_io<"<< hook_fun_name<<">";
 
     bobliew::FdCtx::ptr ctx = bobliew::FdMgr::GetInstance()->get(fd);
     //如果ctx不存在，说明该文件就不是socket，就使用原函数就可以

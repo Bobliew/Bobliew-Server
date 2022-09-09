@@ -114,6 +114,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named echo_server
+
+# Build rule for target.
+echo_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 echo_server
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
+
+#=============================================================================
+# Target rules for targets named test_tcp_server
+
+# Build rule for target.
+test_tcp_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_tcp_server
+.PHONY : test_tcp_server
+
+# fast build rule for target.
+test_tcp_server/fast:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/build
+.PHONY : test_tcp_server/fast
+
+#=============================================================================
 # Target rules for targets named test_parser
 
 # Build rule for target.
@@ -538,6 +564,33 @@ bobliew/http/http_parser.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.s
 .PHONY : bobliew/http/http_parser.cc.s
 
+bobliew/http/http_session.o: bobliew/http/http_session.cc.o
+
+.PHONY : bobliew/http/http_session.o
+
+# target to build an object file
+bobliew/http/http_session.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.o
+.PHONY : bobliew/http/http_session.cc.o
+
+bobliew/http/http_session.i: bobliew/http/http_session.cc.i
+
+.PHONY : bobliew/http/http_session.i
+
+# target to preprocess a source file
+bobliew/http/http_session.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.i
+.PHONY : bobliew/http/http_session.cc.i
+
+bobliew/http/http_session.s: bobliew/http/http_session.cc.s
+
+.PHONY : bobliew/http/http_session.s
+
+# target to generate assembly for a file
+bobliew/http/http_session.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.s
+.PHONY : bobliew/http/http_session.cc.s
+
 bobliew/http/httpclient_parser.o: bobliew/http/httpclient_parser.cc.o
 
 .PHONY : bobliew/http/httpclient_parser.o
@@ -646,6 +699,114 @@ bobliew/scheduler.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/scheduler.cc.s
 .PHONY : bobliew/scheduler.cc.s
 
+bobliew/socket.o: bobliew/socket.cc.o
+
+.PHONY : bobliew/socket.o
+
+# target to build an object file
+bobliew/socket.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/socket.cc.o
+.PHONY : bobliew/socket.cc.o
+
+bobliew/socket.i: bobliew/socket.cc.i
+
+.PHONY : bobliew/socket.i
+
+# target to preprocess a source file
+bobliew/socket.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/socket.cc.i
+.PHONY : bobliew/socket.cc.i
+
+bobliew/socket.s: bobliew/socket.cc.s
+
+.PHONY : bobliew/socket.s
+
+# target to generate assembly for a file
+bobliew/socket.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/socket.cc.s
+.PHONY : bobliew/socket.cc.s
+
+bobliew/stream.o: bobliew/stream.cc.o
+
+.PHONY : bobliew/stream.o
+
+# target to build an object file
+bobliew/stream.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/stream.cc.o
+.PHONY : bobliew/stream.cc.o
+
+bobliew/stream.i: bobliew/stream.cc.i
+
+.PHONY : bobliew/stream.i
+
+# target to preprocess a source file
+bobliew/stream.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/stream.cc.i
+.PHONY : bobliew/stream.cc.i
+
+bobliew/stream.s: bobliew/stream.cc.s
+
+.PHONY : bobliew/stream.s
+
+# target to generate assembly for a file
+bobliew/stream.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/stream.cc.s
+.PHONY : bobliew/stream.cc.s
+
+bobliew/streams/socket_stream.o: bobliew/streams/socket_stream.cc.o
+
+.PHONY : bobliew/streams/socket_stream.o
+
+# target to build an object file
+bobliew/streams/socket_stream.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.o
+.PHONY : bobliew/streams/socket_stream.cc.o
+
+bobliew/streams/socket_stream.i: bobliew/streams/socket_stream.cc.i
+
+.PHONY : bobliew/streams/socket_stream.i
+
+# target to preprocess a source file
+bobliew/streams/socket_stream.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.i
+.PHONY : bobliew/streams/socket_stream.cc.i
+
+bobliew/streams/socket_stream.s: bobliew/streams/socket_stream.cc.s
+
+.PHONY : bobliew/streams/socket_stream.s
+
+# target to generate assembly for a file
+bobliew/streams/socket_stream.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.s
+.PHONY : bobliew/streams/socket_stream.cc.s
+
+bobliew/tcp_server.o: bobliew/tcp_server.cc.o
+
+.PHONY : bobliew/tcp_server.o
+
+# target to build an object file
+bobliew/tcp_server.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.o
+.PHONY : bobliew/tcp_server.cc.o
+
+bobliew/tcp_server.i: bobliew/tcp_server.cc.i
+
+.PHONY : bobliew/tcp_server.i
+
+# target to preprocess a source file
+bobliew/tcp_server.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.i
+.PHONY : bobliew/tcp_server.cc.i
+
+bobliew/tcp_server.s: bobliew/tcp_server.cc.s
+
+.PHONY : bobliew/tcp_server.s
+
+# target to generate assembly for a file
+bobliew/tcp_server.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.s
+.PHONY : bobliew/tcp_server.cc.s
+
 bobliew/thread.o: bobliew/thread.cc.o
 
 .PHONY : bobliew/thread.o
@@ -726,6 +887,33 @@ bobliew/util.s: bobliew/util.cc.s
 bobliew/util.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util.cc.s
 .PHONY : bobliew/util.cc.s
+
+example/echo_server.o: example/echo_server.cc.o
+
+.PHONY : example/echo_server.o
+
+# target to build an object file
+example/echo_server.cc.o:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/example/echo_server.cc.o
+.PHONY : example/echo_server.cc.o
+
+example/echo_server.i: example/echo_server.cc.i
+
+.PHONY : example/echo_server.i
+
+# target to preprocess a source file
+example/echo_server.cc.i:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/example/echo_server.cc.i
+.PHONY : example/echo_server.cc.i
+
+example/echo_server.s: example/echo_server.cc.s
+
+.PHONY : example/echo_server.s
+
+# target to generate assembly for a file
+example/echo_server.cc.s:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/example/echo_server.cc.s
+.PHONY : example/echo_server.cc.s
 
 tests/test.o: tests/test.cc.o
 
@@ -1024,6 +1212,33 @@ tests/test_scheduler.cc.s:
 	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.s
 .PHONY : tests/test_scheduler.cc.s
 
+tests/test_tcp_server.o: tests/test_tcp_server.cc.o
+
+.PHONY : tests/test_tcp_server.o
+
+# target to build an object file
+tests/test_tcp_server.cc.o:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cc.o
+.PHONY : tests/test_tcp_server.cc.o
+
+tests/test_tcp_server.i: tests/test_tcp_server.cc.i
+
+.PHONY : tests/test_tcp_server.i
+
+# target to preprocess a source file
+tests/test_tcp_server.cc.i:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cc.i
+.PHONY : tests/test_tcp_server.cc.i
+
+tests/test_tcp_server.s: tests/test_tcp_server.cc.s
+
+.PHONY : tests/test_tcp_server.s
+
+# target to generate assembly for a file
+tests/test_tcp_server.cc.s:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cc.s
+.PHONY : tests/test_tcp_server.cc.s
+
 tests/test_thread.o: tests/test_thread.cc.o
 
 .PHONY : tests/test_thread.o
@@ -1086,6 +1301,8 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... echo_server"
+	@echo "... test_tcp_server"
 	@echo "... test_parser"
 	@echo "... test"
 	@echo "... test_thread"
@@ -1127,6 +1344,9 @@ help:
 	@echo "... bobliew/http/http_parser.o"
 	@echo "... bobliew/http/http_parser.i"
 	@echo "... bobliew/http/http_parser.s"
+	@echo "... bobliew/http/http_session.o"
+	@echo "... bobliew/http/http_session.i"
+	@echo "... bobliew/http/http_session.s"
 	@echo "... bobliew/http/httpclient_parser.o"
 	@echo "... bobliew/http/httpclient_parser.i"
 	@echo "... bobliew/http/httpclient_parser.s"
@@ -1139,6 +1359,18 @@ help:
 	@echo "... bobliew/scheduler.o"
 	@echo "... bobliew/scheduler.i"
 	@echo "... bobliew/scheduler.s"
+	@echo "... bobliew/socket.o"
+	@echo "... bobliew/socket.i"
+	@echo "... bobliew/socket.s"
+	@echo "... bobliew/stream.o"
+	@echo "... bobliew/stream.i"
+	@echo "... bobliew/stream.s"
+	@echo "... bobliew/streams/socket_stream.o"
+	@echo "... bobliew/streams/socket_stream.i"
+	@echo "... bobliew/streams/socket_stream.s"
+	@echo "... bobliew/tcp_server.o"
+	@echo "... bobliew/tcp_server.i"
+	@echo "... bobliew/tcp_server.s"
 	@echo "... bobliew/thread.o"
 	@echo "... bobliew/thread.i"
 	@echo "... bobliew/thread.s"
@@ -1148,6 +1380,9 @@ help:
 	@echo "... bobliew/util.o"
 	@echo "... bobliew/util.i"
 	@echo "... bobliew/util.s"
+	@echo "... example/echo_server.o"
+	@echo "... example/echo_server.i"
+	@echo "... example/echo_server.s"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
@@ -1181,6 +1416,9 @@ help:
 	@echo "... tests/test_scheduler.o"
 	@echo "... tests/test_scheduler.i"
 	@echo "... tests/test_scheduler.s"
+	@echo "... tests/test_tcp_server.o"
+	@echo "... tests/test_tcp_server.i"
+	@echo "... tests/test_tcp_server.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"

@@ -83,6 +83,12 @@ test_iomanager_EXTERNAL_OBJECTS =
 bin/test_iomanager: CMakeFiles/test_iomanager.dir/tests/test_iomanager.cc.o
 bin/test_iomanager: CMakeFiles/test_iomanager.dir/build.make
 bin/test_iomanager: lib/libbobliew.so
+bin/test_iomanager: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/test_iomanager: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/test_iomanager: /usr/lib/x86_64-linux-gnu/libprotobuf.so
+bin/test_iomanager: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/test_iomanager: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/test_iomanager: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 bin/test_iomanager: CMakeFiles/test_iomanager.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/test_iomanager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_iomanager.dir/link.txt --verbose=$(VERBOSE)

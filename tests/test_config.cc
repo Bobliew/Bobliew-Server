@@ -181,7 +181,6 @@ void test_log() {
 
     static bobliew::Logger::ptr system_log = BOBLIEW_LOG_NAME("system");
     //system_log->addAppender(file_appender);
-    BOBLIEW_LOG_INFO(system_log) << "hello bobliew!!!!!!!!!!!!!!!!!!!!!!!!!" << std::endl;
 
     //本来就会初始化一个root放在Mgr的GetInstance（）就是s_data中.
     //然后新建立的BOBLIEW_LOG_NAME（“system”）生成的system也被记录到s_data中

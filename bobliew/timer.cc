@@ -51,11 +51,9 @@ TimerManager::~TimerManager() {
 Timer::ptr TimerManager::addTimer(uint64_t ms, std::function<void()> cb, 
                                   bool recurring) {
     // 新建一个timmer，然后将这个timer放进timmermanager
-    BOBLIEW_LOG_DEBUG(x_logger) << "test!!!!!!!!!!!!!!111";
     Timer::ptr timer (new Timer(ms, cb, recurring, this));
     RWMutexType::WriteLock lock(m_mutex);
     addTimer(timer, lock);
-    BOBLIEW_LOG_DEBUG(x_logger)<<"Added!!!!!!!!!!!!!!!!!!"<<"ms:"<<ms;
     return timer;
 
 }

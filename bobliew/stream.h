@@ -60,14 +60,14 @@ public:
     // >0 返回写入到的数据的实际大小
     // =0 被关闭
     // <0 出现流错误
-    virtual int writeFixSize(const void* buffer, size_t length) = 0;
+    virtual int writeFixSize(const void* buffer, size_t length) ;
     // 写数据
     // 写数据的ByteArray
     // 写数据的内存大小
     // >0 返回写入到的数据的实际大小
     // =0 被关闭
     // <0 出现流错误
-    virtual int writeFixSize(ByteArray::ptr ba, size_t length) = 0;
+    virtual int writeFixSize(ByteArray::ptr ba, size_t length) ;
     //关闭流
     virtual void close() = 0;
 

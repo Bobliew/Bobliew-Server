@@ -83,6 +83,12 @@ test_configs_EXTERNAL_OBJECTS =
 bin/test_configs: CMakeFiles/test_configs.dir/tests/test_configs.cc.o
 bin/test_configs: CMakeFiles/test_configs.dir/build.make
 bin/test_configs: lib/libbobliew.so
+bin/test_configs: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/test_configs: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/test_configs: /usr/lib/x86_64-linux-gnu/libprotobuf.so
+bin/test_configs: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/test_configs: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/test_configs: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 bin/test_configs: CMakeFiles/test_configs.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/test_configs"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_configs.dir/link.txt --verbose=$(VERBOSE)

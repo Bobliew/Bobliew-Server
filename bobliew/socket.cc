@@ -92,6 +92,7 @@ Socket::ptr Socket::accept() {
     Socket::ptr sock(new Socket(m_family, m_type, m_protocol));
     int newsock = ::accept(m_sock, nullptr, nullptr);
     if(newsock == -1) {
+        BOBLIEW_LOG_INFO(g_logger) << "newsock!!!! == " << newsock;
         BOBLIEW_LOG_ERROR(g_logger) << "accept(" << m_sock << ") errno="
             << errno << " errstr=" << strerror(errno);
         return nullptr;

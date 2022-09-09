@@ -6,12 +6,23 @@ include (cmake/utils.cmake)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O0 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined")
 
+include_directories(..)
 include_directories(.)
 include_directories(~/build)
 
 link_directories(~/build/yaml-cpp)
 #link_directories(/apps/bobliew/lib)
 #link_directories(/apps/bobliew/lib64)
+
+
+find_package(Protobuf)
+if(Protobuf_FOUND)
+    include_directories(${Protobuf_INCLUDE_DIRS})
+endif()
+find_package(OpenSSL REQUIRED)
+if(OPENSSL_FOUND)
+    include_directories(${OPENSSL_INCLUDE_DIR})
+endif()
 
 find_library(PTHREAD pthread)
 find_package(Protobuf)
@@ -28,14 +39,19 @@ set(LIB_SRC
     bobliew/util.cc
     bobliew/thread.cc
     bobliew/fiber.cc
+    bobliew/socket.cc
     bobliew/scheduler.cc
+    bobliew/stream.cc
     bobliew/timer.cc
+    bobliew/tcp_server.cc
     bobliew/iomanager.cc
     bobliew/hook.cc
+    bobliew/streams/socket_stream.cc
     bobliew/http/http.cc
     bobliew/http/httpclient_parser.cc
     bobliew/http/http11_parser.cc
     bobliew/http/http_parser.cc
+    bobliew/http/http_session.cc
     )
 add_library(bobliew SHARED ${LIB_SRC})
 force_redefine_file_macro_for_sources(bobliew) #__FILE__
@@ -47,6 +63,8 @@ set(LIB_LIB
         bobliew
         pthread
         yaml-cpp
+        ${OPENSSL_LIBRARIES}
+        ${PROTOBUF_LIBRARIES}
     )
 
 add_executable(test tests/test.cc)
@@ -120,6 +138,17 @@ add_executable(test_parser tests/test_parser.cc)
 add_dependencies(test_parser bobliew)
 force_redefine_file_macro_for_sources(test_parser)
 target_link_libraries(test_parser ${LIB_LIB} dl)
+
+add_executable(test_tcp_server tests/test_tcp_server.cc)
+add_dependencies(test_tcp_server bobliew)
+force_redefine_file_macro_for_sources(test_tcp_server)
+target_link_libraries(test_tcp_server ${LIB_LIB} dl)
+
+
+add_executable(echo_server example/echo_server.cc)
+add_dependencies(echo_server bobliew)
+force_redefine_file_macro_for_sources(echo_server)
+target_link_libraries(echo_server ${LIB_LIB} dl)
 
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

@@ -15,6 +15,7 @@
 
 #include "log.h"
 #include "fiber.h"
+#include "util/json_util.h"
 
 
 namespace bobliew {
@@ -583,128 +584,128 @@ std::string GetIPv4() {
     return ip;
 }
 
-//Bool YamlToJson(const YAML::Node& ynode, Json::Value& jnode) {
-//    try {
-//        if(ynode.IsScalar()) {
-//            Json::Value v(ynode.Scalar());
-//            jnode.swapPayload(v);
-//            return true;
-//        }
-//        if(ynode.IsSequence()) {
-//            for(size_t i = 0; i < ynode.size(); ++i) {
-//                Json::Value v;
-//                if(YamlToJson(ynode[i], v)) {
-//                    jnode.append(v);
-//                } else {
-//                    return false;
-//                }
-//            }
-//        } else if(ynode.IsMap()) {
-//            for(auto it = ynode.begin();
-//                    it != ynode.end(); ++it) {
-//                Json::Value v;
-//                if(YamlToJson(it->second, v)) {
-//                    jnode[it->first.Scalar()] = v;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        }
-//    } catch(...) {
-//        return false;
-//    }
-//    return true;
-//}
-//
-//Bool JsonToYaml(const Json::Value& jnode, YAML::Node& ynode) {
-//    try {
-//        if(jnode.isArray()) {
-//            for(int i = 0; i < (int)jnode.size(); ++i) {
-//                YAML::Node n;
-//                if(JsonToYaml(jnode[i], n)) {
-//                    ynode.push_back(n);
-//                } else {
-//                    return false;
-//                }
-//            }
-//        } else if(jnode.isObject()) {
-//            for(auto it = jnode.begin();
-//                    it != jnode.end();
-//                    ++it) {
-//                YAML::Node n;
-//                if(JsonToYaml(*it, n)) {
-//                    ynode[it.name()] = n;
-//                } else {
-//                    return false;
-//                }
-//            }
-//        } else {
-//            ynode = jnode.asString();
-//        }
-//    } catch (...) {
-//        return false;
-//    }
-//    return true;
-//}
-//
-//Static void serialize_unknowfieldset(const google::protobuf::UnknownFieldSet& ufs, Json::Value& jnode) {
-//    std::map<int, std::vector<Json::Value> > kvs;
-//    for(int i = 0; i < ufs.field_count(); ++i) {
-//        const auto& uf = ufs.field(i);
-//        switch((int)uf.type()) {
-//            case google::protobuf::UnknownField::TYPE_VARINT:
-//                kvs[uf.number()].push_back((Json::Int64)uf.varint());
-//                break;
-//            case google::protobuf::UnknownField::TYPE_FIXED32:
-//                kvs[uf.number()].push_back((Json::UInt)uf.fixed32());
-//                break;
-//            case google::protobuf::UnknownField::TYPE_FIXED64:
-//                kvs[uf.number()].push_back((Json::UInt64)uf.fixed64());
-//                break;
-//            case google::protobuf::UnknownField::TYPE_LENGTH_DELIMITED:
-//                google::protobuf::UnknownFieldSet tmp;
-//                auto& v = uf.length_delimited();
-//                if(!v.empty() && tmp.ParseFromString(v)) {
-//                    Json::Value vv;
-//                    serialize_unknowfieldset(tmp, vv);
-//                    kvs[uf.number()].push_back(vv);
-//                } else {
-//                    kvs[uf.number()].push_back(v);
-//                }
-//                break;
-//        }
-//    }
-//
-//    for(auto& i : kvs) {
-//        if(i.second.size() > 1) {
-//            for(auto& n : i.second) {
-//                jnode[std::to_string(i.first)].append(n);
-//            }
-//        } else {
-//            jnode[std::to_string(i.first)] = i.second[0];
-//        }
-//    }
-//}
-//
-//Static void serialize_message(const google::protobuf::Message& message, Json::Value& jnode) {
-//    const google::protobuf::Descriptor* descriptor = message.GetDescriptor();
-//    const google::protobuf::Reflection* reflection = message.GetReflection();
-//
-//    for(int i = 0; i < descriptor->field_count(); ++i) {
-//        const google::protobuf::FieldDescriptor* field = descriptor->field(i);
-//
-//        if(field->is_repeated()) {
-//            if(!reflection->FieldSize(message, field)) {
-//                continue;
-//            }
-//        } else {
-//            if(!reflection->HasField(message, field)) {
-//                continue;
-//            }
-//        }
-//
-//        if(field->is_repeated()) {
-//            switch(field->cpp_type()) {
+bool YamlToJson(const YAML::Node& ynode, Json::Value& jnode) {
+    try {
+        if(ynode.IsScalar()) {
+            Json::Value v(ynode.Scalar());
+            jnode.swapPayload(v);
+            return true;
+        }
+        if(ynode.IsSequence()) {
+            for(size_t i = 0; i < ynode.size(); ++i) {
+                Json::Value v;
+                if(YamlToJson(ynode[i], v)) {
+                    jnode.append(v);
+                } else {
+                    return false;
+                }
+            }
+        } else if(ynode.IsMap()) {
+            for(auto it = ynode.begin();
+                    it != ynode.end(); ++it) {
+                Json::Value v;
+                if(YamlToJson(it->second, v)) {
+                    jnode[it->first.Scalar()] = v;
+                } else {
+                    return false;
+                }
+            }
+        }
+    } catch(...) {
+        return false;
+    }
+    return true;
+}
+
+bool JsonToYaml(const Json::Value& jnode, YAML::Node& ynode) {
+    try {
+        if(jnode.isArray()) {
+            for(int i = 0; i < (int)jnode.size(); ++i) {
+                YAML::Node n;
+                if(JsonToYaml(jnode[i], n)) {
+                    ynode.push_back(n);
+                } else {
+                    return false;
+                }
+            }
+        } else if(jnode.isObject()) {
+            for(auto it = jnode.begin();
+                    it != jnode.end();
+                    ++it) {
+                YAML::Node n;
+                if(JsonToYaml(*it, n)) {
+                    ynode[it.name()] = n;
+                } else {
+                    return false;
+                }
+            }
+        } else {
+            ynode = jnode.asString();
+        }
+    } catch (...) {
+        return false;
+    }
+    return true;
+}
+
+static void serialize_unknowfieldset(const google::protobuf::UnknownFieldSet& ufs, Json::Value& jnode) {
+    std::map<int, std::vector<Json::Value> > kvs;
+    for(int i = 0; i < ufs.field_count(); ++i) {
+        const auto& uf = ufs.field(i);
+        switch((int)uf.type()) {
+            case google::protobuf::UnknownField::TYPE_VARINT:
+                kvs[uf.number()].push_back((Json::Int64)uf.varint());
+                break;
+            case google::protobuf::UnknownField::TYPE_FIXED32:
+                kvs[uf.number()].push_back((Json::UInt)uf.fixed32());
+                break;
+            case google::protobuf::UnknownField::TYPE_FIXED64:
+                kvs[uf.number()].push_back((Json::UInt64)uf.fixed64());
+                break;
+            case google::protobuf::UnknownField::TYPE_LENGTH_DELIMITED:
+                google::protobuf::UnknownFieldSet tmp;
+                auto& v = uf.length_delimited();
+                if(!v.empty() && tmp.ParseFromString(v)) {
+                    Json::Value vv;
+                    serialize_unknowfieldset(tmp, vv);
+                    kvs[uf.number()].push_back(vv);
+                } else {
+                    kvs[uf.number()].push_back(v);
+                }
+                break;
+        }
+    }
+
+    for(auto& i : kvs) {
+        if(i.second.size() > 1) {
+            for(auto& n : i.second) {
+                jnode[std::to_string(i.first)].append(n);
+            }
+        } else {
+            jnode[std::to_string(i.first)] = i.second[0];
+        }
+    }
+}
+
+static void serialize_message(const google::protobuf::Message& message, Json::Value& jnode) {
+    const google::protobuf::Descriptor* descriptor = message.GetDescriptor();
+    const google::protobuf::Reflection* reflection = message.GetReflection();
+
+    for(int i = 0; i < descriptor->field_count(); ++i) {
+        const google::protobuf::FieldDescriptor* field = descriptor->field(i);
+
+        if(field->is_repeated()) {
+            if(!reflection->FieldSize(message, field)) {
+                continue;
+            }
+        } else {
+            if(!reflection->HasField(message, field)) {
+                continue;
+            }
+        }
+
+        if(field->is_repeated()) {
+            switch(field->cpp_type()) {
  #define XX(cpptype, method, valuetype, jsontype) \
                 case google::protobuf::FieldDescriptor::CPPTYPE_##cpptype: { \
                     int size = reflection->FieldSize(message, field); \
@@ -713,152 +714,152 @@ std::string GetIPv4() {
                     } \
                     break; \
                 }
-//            XX(INT32, Int32, int32_t, Json::Int);
-//            XX(UINT32, UInt32, uint32_t, Json::UInt);
-//            XX(FLOAT, Float, float, double);
-//            XX(DOUBLE, Double, double, double);
-//            XX(BOOL, Bool, bool, bool);
-//            XX(INT64, Int64, int64_t, Json::Int64);
-//            XX(UINT64, UInt64, uint64_t, Json::UInt64);
+            XX(INT32, Int32, int32_t, Json::Int);
+            XX(UINT32, UInt32, uint32_t, Json::UInt);
+            XX(FLOAT, Float, float, double);
+            XX(DOUBLE, Double, double, double);
+            XX(BOOL, Bool, bool, bool);
+            XX(INT64, Int64, int64_t, Json::Int64);
+            XX(UINT64, UInt64, uint64_t, Json::UInt64);
  #undef XX
-//                case google::protobuf::FieldDescriptor::CPPTYPE_ENUM: {
-//                    int size = reflection->FieldSize(message, field);
-//                    for(int n = 0; n < size; ++n) {
-//                        jnode[field->name()].append(reflection->GetRepeatedEnum(message, field, n)->number());
-//                    }
-//                    break;
-//                }
-//                case google::protobuf::FieldDescriptor::CPPTYPE_STRING: {
-//                    int size = reflection->FieldSize(message, field);
-//                    for(int n = 0; n < size; ++n) {
-//                        jnode[field->name()].append(reflection->GetRepeatedString(message, field, n));
-//                    }
-//                    break;
-//                }
-//                case google::protobuf::FieldDescriptor::CPPTYPE_MESSAGE: {
-//                    int size = reflection->FieldSize(message, field);
-//                    for(int n = 0; n < size; ++n) {
-//                        Json::Value vv;
-//                        serialize_message(reflection->GetRepeatedMessage(message, field, n), vv);
-//                        jnode[field->name()].append(vv);
-//                    }
-//                    break;
-//                }
-//            }
-//            continue;
-//        }
-//
-//        switch(field->cpp_type()) {
+                case google::protobuf::FieldDescriptor::CPPTYPE_ENUM: {
+                    int size = reflection->FieldSize(message, field);
+                    for(int n = 0; n < size; ++n) {
+                        jnode[field->name()].append(reflection->GetRepeatedEnum(message, field, n)->number());
+                    }
+                    break;
+                }
+                case google::protobuf::FieldDescriptor::CPPTYPE_STRING: {
+                    int size = reflection->FieldSize(message, field);
+                    for(int n = 0; n < size; ++n) {
+                        jnode[field->name()].append(reflection->GetRepeatedString(message, field, n));
+                    }
+                    break;
+                }
+                case google::protobuf::FieldDescriptor::CPPTYPE_MESSAGE: {
+                    int size = reflection->FieldSize(message, field);
+                    for(int n = 0; n < size; ++n) {
+                        Json::Value vv;
+                        serialize_message(reflection->GetRepeatedMessage(message, field, n), vv);
+                        jnode[field->name()].append(vv);
+                    }
+                    break;
+                }
+            }
+            continue;
+        }
+
+        switch(field->cpp_type()) {
  #define XX(cpptype, method, valuetype, jsontype) \
             case google::protobuf::FieldDescriptor::CPPTYPE_##cpptype: { \
                 jnode[field->name()] = (jsontype)reflection->Get##method(message, field); \
                 break; \
             }
-//            XX(INT32, Int32, int32_t, Json::Int);
-//            XX(UINT32, UInt32, uint32_t, Json::UInt);
-//            XX(FLOAT, Float, float, double);
-//            XX(DOUBLE, Double, double, double);
-//            XX(BOOL, Bool, bool, bool);
-//            XX(INT64, Int64, int64_t, Json::Int64);
-//            XX(UINT64, UInt64, uint64_t, Json::UInt64);
+            XX(INT32, Int32, int32_t, Json::Int);
+            XX(UINT32, UInt32, uint32_t, Json::UInt);
+            XX(FLOAT, Float, float, double);
+            XX(DOUBLE, Double, double, double);
+            XX(BOOL, Bool, bool, bool);
+            XX(INT64, Int64, int64_t, Json::Int64);
+            XX(UINT64, UInt64, uint64_t, Json::UInt64);
 #undef XX
-//            case google::protobuf::FieldDescriptor::CPPTYPE_ENUM: {
-//                jnode[field->name()] = reflection->GetEnum(message, field)->number();
-//                break;
-//            }
-//            case google::protobuf::FieldDescriptor::CPPTYPE_STRING: {
-//                jnode[field->name()] = reflection->GetString(message, field);
-//                break;
-//            }
-//            case google::protobuf::FieldDescriptor::CPPTYPE_MESSAGE: {
-//                serialize_message(reflection->GetMessage(message, field), jnode[field->name()]);
-//                break;
-//            }
-//        }
-//
-//    }
-//
-//    const auto& ufs = reflection->GetUnknownFields(message);
-//    serialize_unknowfieldset(ufs, jnode);
-//}
-//
-//std::string PBToJsonString(const google::protobuf::Message& message) {
-//    Json::Value jnode;
-//    serialize_message(message, jnode);
-//    return bobliew::JsonUtil::ToString(jnode);
-//}
-//
-//SpeedLimit::SpeedLimit(uint32_t speed)
-//    :m_speed(speed)
-//    ,m_countPerMS(0)
-//    ,m_curCount(0)
-//    ,m_curSec(0) {
-//    if(speed == 0) {
-//        m_speed = (uint32_t)-1;
-//    }
-//    m_countPerMS = m_speed / 1000.0;
-//}
-//
-//Void SpeedLimit::add(uint32_t v) {
-//    uint64_t curms = bobliew::GetCurrentMS();
-//    if(curms / 1000 != m_curSec) {
-//        m_curSec = curms / 1000;
-//        m_curCount = v;
-//        return;
-//    }
-//
-//    m_curCount += v;
-//
-//    int usedms = curms % 1000;
-//    int limitms = m_curCount / m_countPerMS;
-//
-//    if(usedms < limitms) {
-//        usleep(1000 * (limitms - usedms));
-//    }
-//}
-//
-//
-//Bool ReadFixFromStreamWithSpeed(std::istream& is, char* data,
-//                               const uint64_t& size, const uint64_t& speed) {
-//    SpeedLimit::ptr limit;
-//    if(dynamic_cast<std::ifstream*>(&is)) {
-//        limit.reset(new SpeedLimit(speed));
-//    }
-//
-//    uint64_t offset = 0;
-//    uint64_t per = std::max((uint64_t)ceil(speed / 100.0), (uint64_t)1024 * 64);
-//    while(is && (offset < size)) {
-//        uint64_t s = size - offset > per ? per : size - offset;
-//        is.read(data + offset, s);
-//        offset += is.gcount();
-//
-//        if(limit) {
-//            limit->add(is.gcount());
-//        }
-//    }
-//    return offset == size;
-//}
-//
-//Bool WriteFixToStreamWithSpeed(std::ostream& os, const char* data,
-//                               const uint64_t& size, const uint64_t& speed) {
-//     SpeedLimit::ptr limit;
-//    if(dynamic_cast<std::ofstream*>(&os)) {
-//        limit.reset(new SpeedLimit(speed));
-//    }
-//
-//    uint64_t offset = 0;
-//    uint64_t per = std::max((uint64_t)ceil(speed / 100.0), (uint64_t)1024 * 64);
-//    while(os && (offset < size)) {
-//        uint64_t s = size - offset > per ? per : size - offset;
-//        os.write(data + offset, s);
-//        offset += s;
-//
-//        if(limit) {
-//            limit->add(s);
-//        }
-//    }
-//
-//    return offset == size;
-//}
+            case google::protobuf::FieldDescriptor::CPPTYPE_ENUM: {
+                jnode[field->name()] = reflection->GetEnum(message, field)->number();
+                break;
+            }
+            case google::protobuf::FieldDescriptor::CPPTYPE_STRING: {
+                jnode[field->name()] = reflection->GetString(message, field);
+                break;
+            }
+            case google::protobuf::FieldDescriptor::CPPTYPE_MESSAGE: {
+                serialize_message(reflection->GetMessage(message, field), jnode[field->name()]);
+                break;
+            }
+        }
+
+    }
+
+    const auto& ufs = reflection->GetUnknownFields(message);
+    serialize_unknowfieldset(ufs, jnode);
+}
+
+std::string PBToJsonString(const google::protobuf::Message& message) {
+    Json::Value jnode;
+    serialize_message(message, jnode);
+    return bobliew::JsonUtil::ToString(jnode);
+}
+
+SpeedLimit::SpeedLimit(uint32_t speed)
+    :m_speed(speed)
+    ,m_countPerMS(0)
+    ,m_curCount(0)
+    ,m_curSec(0) {
+    if(speed == 0) {
+        m_speed = (uint32_t)-1;
+    }
+    m_countPerMS = m_speed / 1000.0;
+}
+
+void SpeedLimit::add(uint32_t v) {
+    uint64_t curms = bobliew::GetCurrentMS();
+    if(curms / 1000 != m_curSec) {
+        m_curSec = curms / 1000;
+        m_curCount = v;
+        return;
+    }
+
+    m_curCount += v;
+
+    int usedms = curms % 1000;
+    int limitms = m_curCount / m_countPerMS;
+
+    if(usedms < limitms) {
+        usleep(1000 * (limitms - usedms));
+    }
+}
+
+
+bool ReadFixFromStreamWithSpeed(std::istream& is, char* data,
+                               const uint64_t& size, const uint64_t& speed) {
+    SpeedLimit::ptr limit;
+    if(dynamic_cast<std::ifstream*>(&is)) {
+        limit.reset(new SpeedLimit(speed));
+    }
+
+    uint64_t offset = 0;
+    uint64_t per = std::max((uint64_t)ceil(speed / 100.0), (uint64_t)1024 * 64);
+    while(is && (offset < size)) {
+        uint64_t s = size - offset > per ? per : size - offset;
+        is.read(data + offset, s);
+        offset += is.gcount();
+
+        if(limit) {
+            limit->add(is.gcount());
+        }
+    }
+    return offset == size;
+}
+
+bool WriteFixToStreamWithSpeed(std::ostream& os, const char* data,
+                               const uint64_t& size, const uint64_t& speed) {
+     SpeedLimit::ptr limit;
+    if(dynamic_cast<std::ofstream*>(&os)) {
+        limit.reset(new SpeedLimit(speed));
+    }
+
+    uint64_t offset = 0;
+    uint64_t per = std::max((uint64_t)ceil(speed / 100.0), (uint64_t)1024 * 64);
+    while(os && (offset < size)) {
+        uint64_t s = size - offset > per ? per : size - offset;
+        os.write(data + offset, s);
+        offset += s;
+
+        if(limit) {
+            limit->add(s);
+        }
+    }
+
+    return offset == size;
+}
 
 }

@@ -13,10 +13,15 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/bobliew/data/bobliew/bobliew/http/http.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/http/http.cc.o"
   "/home/bobliew/data/bobliew/bobliew/http/http11_parser.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o"
   "/home/bobliew/data/bobliew/bobliew/http/http_parser.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o"
+  "/home/bobliew/data/bobliew/bobliew/http/http_session.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.o"
   "/home/bobliew/data/bobliew/bobliew/http/httpclient_parser.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o"
   "/home/bobliew/data/bobliew/bobliew/iomanager.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o"
   "/home/bobliew/data/bobliew/bobliew/log.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/log.cc.o"
   "/home/bobliew/data/bobliew/bobliew/scheduler.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o"
+  "/home/bobliew/data/bobliew/bobliew/socket.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/socket.cc.o"
+  "/home/bobliew/data/bobliew/bobliew/stream.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/stream.cc.o"
+  "/home/bobliew/data/bobliew/bobliew/streams/socket_stream.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.o"
+  "/home/bobliew/data/bobliew/bobliew/tcp_server.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.o"
   "/home/bobliew/data/bobliew/bobliew/thread.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/thread.cc.o"
   "/home/bobliew/data/bobliew/bobliew/timer.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/timer.cc.o"
   "/home/bobliew/data/bobliew/bobliew/util.cc" "/home/bobliew/data/bobliew/CMakeFiles/bobliew.dir/bobliew/util.cc.o"
@@ -30,6 +35,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  ".."
   "."
   "/home/bobliew/build"
   )

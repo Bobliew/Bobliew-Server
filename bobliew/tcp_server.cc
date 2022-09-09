@@ -1,5 +1,6 @@
 #include "tcp_server.h"
 #include "config.h"
+
 #include "log.h"
 
 
@@ -22,6 +23,7 @@ TcpServer::TcpServer(bobliew::IOManager* worker, bobliew::IOManager* io_worker,
 }
 
 //析构函数
+//将socket也析构，防止出现socket泄露
 TcpServer::~TcpServer() {
     for(auto& i : m_socks) {
         i->close();
@@ -51,19 +53,30 @@ std::vector<Address::ptr>& fails, bool ssl) {
         Socket::ptr sock = ssl ? SSLSocket::CreateTCP(addr) : Socket::CreateTCP(addr);
         if(!sock->bind(addr)) {
             BOBLIEW_LOG_ERROR(g_logger) << "bind fail errno=" << errno <<
-            " errstr=" << strerror(errno) << " addr=[" << addr->toString() << "]";
+                " errstr=" << strerror(errno) << " addr=[" << addr->toString() << "]";
+            fails.push_back(addr);
+            continue;
+        }
+        if(!sock->listen()) {
+            BOBLIEW_LOG_ERROR(g_logger) << "listen fail errno="
+                << errno << " errstr=" << strerror(errno)
+                << " addr=[" << addr->toString() << "]";
             fails.push_back(addr);
             continue;
         }
         m_socks.push_back(sock);
     }
+
     if(!fails.empty()) {
         m_socks.clear();
         return false;
     }
+
     for(auto& i : m_socks) {
-        BOBLIEW_LOG_INFO(g_logger) << "type=" << m_type << " name=" << m_name
-            << " ssl=" << m_ssl << " server bind success: "<< *i;
+        BOBLIEW_LOG_INFO(g_logger) << "type=" << m_type
+            << " name=" << m_name
+            << " ssl=" << m_ssl
+            << " server bind success: " << *i;
     }
     return true;
 }

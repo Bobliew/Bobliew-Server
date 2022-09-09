@@ -6,6 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/home/bobliew/data/bobliew/bobliew/address.h
+memory
+-
+string
+-
+sys/socket.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+iostream
+-
+vector
+-
+map
+-
+sys/un.h
+-
+
 /home/bobliew/data/bobliew/bobliew/http/http.h
 algorithm
 -
@@ -77,6 +99,24 @@ thread.h
 /home/bobliew/data/bobliew/bobliew/singleton.h
 memory
 -
+
+/home/bobliew/data/bobliew/bobliew/socket.h
+memory
+-
+netinet/tcp.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+openssl/err.h
+-
+openssl/ssl.h
+-
+address.h
+/home/bobliew/data/bobliew/bobliew/address.h
+noncopyable.h
+/home/bobliew/data/bobliew/bobliew/noncopyable.h
 
 /home/bobliew/data/bobliew/bobliew/thread.h
 list
@@ -151,4 +191,6 @@ json/json.h
 /home/bobliew/data/bobliew/bobliew/http/http_parser.h
 ../bobliew/log.h
 /home/bobliew/data/bobliew/bobliew/log.h
+../bobliew/socket.h
+/home/bobliew/data/bobliew/bobliew/socket.h
 

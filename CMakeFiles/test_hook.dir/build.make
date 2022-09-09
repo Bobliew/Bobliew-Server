@@ -83,6 +83,12 @@ test_hook_EXTERNAL_OBJECTS =
 bin/test_hook: CMakeFiles/test_hook.dir/tests/test_hook.cc.o
 bin/test_hook: CMakeFiles/test_hook.dir/build.make
 bin/test_hook: lib/libbobliew.so
+bin/test_hook: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/test_hook: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/test_hook: /usr/lib/x86_64-linux-gnu/libprotobuf.so
+bin/test_hook: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/test_hook: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/test_hook: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 bin/test_hook: CMakeFiles/test_hook.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bin/test_hook"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_hook.dir/link.txt --verbose=$(VERBOSE)

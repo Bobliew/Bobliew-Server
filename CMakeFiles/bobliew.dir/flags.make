@@ -6,7 +6,7 @@ CXX_FLAGS =  -rdynamic -O0 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unus
 
 CXX_DEFINES = -Dbobliew_EXPORTS
 
-CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build 
+CXX_INCLUDES = -I/home/bobliew/data/bobliew/.. -I/home/bobliew/data/bobliew/. -I/home/bobliew/build 
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/log.cc.o_DEFINES = __FILE__="bobliew/log.cc"
 
@@ -24,13 +24,21 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/fiber.cc.o_DEFINES = __FILE__="bobliew/fiber.cc"
 
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/socket.cc.o_DEFINES = __FILE__="bobliew/socket.cc"
+
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/scheduler.cc.o_DEFINES = __FILE__="bobliew/scheduler.cc"
 
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/stream.cc.o_DEFINES = __FILE__="bobliew/stream.cc"
+
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/timer.cc.o_DEFINES = __FILE__="bobliew/timer.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.o_DEFINES = __FILE__="bobliew/tcp_server.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/iomanager.cc.o_DEFINES = __FILE__="bobliew/iomanager.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/hook.cc.o_DEFINES = __FILE__="bobliew/hook.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.o_DEFINES = __FILE__="bobliew/streams/socket_stream.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http.cc.o_DEFINES = __FILE__="bobliew/http/http.cc"
 
@@ -39,4 +47,6 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/. -I/home/bobliew/build
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o_DEFINES = __FILE__="bobliew/http/http11_parser.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o_DEFINES = __FILE__="bobliew/http/http_parser.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.o_DEFINES = __FILE__="bobliew/http/http_session.cc"
 

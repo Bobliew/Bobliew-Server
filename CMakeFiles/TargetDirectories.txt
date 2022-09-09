@@ -1,5 +1,7 @@
 /home/bobliew/data/bobliew/CMakeFiles/rebuild_cache.dir
 /home/bobliew/data/bobliew/CMakeFiles/edit_cache.dir
+/home/bobliew/data/bobliew/CMakeFiles/echo_server.dir
+/home/bobliew/data/bobliew/CMakeFiles/test_tcp_server.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_parser.dir
 /home/bobliew/data/bobliew/CMakeFiles/test.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_thread.dir
