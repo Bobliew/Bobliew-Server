@@ -47,11 +47,13 @@ set(LIB_SRC
     bobliew/iomanager.cc
     bobliew/hook.cc
     bobliew/streams/socket_stream.cc
+    bobliew/streams/zlib_stream.cc
     bobliew/http/http.cc
     bobliew/http/httpclient_parser.cc
     bobliew/http/http11_parser.cc
     bobliew/http/http_parser.cc
     bobliew/http/http_session.cc
+    bobliew/util/json_util.cc
     )
 add_library(bobliew SHARED ${LIB_SRC})
 force_redefine_file_macro_for_sources(bobliew) #__FILE__
@@ -63,6 +65,7 @@ set(LIB_LIB
         bobliew
         pthread
         yaml-cpp
+        jsoncpp
         ${OPENSSL_LIBRARIES}
         ${PROTOBUF_LIBRARIES}
     )

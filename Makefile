@@ -780,6 +780,33 @@ bobliew/streams/socket_stream.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.s
 .PHONY : bobliew/streams/socket_stream.cc.s
 
+bobliew/streams/zlib_stream.o: bobliew/streams/zlib_stream.cc.o
+
+.PHONY : bobliew/streams/zlib_stream.o
+
+# target to build an object file
+bobliew/streams/zlib_stream.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o
+.PHONY : bobliew/streams/zlib_stream.cc.o
+
+bobliew/streams/zlib_stream.i: bobliew/streams/zlib_stream.cc.i
+
+.PHONY : bobliew/streams/zlib_stream.i
+
+# target to preprocess a source file
+bobliew/streams/zlib_stream.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.i
+.PHONY : bobliew/streams/zlib_stream.cc.i
+
+bobliew/streams/zlib_stream.s: bobliew/streams/zlib_stream.cc.s
+
+.PHONY : bobliew/streams/zlib_stream.s
+
+# target to generate assembly for a file
+bobliew/streams/zlib_stream.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.s
+.PHONY : bobliew/streams/zlib_stream.cc.s
+
 bobliew/tcp_server.o: bobliew/tcp_server.cc.o
 
 .PHONY : bobliew/tcp_server.o
@@ -887,6 +914,33 @@ bobliew/util.s: bobliew/util.cc.s
 bobliew/util.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util.cc.s
 .PHONY : bobliew/util.cc.s
+
+bobliew/util/json_util.o: bobliew/util/json_util.cc.o
+
+.PHONY : bobliew/util/json_util.o
+
+# target to build an object file
+bobliew/util/json_util.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o
+.PHONY : bobliew/util/json_util.cc.o
+
+bobliew/util/json_util.i: bobliew/util/json_util.cc.i
+
+.PHONY : bobliew/util/json_util.i
+
+# target to preprocess a source file
+bobliew/util/json_util.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.i
+.PHONY : bobliew/util/json_util.cc.i
+
+bobliew/util/json_util.s: bobliew/util/json_util.cc.s
+
+.PHONY : bobliew/util/json_util.s
+
+# target to generate assembly for a file
+bobliew/util/json_util.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.s
+.PHONY : bobliew/util/json_util.cc.s
 
 example/echo_server.o: example/echo_server.cc.o
 
@@ -1368,6 +1422,9 @@ help:
 	@echo "... bobliew/streams/socket_stream.o"
 	@echo "... bobliew/streams/socket_stream.i"
 	@echo "... bobliew/streams/socket_stream.s"
+	@echo "... bobliew/streams/zlib_stream.o"
+	@echo "... bobliew/streams/zlib_stream.i"
+	@echo "... bobliew/streams/zlib_stream.s"
 	@echo "... bobliew/tcp_server.o"
 	@echo "... bobliew/tcp_server.i"
 	@echo "... bobliew/tcp_server.s"
@@ -1380,6 +1437,9 @@ help:
 	@echo "... bobliew/util.o"
 	@echo "... bobliew/util.i"
 	@echo "... bobliew/util.s"
+	@echo "... bobliew/util/json_util.o"
+	@echo "... bobliew/util/json_util.i"
+	@echo "... bobliew/util/json_util.s"
 	@echo "... example/echo_server.o"
 	@echo "... example/echo_server.i"
 	@echo "... example/echo_server.s"

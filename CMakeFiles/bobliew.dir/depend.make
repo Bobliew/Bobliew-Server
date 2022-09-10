@@ -235,6 +235,20 @@ CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.o: bobliew/util/crypto_u
 CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.o: bobliew/util/hash_util.h
 CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.o: bobliew/util/json_util.h
 
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/bytearray.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/log.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/macro.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/noncopyable.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/singleton.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/stream.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/streams/zlib_stream.cc
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/streams/zlib_stream.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/thread.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o: bobliew/util/json_util.h
+
 CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.o: bobliew/address.h
 CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.o: bobliew/bobliew.h
 CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.o: bobliew/config.h
@@ -288,4 +302,10 @@ CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util/crypto_util.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util/hash_util.h
 CMakeFiles/bobliew.dir/bobliew/util.cc.o: bobliew/util/json_util.h
+
+CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o: bobliew/util.h
+CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o: bobliew/util/crypto_util.h
+CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o: bobliew/util/hash_util.h
+CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o: bobliew/util/json_util.cc
+CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o: bobliew/util/json_util.h
 

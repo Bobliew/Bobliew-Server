@@ -155,6 +155,8 @@ string.h
 -
 assert.h
 -
+log.h
+/home/bobliew/data/bobliew/bobliew/log.h
 util.h
 /home/bobliew/data/bobliew/bobliew/util.h
 
@@ -309,6 +311,12 @@ json/json.h
 /home/bobliew/data/bobliew/bobliew/util/hash_util.h
 
 /home/bobliew/data/bobliew/bobliew/util/json_util.h
+string
+-
+iostream
+-
+json/json.h
+-
 
 /home/bobliew/data/bobliew/tests/test_tcp_server.cc
 ../bobliew/tcp_server.h

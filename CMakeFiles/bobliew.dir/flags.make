@@ -40,6 +40,8 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/.. -I/home/bobliew/data/bobliew/. -I
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.o_DEFINES = __FILE__="bobliew/streams/socket_stream.cc"
 
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o_DEFINES = __FILE__="bobliew/streams/zlib_stream.cc"
+
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http.cc.o_DEFINES = __FILE__="bobliew/http/http.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o_DEFINES = __FILE__="bobliew/http/httpclient_parser.cc"
@@ -49,4 +51,6 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/.. -I/home/bobliew/data/bobliew/. -I
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o_DEFINES = __FILE__="bobliew/http/http_parser.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.o_DEFINES = __FILE__="bobliew/http/http_session.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o_DEFINES = __FILE__="bobliew/util/json_util.cc"
 

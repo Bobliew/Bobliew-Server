@@ -16,10 +16,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/bobliew.dir/bobliew/socket.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/stream.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/streams/socket_stream.cc.o"
+  "CMakeFiles/bobliew.dir/bobliew/streams/zlib_stream.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/tcp_server.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/thread.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/timer.cc.o"
   "CMakeFiles/bobliew.dir/bobliew/util.cc.o"
+  "CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o"
   "lib/libbobliew.pdb"
   "lib/libbobliew.so"
 )
