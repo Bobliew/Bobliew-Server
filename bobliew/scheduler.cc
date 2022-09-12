@@ -105,6 +105,8 @@ void Scheduler::stop() {
             return;
         }
     }
+    //-1是任意线程所以是没有限制的。
+    //而规定了运行线程的子协程只能在特定的线程结束。
     if(m_rootThread != -1) {
         BOBLIEW_ASSERT(GetThis() == this);
     } else {
@@ -277,6 +279,22 @@ void Scheduler::run() {
     }
 }
 
+
+std::ostream& Scheduler::dump (std::ostream& os) {
+    os << "[Scheduler name=" << m_name
+       << " size=" << m_threadCount
+       << " active_count=" << m_activeThreadCount
+       << " idle_count=" << m_idleThreadCount
+       << " stopping=" << m_stopping
+       << " ]" << std::endl << "    ";
+    for(size_t i = 0; i < m_threadIds.size(); ++i) {
+        if(i) {
+            os << ", ";
+        }
+        os << m_threadIds[i];
+    }
+    return os;
+}
 
 
 }

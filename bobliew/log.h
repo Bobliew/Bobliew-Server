@@ -16,6 +16,7 @@
 #include <vector>
 #include "util.h"
 #include "thread.h"
+#include "mutex.h"
 /**
  * @brief 使用流式方式将日志级别level的日志写入到logger
  */

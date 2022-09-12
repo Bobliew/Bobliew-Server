@@ -1,10 +1,14 @@
 
 #include "http_session.h"
 #include "http_parser.h"
+#include "../log.h"
+
+
 
 namespace bobliew {
 namespace http {
 
+static bobliew::Logger::ptr g_logger = BOBLIEW_LOG_NAME("system");
 HttpSession::HttpSession(Socket::ptr sock, bool owner) 
 :SocketStream(sock, owner){
 }
@@ -35,6 +39,7 @@ HttpRequest::ptr HttpSession::recvRequest() {
         offset = len - nparse;
         if(offset == (int)buff_size) {
             close();
+        //    BOBLIEW_LOG_DEBUG(g_logger) << "test3333333333333333333333333";
             return nullptr;
         }
         if(parser->isFinished()) {
@@ -58,6 +63,7 @@ HttpRequest::ptr HttpSession::recvRequest() {
         if(length > 0) {
             if(readFixSize(&body[len], length) <= 0) {
                 close();
+                BOBLIEW_LOG_DEBUG(g_logger) << "test4444444444444444444444444";
                 return nullptr;
             }
         }

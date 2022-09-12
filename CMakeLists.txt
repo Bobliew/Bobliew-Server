@@ -38,6 +38,7 @@ set(LIB_SRC
     bobliew/fd_manager.cc
     bobliew/util.cc
     bobliew/thread.cc
+    bobliew/mutex.cc
     bobliew/fiber.cc
     bobliew/socket.cc
     bobliew/scheduler.cc
@@ -49,10 +50,14 @@ set(LIB_SRC
     bobliew/streams/socket_stream.cc
     bobliew/streams/zlib_stream.cc
     bobliew/http/http.cc
+    bobliew/http/http_server.cc
     bobliew/http/httpclient_parser.cc
     bobliew/http/http11_parser.cc
     bobliew/http/http_parser.cc
     bobliew/http/http_session.cc
+    bobliew/http/servlet.cc
+    bobliew/http/servlets/config_servlet.cc
+    #bobliew/http/servlets/status_servlet.cc
     bobliew/util/json_util.cc
     )
 add_library(bobliew SHARED ${LIB_SRC})
@@ -146,6 +151,17 @@ add_executable(test_tcp_server tests/test_tcp_server.cc)
 add_dependencies(test_tcp_server bobliew)
 force_redefine_file_macro_for_sources(test_tcp_server)
 target_link_libraries(test_tcp_server ${LIB_LIB} dl)
+
+add_executable(test_http_server tests/test_http_server.cc)
+add_dependencies(test_http_server bobliew)
+force_redefine_file_macro_for_sources(test_http_server)
+target_link_libraries(test_http_server ${LIB_LIB} dl)
+
+add_executable(test_http_server2 tests/test_http_server2.cc)
+add_dependencies(test_http_server2 bobliew)
+force_redefine_file_macro_for_sources(test_http_server2)
+target_link_libraries(test_http_server2 ${LIB_LIB} dl)
+
 
 
 add_executable(echo_server example/echo_server.cc)

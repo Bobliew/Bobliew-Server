@@ -99,9 +99,11 @@ void TcpServer::startAccept(Socket::ptr sock) {
 //启动服务
 //需要bind成功后执行
 bool TcpServer::start() {
+    
     if(!m_isStop) {
         return true;
     }
+    
     m_isStop = false;
     for(auto& sock : m_socks) {
         m_acceptWorker->schedule(std::bind(&TcpServer::startAccept,

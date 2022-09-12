@@ -3,7 +3,9 @@
 
 CMakeFiles/test_address.dir/tests/test_address.cc.o
  /home/bobliew/data/bobliew/bobliew/address.h
+ /home/bobliew/data/bobliew/bobliew/fiber.h
  /home/bobliew/data/bobliew/bobliew/log.h
+ /home/bobliew/data/bobliew/bobliew/mutex.h
  /home/bobliew/data/bobliew/bobliew/noncopyable.h
  /home/bobliew/data/bobliew/bobliew/singleton.h
  /home/bobliew/data/bobliew/bobliew/thread.h

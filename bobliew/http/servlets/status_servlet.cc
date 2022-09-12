@@ -37,20 +37,19 @@ std::string format_used_time(int64_t ts) {
 }
 
 
-int32_t handle(bobliew::http::HttpRequest::ptr request,
-                       bobliew::http::HttpResponse::ptr response,
-                       bobliew::http::HttpSession::ptr session) {
-    response->setHeader("Content-Type", "text/text; charset=utf-8");
-#define XX(key) \
-    ss << std::setw(30) << std::right << key ": "
-    std::stringstream ss;
-    ss << "=====================================================" << std::endl
-    XX("server_version") << "bobliew/1.0.0" << std::endl;
-
-    std::vector<Module::ptr> 
-
+//int32_t handle(bobliew::http::HttpRequest::ptr request,
+//                       bobliew::http::HttpResponse::ptr response,
+//                       bobliew::http::HttpSession::ptr session) {
+//    response->setHeader("Content-Type", "text/text; charset=utf-8");
+//#define XX(key) \
+//    ss << std::setw(30) << std::right << key ": "
+//    std::stringstream ss;
+//    ss << "=====================================================" << std::endl;
+//    XX("server_version") << "bobliew/1.0.0" << std::endl;
+//  //  std::vector<Module::ptr> ms;
+//
+//
+//};
 }
-};
 
-}
 }

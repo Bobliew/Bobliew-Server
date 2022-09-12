@@ -8,6 +8,7 @@
 #include "socket.h"
 #include "noncopyable.h"
 #include "config.h"
+#include "mutex.h"
 
 
 namespace bobliew {

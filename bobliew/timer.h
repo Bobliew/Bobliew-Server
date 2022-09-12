@@ -4,6 +4,7 @@
 #include <bits/stdint-uintn.h>
 #include <memory>
 #include "thread.h"
+#include "mutex.h"
 #include <set>
 #include <vector>
 

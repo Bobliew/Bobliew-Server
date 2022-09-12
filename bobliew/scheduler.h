@@ -65,6 +65,8 @@ void schedule(InputIterator begin, InputIterator end) {
     }
 }
 
+std::ostream& dump (std::ostream& os);
+
 protected:
 //返回是否可以停止
 virtual bool stopping();

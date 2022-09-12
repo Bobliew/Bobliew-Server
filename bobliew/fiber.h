@@ -5,7 +5,6 @@
 
 #include <memory>
 #include<ucontext.h>
-#include "thread.h"
 #include <functional>
 
 

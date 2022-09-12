@@ -102,6 +102,19 @@ Servlet::ptr ServletDispatch::getGlobServlet(const std::string& uri) {
     return nullptr;
 }
 
+Servlet::ptr ServletDispatch::getMatchedServlet(const std::string& uri) {
+    RWMutexType::ReadLock lock(m_mutex);
+    auto mit = m_datas.find(uri);
+    if(mit != m_datas.end()) {
+        return mit->second->get();
+    }
+    for(auto it = m_globs.begin(); it != m_globs.end(); ++it) {
+        if(!fnmatch(it->first.c_str(), uri.c_str(), 0)) {
+            return it->second->get();
+        }
+    }
+    return m_default;
+}
 
 void ServletDispatch::listAllServletCreator(std::map<std::string, IServletCreator::ptr>& infos) {
     RWMutexType::WriteLock lock(m_mutex);

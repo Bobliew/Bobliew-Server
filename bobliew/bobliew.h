@@ -8,6 +8,7 @@
 #include "hook.h"
 #include "scheduler.h"
 #include "thread.h"
+#include "mutex.h"
 #include "util.h"
 #include "macro.h"
 

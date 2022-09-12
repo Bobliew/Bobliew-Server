@@ -3,12 +3,14 @@
 
 CMakeFiles/test_parser.dir/tests/test_parser.cc.o
  /home/bobliew/data/bobliew/bobliew/address.h
+ /home/bobliew/data/bobliew/bobliew/fiber.h
  /home/bobliew/data/bobliew/bobliew/http/http.h
  /home/bobliew/data/bobliew/bobliew/http/http11_common.h
  /home/bobliew/data/bobliew/bobliew/http/http11_parser.h
  /home/bobliew/data/bobliew/bobliew/http/http_parser.h
  /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.h
  /home/bobliew/data/bobliew/bobliew/log.h
+ /home/bobliew/data/bobliew/bobliew/mutex.h
  /home/bobliew/data/bobliew/bobliew/noncopyable.h
  /home/bobliew/data/bobliew/bobliew/singleton.h
  /home/bobliew/data/bobliew/bobliew/socket.h

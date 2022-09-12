@@ -14,35 +14,6 @@ static std::string t_thread_name = "UNKNOW";
 static bobliew::Logger::ptr g_logger = BOBLIEW_LOG_NAME("system");
 
 
-Semaphore::Semaphore(uint32_t count){
-    //sem_init(指向的信号对象， pshared， 初始整数值value)
-    //pshard控制信号量类型，在这里0代表信号量用于多线程同步，
-    //如果大于0表示可以共享，用于多个相关进程之间的同步。
-    if(sem_init(&m_semaphore, 0, count)) {
-        throw std::logic_error(" sem_init error ");
-    }
-}
-
-Semaphore::~Semaphore() {
-
-}
-
-void Semaphore::wait() {
-    //如果信号箱大于零，则递减继续，如果信号箱等于零，
-    //则调用阻塞直到信号量上升到大于0.
-    //sen_wait将信号值减一
-    //成功后返回0.
-    if(sem_wait(&m_semaphore)) {
-        throw std::logic_error("sem_wait error");
-    }
-}
-
-void Semaphore::notify() {
-    //sem_post
-    if(sem_post(&m_semaphore)) {
-        throw std::logic_error("sem_post error");
-    }
-}
 
 Thread* Thread::GetThis(){
     return t_thread;

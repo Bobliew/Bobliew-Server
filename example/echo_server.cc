@@ -3,6 +3,7 @@
 #include "../bobliew/iomanager.h"
 #include "../bobliew/bytearray.h"
 #include "../bobliew/address.h"
+#include "../bobliew/mutex.h"
 
 static bobliew::Logger::ptr g_logger = BOBLIEW_LOG_ROOT();
 

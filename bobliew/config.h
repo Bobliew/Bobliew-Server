@@ -17,6 +17,7 @@
 #include <unordered_set>
 #include <list>
 #include "thread.h"
+#include "mutex.h"
 
 namespace bobliew {
 

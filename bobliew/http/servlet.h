@@ -11,6 +11,8 @@
 #include "../thread.h"
 #include "../util.h"
 
+//留坑：Servlet后序可以增加文件解析
+//模仿nginx
 
 namespace bobliew {
 namespace http {
