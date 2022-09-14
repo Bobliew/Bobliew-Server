@@ -18,6 +18,7 @@ void test_pool() {
 }
 
 void run() {
+    BOBLIEW_LOG_DEBUG(g_logger) << "hello bobliew";
     bobliew::Address::ptr addr = bobliew::Address::LookupAnyIPAddress(NETWORK + ":80");
     if(!addr) {
         BOBLIEW_LOG_INFO(g_logger) << "get addr error";
