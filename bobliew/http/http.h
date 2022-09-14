@@ -407,8 +407,9 @@ private:
     MapType m_headers;
     std::vector<std::string> m_cookies;
 };
-
+std::ostream& operator<<(std::ostream& os, const HttpRequest& req);
 std::ostream& operator<<(std::ostream& os, const HttpResponse& rsp);
+
 
 }
 }

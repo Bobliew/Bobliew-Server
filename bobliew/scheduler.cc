@@ -22,6 +22,7 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
         //该协程会使用当前的线程进行操作，所以应该手动--。
         --threads;
         //防止重复产生过调度器
+        
         BOBLIEW_ASSERT(GetThis() == nullptr);
         t_scheduler = this;
 
@@ -102,6 +103,7 @@ void Scheduler::stop() {
         m_stopping = true;
 
         if(stopping()) {
+            BOBLIEW_LOG_DEBUG(g_logger)<<"11111111111111111";
             return;
         }
     }

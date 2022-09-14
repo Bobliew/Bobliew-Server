@@ -1,6 +1,8 @@
+/home/bobliew/data/bobliew/CMakeFiles/echo_server.dir
 /home/bobliew/data/bobliew/CMakeFiles/rebuild_cache.dir
 /home/bobliew/data/bobliew/CMakeFiles/edit_cache.dir
-/home/bobliew/data/bobliew/CMakeFiles/echo_server.dir
+/home/bobliew/data/bobliew/CMakeFiles/test_uri.dir
+/home/bobliew/data/bobliew/CMakeFiles/test_http_connection.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_http_server2.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_tcp_server.dir
 /home/bobliew/data/bobliew/CMakeFiles/test_parser.dir

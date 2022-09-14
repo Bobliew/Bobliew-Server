@@ -22,7 +22,7 @@ void set_hook_enable(bool flag);
 
 
 }
-//hook是可以举一反三，先实现一下需求最迫切的定时器sleep和socket里面的一些的函数
+//hook是可以举一反三，先实现需求最迫切的定时器sleep和socket里面的一些的函数
 //实现在用户端同步的操作实现异步的性能效果，减少代码冗杂关键在于hook.cc中的一些
 //宏和functional的巧妙运用。
 //调用的时候就不需要bobliew::啦~直接引用头文件即可

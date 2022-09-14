@@ -127,6 +127,32 @@ echo_server/fast:
 .PHONY : echo_server/fast
 
 #=============================================================================
+# Target rules for targets named test_uri
+
+# Build rule for target.
+test_uri: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_uri
+.PHONY : test_uri
+
+# fast build rule for target.
+test_uri/fast:
+	$(MAKE) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/build
+.PHONY : test_uri/fast
+
+#=============================================================================
+# Target rules for targets named test_http_connection
+
+# Build rule for target.
+test_http_connection: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_http_connection
+.PHONY : test_http_connection
+
+# fast build rule for target.
+test_http_connection/fast:
+	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/build
+.PHONY : test_http_connection/fast
+
+#=============================================================================
 # Target rules for targets named test_http_server2
 
 # Build rule for target.
@@ -536,32 +562,59 @@ bobliew/http/http.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http.cc.s
 .PHONY : bobliew/http/http.cc.s
 
-bobliew/http/http11_parser.o: bobliew/http/http11_parser.cc.o
+bobliew/http/http11_parser.rl.o: bobliew/http/http11_parser.rl.cc.o
 
-.PHONY : bobliew/http/http11_parser.o
+.PHONY : bobliew/http/http11_parser.rl.o
 
 # target to build an object file
-bobliew/http/http11_parser.cc.o:
-	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o
-.PHONY : bobliew/http/http11_parser.cc.o
+bobliew/http/http11_parser.rl.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http11_parser.rl.cc.o
+.PHONY : bobliew/http/http11_parser.rl.cc.o
 
-bobliew/http/http11_parser.i: bobliew/http/http11_parser.cc.i
+bobliew/http/http11_parser.rl.i: bobliew/http/http11_parser.rl.cc.i
 
-.PHONY : bobliew/http/http11_parser.i
+.PHONY : bobliew/http/http11_parser.rl.i
 
 # target to preprocess a source file
-bobliew/http/http11_parser.cc.i:
-	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.i
-.PHONY : bobliew/http/http11_parser.cc.i
+bobliew/http/http11_parser.rl.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http11_parser.rl.cc.i
+.PHONY : bobliew/http/http11_parser.rl.cc.i
 
-bobliew/http/http11_parser.s: bobliew/http/http11_parser.cc.s
+bobliew/http/http11_parser.rl.s: bobliew/http/http11_parser.rl.cc.s
 
-.PHONY : bobliew/http/http11_parser.s
+.PHONY : bobliew/http/http11_parser.rl.s
 
 # target to generate assembly for a file
-bobliew/http/http11_parser.cc.s:
-	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.s
-.PHONY : bobliew/http/http11_parser.cc.s
+bobliew/http/http11_parser.rl.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http11_parser.rl.cc.s
+.PHONY : bobliew/http/http11_parser.rl.cc.s
+
+bobliew/http/http_connection.o: bobliew/http/http_connection.cc.o
+
+.PHONY : bobliew/http/http_connection.o
+
+# target to build an object file
+bobliew/http/http_connection.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_connection.cc.o
+.PHONY : bobliew/http/http_connection.cc.o
+
+bobliew/http/http_connection.i: bobliew/http/http_connection.cc.i
+
+.PHONY : bobliew/http/http_connection.i
+
+# target to preprocess a source file
+bobliew/http/http_connection.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_connection.cc.i
+.PHONY : bobliew/http/http_connection.cc.i
+
+bobliew/http/http_connection.s: bobliew/http/http_connection.cc.s
+
+.PHONY : bobliew/http/http_connection.s
+
+# target to generate assembly for a file
+bobliew/http/http_connection.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_connection.cc.s
+.PHONY : bobliew/http/http_connection.cc.s
 
 bobliew/http/http_parser.o: bobliew/http/http_parser.cc.o
 
@@ -644,32 +697,32 @@ bobliew/http/http_session.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.s
 .PHONY : bobliew/http/http_session.cc.s
 
-bobliew/http/httpclient_parser.o: bobliew/http/httpclient_parser.cc.o
+bobliew/http/httpclient_parser.rl.o: bobliew/http/httpclient_parser.rl.cc.o
 
-.PHONY : bobliew/http/httpclient_parser.o
+.PHONY : bobliew/http/httpclient_parser.rl.o
 
 # target to build an object file
-bobliew/http/httpclient_parser.cc.o:
-	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o
-.PHONY : bobliew/http/httpclient_parser.cc.o
+bobliew/http/httpclient_parser.rl.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.rl.cc.o
+.PHONY : bobliew/http/httpclient_parser.rl.cc.o
 
-bobliew/http/httpclient_parser.i: bobliew/http/httpclient_parser.cc.i
+bobliew/http/httpclient_parser.rl.i: bobliew/http/httpclient_parser.rl.cc.i
 
-.PHONY : bobliew/http/httpclient_parser.i
+.PHONY : bobliew/http/httpclient_parser.rl.i
 
 # target to preprocess a source file
-bobliew/http/httpclient_parser.cc.i:
-	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.i
-.PHONY : bobliew/http/httpclient_parser.cc.i
+bobliew/http/httpclient_parser.rl.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.rl.cc.i
+.PHONY : bobliew/http/httpclient_parser.rl.cc.i
 
-bobliew/http/httpclient_parser.s: bobliew/http/httpclient_parser.cc.s
+bobliew/http/httpclient_parser.rl.s: bobliew/http/httpclient_parser.rl.cc.s
 
-.PHONY : bobliew/http/httpclient_parser.s
+.PHONY : bobliew/http/httpclient_parser.rl.s
 
 # target to generate assembly for a file
-bobliew/http/httpclient_parser.cc.s:
-	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.s
-.PHONY : bobliew/http/httpclient_parser.cc.s
+bobliew/http/httpclient_parser.rl.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.rl.cc.s
+.PHONY : bobliew/http/httpclient_parser.rl.cc.s
 
 bobliew/http/servlet.o: bobliew/http/servlet.cc.o
 
@@ -1022,6 +1075,33 @@ bobliew/timer.cc.s:
 	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/timer.cc.s
 .PHONY : bobliew/timer.cc.s
 
+bobliew/uri.rl.o: bobliew/uri.rl.cc.o
+
+.PHONY : bobliew/uri.rl.o
+
+# target to build an object file
+bobliew/uri.rl.cc.o:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/uri.rl.cc.o
+.PHONY : bobliew/uri.rl.cc.o
+
+bobliew/uri.rl.i: bobliew/uri.rl.cc.i
+
+.PHONY : bobliew/uri.rl.i
+
+# target to preprocess a source file
+bobliew/uri.rl.cc.i:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/uri.rl.cc.i
+.PHONY : bobliew/uri.rl.cc.i
+
+bobliew/uri.rl.s: bobliew/uri.rl.cc.s
+
+.PHONY : bobliew/uri.rl.s
+
+# target to generate assembly for a file
+bobliew/uri.rl.cc.s:
+	$(MAKE) -f CMakeFiles/bobliew.dir/build.make CMakeFiles/bobliew.dir/bobliew/uri.rl.cc.s
+.PHONY : bobliew/uri.rl.cc.s
+
 bobliew/util.o: bobliew/util.cc.o
 
 .PHONY : bobliew/util.o
@@ -1319,6 +1399,33 @@ tests/test_http.cc.s:
 	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cc.s
 .PHONY : tests/test_http.cc.s
 
+tests/test_http_connection.o: tests/test_http_connection.cc.o
+
+.PHONY : tests/test_http_connection.o
+
+# target to build an object file
+tests/test_http_connection.cc.o:
+	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cc.o
+.PHONY : tests/test_http_connection.cc.o
+
+tests/test_http_connection.i: tests/test_http_connection.cc.i
+
+.PHONY : tests/test_http_connection.i
+
+# target to preprocess a source file
+tests/test_http_connection.cc.i:
+	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cc.i
+.PHONY : tests/test_http_connection.cc.i
+
+tests/test_http_connection.s: tests/test_http_connection.cc.s
+
+.PHONY : tests/test_http_connection.s
+
+# target to generate assembly for a file
+tests/test_http_connection.cc.s:
+	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cc.s
+.PHONY : tests/test_http_connection.cc.s
+
 tests/test_http_server.o: tests/test_http_server.cc.o
 
 .PHONY : tests/test_http_server.o
@@ -1508,6 +1615,33 @@ tests/test_thread.cc.s:
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cc.s
 .PHONY : tests/test_thread.cc.s
 
+tests/test_uri.o: tests/test_uri.cc.o
+
+.PHONY : tests/test_uri.o
+
+# target to build an object file
+tests/test_uri.cc.o:
+	$(MAKE) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cc.o
+.PHONY : tests/test_uri.cc.o
+
+tests/test_uri.i: tests/test_uri.cc.i
+
+.PHONY : tests/test_uri.i
+
+# target to preprocess a source file
+tests/test_uri.cc.i:
+	$(MAKE) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cc.i
+.PHONY : tests/test_uri.cc.i
+
+tests/test_uri.s: tests/test_uri.cc.s
+
+.PHONY : tests/test_uri.s
+
+# target to generate assembly for a file
+tests/test_uri.cc.s:
+	$(MAKE) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cc.s
+.PHONY : tests/test_uri.cc.s
+
 tests/test_util.o: tests/test_util.cc.o
 
 .PHONY : tests/test_util.o
@@ -1541,9 +1675,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... echo_server"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... echo_server"
+	@echo "... test_uri"
+	@echo "... test_http_connection"
 	@echo "... test_http_server2"
 	@echo "... test_tcp_server"
 	@echo "... test_parser"
@@ -1582,9 +1718,12 @@ help:
 	@echo "... bobliew/http/http.o"
 	@echo "... bobliew/http/http.i"
 	@echo "... bobliew/http/http.s"
-	@echo "... bobliew/http/http11_parser.o"
-	@echo "... bobliew/http/http11_parser.i"
-	@echo "... bobliew/http/http11_parser.s"
+	@echo "... bobliew/http/http11_parser.rl.o"
+	@echo "... bobliew/http/http11_parser.rl.i"
+	@echo "... bobliew/http/http11_parser.rl.s"
+	@echo "... bobliew/http/http_connection.o"
+	@echo "... bobliew/http/http_connection.i"
+	@echo "... bobliew/http/http_connection.s"
 	@echo "... bobliew/http/http_parser.o"
 	@echo "... bobliew/http/http_parser.i"
 	@echo "... bobliew/http/http_parser.s"
@@ -1594,9 +1733,9 @@ help:
 	@echo "... bobliew/http/http_session.o"
 	@echo "... bobliew/http/http_session.i"
 	@echo "... bobliew/http/http_session.s"
-	@echo "... bobliew/http/httpclient_parser.o"
-	@echo "... bobliew/http/httpclient_parser.i"
-	@echo "... bobliew/http/httpclient_parser.s"
+	@echo "... bobliew/http/httpclient_parser.rl.o"
+	@echo "... bobliew/http/httpclient_parser.rl.i"
+	@echo "... bobliew/http/httpclient_parser.rl.s"
 	@echo "... bobliew/http/servlet.o"
 	@echo "... bobliew/http/servlet.i"
 	@echo "... bobliew/http/servlet.s"
@@ -1636,6 +1775,9 @@ help:
 	@echo "... bobliew/timer.o"
 	@echo "... bobliew/timer.i"
 	@echo "... bobliew/timer.s"
+	@echo "... bobliew/uri.rl.o"
+	@echo "... bobliew/uri.rl.i"
+	@echo "... bobliew/uri.rl.s"
 	@echo "... bobliew/util.o"
 	@echo "... bobliew/util.i"
 	@echo "... bobliew/util.s"
@@ -1669,6 +1811,9 @@ help:
 	@echo "... tests/test_http.o"
 	@echo "... tests/test_http.i"
 	@echo "... tests/test_http.s"
+	@echo "... tests/test_http_connection.o"
+	@echo "... tests/test_http_connection.i"
+	@echo "... tests/test_http_connection.s"
 	@echo "... tests/test_http_server.o"
 	@echo "... tests/test_http_server.i"
 	@echo "... tests/test_http_server.s"
@@ -1690,6 +1835,9 @@ help:
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"
+	@echo "... tests/test_uri.o"
+	@echo "... tests/test_uri.i"
+	@echo "... tests/test_uri.s"
 	@echo "... tests/test_util.o"
 	@echo "... tests/test_util.i"
 	@echo "... tests/test_util.s"

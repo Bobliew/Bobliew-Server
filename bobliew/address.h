@@ -69,7 +69,7 @@ public:
     virtual IPAddress::ptr subnetMask(uint32_t prefix_len) = 0;
 
     virtual uint32_t getPort() const = 0;
-    virtual void setPPort(uint32_t v) = 0;
+    virtual void setPort(uint32_t v) = 0;
 };
 
 
@@ -94,7 +94,7 @@ public:
     IPAddress::ptr subnetMask(uint32_t prefix_len) override;
 
     uint32_t getPort() const override;
-    void setPPort(uint32_t v) override; 
+    void setPort(uint32_t v) override; 
 
 private:
     sockaddr_in m_addr;
@@ -119,7 +119,7 @@ public:
     IPAddress::ptr subnetMask(uint32_t prefix_len) override;
 
     uint32_t getPort() const override;
-    void setPPort(uint32_t v) override; 
+    void setPort(uint32_t v) override; 
 
 private:
     sockaddr_in6 m_addr;

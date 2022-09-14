@@ -70,7 +70,7 @@ void test_sock() {
 
 
 int main(int argc, char** argv) {
-    bobliew::IOManager iom;
-    iom.schedule(test_sock);
+    //bobliew::IOManager iom(1,true,"bobliew");
+    test_sleep();
     return 0;
 }

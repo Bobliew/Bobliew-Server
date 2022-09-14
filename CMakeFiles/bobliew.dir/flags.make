@@ -48,17 +48,21 @@ CXX_INCLUDES = -I/home/bobliew/data/bobliew/.. -I/home/bobliew/data/bobliew/. -I
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_server.cc.o_DEFINES = __FILE__="bobliew/http/http_server.cc"
 
-# Custom defines: CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o_DEFINES = __FILE__="bobliew/http/httpclient_parser.cc"
-
-# Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o_DEFINES = __FILE__="bobliew/http/http11_parser.cc"
-
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o_DEFINES = __FILE__="bobliew/http/http_parser.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.o_DEFINES = __FILE__="bobliew/http/http_session.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http_connection.cc.o_DEFINES = __FILE__="bobliew/http/http_connection.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/servlet.cc.o_DEFINES = __FILE__="bobliew/http/servlet.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/http/servlets/config_servlet.cc.o_DEFINES = __FILE__="bobliew/http/servlets/config_servlet.cc"
 
 # Custom defines: CMakeFiles/bobliew.dir/bobliew/util/json_util.cc.o_DEFINES = __FILE__="bobliew/util/json_util.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/http/http11_parser.rl.cc.o_DEFINES = __FILE__="bobliew/http/http11_parser.rl.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.rl.cc.o_DEFINES = __FILE__="bobliew/http/httpclient_parser.rl.cc"
+
+# Custom defines: CMakeFiles/bobliew.dir/bobliew/uri.rl.cc.o_DEFINES = __FILE__="bobliew/uri.rl.cc"
 

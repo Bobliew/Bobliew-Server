@@ -28,13 +28,13 @@ public:
 
     const std::string& getHost() const { return m_host;}
 
-    const std::string& getPath() const { return m_path;}
+    const std::string& getPath() const;
 
     const std::string& getQuery() const { return m_query;}
 
     const std::string& getFragment() const { return m_fragment;}
 
-    int32_t getPort() const { return m_port;}
+    int32_t getPort() const;
 
     void setScheme(const std::string& V) { m_scheme = V;}
 
@@ -55,6 +55,10 @@ public:
     std::string toString() const;
 
     Address::ptr createAddress() const;
+private:
+
+    bool isDefaultPort() const;
+
 private:
     std::string m_scheme;
     std::string m_userinfo;

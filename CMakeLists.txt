@@ -3,6 +3,8 @@ project(bobliew)
 
 include (cmake/utils.cmake)
 
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS "$ENV{CXXFLAGS} -rdynamic -O0 -g -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined")
 
@@ -51,15 +53,20 @@ set(LIB_SRC
     bobliew/streams/zlib_stream.cc
     bobliew/http/http.cc
     bobliew/http/http_server.cc
-    bobliew/http/httpclient_parser.cc
-    bobliew/http/http11_parser.cc
+    #bobliew/http/httpclient_parser.cc
+    #bobliew/http/http11_parser.cc
     bobliew/http/http_parser.cc
     bobliew/http/http_session.cc
+    bobliew/http/http_connection.cc
     bobliew/http/servlet.cc
     bobliew/http/servlets/config_servlet.cc
     #bobliew/http/servlets/status_servlet.cc
     bobliew/util/json_util.cc
     )
+ragelmaker(bobliew/http/http11_parser.rl LIB_SRC ${CMAKE_CURRENT_SOURCE_DIR}/bobliew/http)
+ragelmaker(bobliew/http/httpclient_parser.rl LIB_SRC ${CMAKE_CURRENT_SOURCE_DIR}/bobliew/http)
+ragelmaker(bobliew/uri.rl LIB_SRC ${CMAKE_CURRENT_SOURCE_DIR}/bobliew)
+
 add_library(bobliew SHARED ${LIB_SRC})
 force_redefine_file_macro_for_sources(bobliew) #__FILE__
 #add_library(bobliew_static STATIC ${LIB_SRC})
@@ -162,7 +169,15 @@ add_dependencies(test_http_server2 bobliew)
 force_redefine_file_macro_for_sources(test_http_server2)
 target_link_libraries(test_http_server2 ${LIB_LIB} dl)
 
+add_executable(test_http_connection tests/test_http_connection.cc)
+add_dependencies(test_http_connection bobliew)
+force_redefine_file_macro_for_sources(test_http_connection)
+target_link_libraries(test_http_connection ${LIB_LIB} dl)
 
+add_executable(test_uri tests/test_uri.cc)
+add_dependencies(test_uri bobliew)
+force_redefine_file_macro_for_sources(test_uri)
+target_link_libraries(test_uri ${LIB_LIB} dl)
 
 add_executable(echo_server example/echo_server.cc)
 add_dependencies(echo_server bobliew)

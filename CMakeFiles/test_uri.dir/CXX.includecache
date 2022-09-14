@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bobliew/data/bobliew/bobliew/address.h
+memory
+-
+string
+-
+sys/socket.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+iostream
+-
+vector
+-
+map
+-
+sys/un.h
+-
+
+/home/bobliew/data/bobliew/bobliew/uri.h
+memory
+-
+string
+-
+stdint.h
+-
+address.h
+/home/bobliew/data/bobliew/bobliew/address.h
+
+/home/bobliew/data/bobliew/tests/test_uri.cc
+../bobliew/uri.h
+/home/bobliew/data/bobliew/bobliew/uri.h
+iostream
+-
+

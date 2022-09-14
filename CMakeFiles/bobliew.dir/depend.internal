@@ -94,10 +94,42 @@ CMakeFiles/bobliew.dir/bobliew/http/http.cc.o
  /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
  /home/bobliew/data/bobliew/bobliew/util/hash_util.h
  /home/bobliew/data/bobliew/bobliew/util/json_util.h
-CMakeFiles/bobliew.dir/bobliew/http/http11_parser.cc.o
+CMakeFiles/bobliew.dir/bobliew/http/http11_parser.rl.cc.o
  /home/bobliew/data/bobliew/bobliew/http/http11_common.h
- /home/bobliew/data/bobliew/bobliew/http/http11_parser.cc
  /home/bobliew/data/bobliew/bobliew/http/http11_parser.h
+ /home/bobliew/data/bobliew/bobliew/http/http11_parser.rl.cc
+CMakeFiles/bobliew.dir/bobliew/http/http_connection.cc.o
+ /home/bobliew/data/bobliew/bobliew/address.h
+ /home/bobliew/data/bobliew/bobliew/bobliew.h
+ /home/bobliew/data/bobliew/bobliew/bytearray.h
+ /home/bobliew/data/bobliew/bobliew/config.h
+ /home/bobliew/data/bobliew/bobliew/fiber.h
+ /home/bobliew/data/bobliew/bobliew/hook.h
+ /home/bobliew/data/bobliew/bobliew/http/http.h
+ /home/bobliew/data/bobliew/bobliew/http/http11_common.h
+ /home/bobliew/data/bobliew/bobliew/http/http11_parser.h
+ /home/bobliew/data/bobliew/bobliew/http/http_connection.cc
+ /home/bobliew/data/bobliew/bobliew/http/http_connection.h
+ /home/bobliew/data/bobliew/bobliew/http/http_parser.h
+ /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.h
+ /home/bobliew/data/bobliew/bobliew/iomanager.h
+ /home/bobliew/data/bobliew/bobliew/log.h
+ /home/bobliew/data/bobliew/bobliew/macro.h
+ /home/bobliew/data/bobliew/bobliew/mutex.h
+ /home/bobliew/data/bobliew/bobliew/noncopyable.h
+ /home/bobliew/data/bobliew/bobliew/scheduler.h
+ /home/bobliew/data/bobliew/bobliew/singleton.h
+ /home/bobliew/data/bobliew/bobliew/socket.h
+ /home/bobliew/data/bobliew/bobliew/stream.h
+ /home/bobliew/data/bobliew/bobliew/streams/socket_stream.h
+ /home/bobliew/data/bobliew/bobliew/streams/zlib_stream.h
+ /home/bobliew/data/bobliew/bobliew/thread.h
+ /home/bobliew/data/bobliew/bobliew/timer.h
+ /home/bobliew/data/bobliew/bobliew/uri.h
+ /home/bobliew/data/bobliew/bobliew/util.h
+ /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
+ /home/bobliew/data/bobliew/bobliew/util/hash_util.h
+ /home/bobliew/data/bobliew/bobliew/util/json_util.h
 CMakeFiles/bobliew.dir/bobliew/http/http_parser.cc.o
  /home/bobliew/data/bobliew/bobliew/config.h
  /home/bobliew/data/bobliew/bobliew/fiber.h
@@ -176,10 +208,10 @@ CMakeFiles/bobliew.dir/bobliew/http/http_session.cc.o
  /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
  /home/bobliew/data/bobliew/bobliew/util/hash_util.h
  /home/bobliew/data/bobliew/bobliew/util/json_util.h
-CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.cc.o
+CMakeFiles/bobliew.dir/bobliew/http/httpclient_parser.rl.cc.o
  /home/bobliew/data/bobliew/bobliew/http/http11_common.h
- /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.cc
  /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.h
+ /home/bobliew/data/bobliew/bobliew/http/httpclient_parser.rl.cc
 CMakeFiles/bobliew.dir/bobliew/http/servlet.cc.o
  /home/bobliew/data/bobliew/bobliew/address.h
  /home/bobliew/data/bobliew/bobliew/bobliew.h
@@ -409,6 +441,10 @@ CMakeFiles/bobliew.dir/bobliew/timer.cc.o
  /home/bobliew/data/bobliew/bobliew/util/crypto_util.h
  /home/bobliew/data/bobliew/bobliew/util/hash_util.h
  /home/bobliew/data/bobliew/bobliew/util/json_util.h
+CMakeFiles/bobliew.dir/bobliew/uri.rl.cc.o
+ /home/bobliew/data/bobliew/bobliew/address.h
+ /home/bobliew/data/bobliew/bobliew/uri.h
+ /home/bobliew/data/bobliew/bobliew/uri.rl.cc
 CMakeFiles/bobliew.dir/bobliew/util.cc.o
  /home/bobliew/data/bobliew/bobliew/fiber.h
  /home/bobliew/data/bobliew/bobliew/log.h

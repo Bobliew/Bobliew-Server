@@ -59,6 +59,11 @@ public:
                                   , uint64_t timeout_ms
                                   , const std::map<std::string, std::string>& headers = {}
                                   , const std::string& body = "");
+
+    static HttpResult::ptr DoPost(Uri::ptr uri
+                                  ,uint64_t timeout_ms
+                                  ,const std::map<std::string, std::string>& headers
+                                  ,const std::string& body);
     static HttpResult::ptr DoRequest(HttpMethod method 
                                      ,const std::string& url
                                      ,uint64_t timeout_ms
@@ -101,32 +106,37 @@ public:
 
     HttpConnection::ptr getConnection();
 
-    static HttpResult::ptr doGet(const std::string& url
-                                 , uint64_t timeout_ms
-                                 , const std::map<std::string, std::string>& headers = {}
-                                 , const std::string& body = "");
+    HttpResult::ptr doGet(const std::string& url
+                          , uint64_t timeout_ms
+                          , const std::map<std::string, std::string>& headers = {}
+                          , const std::string& body = "");
 
-    static HttpResult::ptr doGet(Uri::ptr uri
-                                 , uint64_t timeout_ms
-                                 , const std::map<std::string, std::string>& headers = {}
-                                 , const std::string& body = "");
-    static HttpResult::ptr doPost(const std::string& uri
-                                  , uint64_t timeout_ms
-                                  , const std::map<std::string, std::string>& headers = {}
-                                  , const std::string& body = "");
-    static HttpResult::ptr doRequest(HttpMethod method 
-                                     ,const std::string& url
-                                     ,uint64_t timeout_ms
-                                     ,const std::map<std::string, std::string>& headers = {}
-                                     ,const std::string& body = "");
-    static HttpResult::ptr doRequest(HttpMethod method 
-                                     ,Uri::ptr uri
-                                     ,uint64_t timeout_ms
-                                     ,const std::map<std::string, std::string>& headers = {}
-                                     ,const std::string& body = "");
-    static HttpResult::ptr doRequest(HttpRequest::ptr req
-                                     ,Uri::ptr uri
-                                     ,uint64_t timeout_ms);
+    HttpResult::ptr doGet(Uri::ptr uri
+                          , uint64_t timeout_ms
+                          , const std::map<std::string, std::string>& headers = {}
+                          , const std::string& body = "");
+    HttpResult::ptr doPost(const std::string& url
+                           , uint64_t timeout_ms
+                           , const std::map<std::string, std::string>& headers = {}
+                           , const std::string& body = "");
+
+    HttpResult::ptr doPost(Uri::ptr uri
+                           ,uint64_t timeout_ms
+                           ,const std::map<std::string, std::string>& headers
+                           ,const std::string& body);
+
+    HttpResult::ptr doRequest(HttpMethod method 
+                              ,const std::string& url
+                              ,uint64_t timeout_ms
+                              ,const std::map<std::string, std::string>& headers = {}
+                              ,const std::string& body = "");
+    HttpResult::ptr doRequest(HttpMethod method 
+                              ,Uri::ptr uri
+                              ,uint64_t timeout_ms
+                              ,const std::map<std::string, std::string>& headers = {}
+                              ,const std::string& body = "");
+    HttpResult::ptr doRequest(HttpRequest::ptr req
+                              ,uint64_t timeout_ms);
 private:
     static void ReleasePtr(HttpConnection* ptr, HttpConnectionPool* pool);
 private:
@@ -139,7 +149,7 @@ private:
     bool m_isHttps;
 
     MutexType m_mutex;
-    std::list<HttpConnectionPool*> m_conns;
+    std::list<HttpConnection*> m_conns;
     std::atomic<int32_t> m_total = {0};
 };
 

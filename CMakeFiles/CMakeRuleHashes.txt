@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+5f739943df022257ec18275c3e91ade4 bobliew/http/http11_parser.rl.cc
+5e633533be06f6375df6190ce6ed3964 bobliew/http/httpclient_parser.rl.cc
+4f3693dd76b8df87199bbb66cb33ab4c bobliew/uri.rl.cc

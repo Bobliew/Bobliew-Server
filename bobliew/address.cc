@@ -259,7 +259,7 @@ IPAddress::ptr IPAddress::Create(const char* address, uint16_t port) {
         IPAddress::ptr result = std::dynamic_pointer_cast<IPAddress>(
                 Address::Create(results->ai_addr, (socklen_t)results->ai_addrlen));
         if(result) {
-            result->setPPort(port);
+            result->setPort(port);
         }
         freeaddrinfo(results);
         return result;
@@ -351,7 +351,7 @@ uint32_t IPV4Address::getPort() const {
     return byteswapOnLittleEndian(m_addr.sin_port);
 }
 
-void IPV4Address::setPPort(uint32_t v) {
+void IPV4Address::setPort(uint32_t v) {
     m_addr.sin_port = byteswapOnLittleEndian(v);
 }
 
@@ -465,7 +465,7 @@ uint32_t IPV6Address::getPort() const {
     return byteswapOnLittleEndian(m_addr.sin6_port);
 }
 
-void IPV6Address::setPPort(uint32_t v) {
+void IPV6Address::setPort(uint32_t v) {
     m_addr.sin6_port = byteswapOnLittleEndian(v);
 }
 
