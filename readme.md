@@ -67,6 +67,66 @@ Socket类提供了socket API的功能
 利用Mongreal2提供的有限状态机实现对uri/url的解析，利用Stream中的Connection和Session实现客户端和服务端的链接，
 基于TCPServer实现HttpServer，提供了Http的请求功能
 
+### apache ab 压力测试结果
+
+```
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 0.0.0.0 (be patient)
+Completed 100000 requests
+Completed 200000 requests
+Completed 300000 requests
+Completed 400000 requests
+Completed 500000 requests
+Completed 600000 requests
+Completed 700000 requests
+Completed 800000 requests
+Completed 900000 requests
+Completed 1000000 requests
+Finished 1000000 requests
+
+
+Server Software:        bobliew/1.0.0
+Server Hostname:        0.0.0.0
+Server Port:            8020
+
+Document Path:          /bobliew/*
+Document Length:        138 bytes
+
+Concurrency Level:      300
+Time taken for tests:   42.879 seconds
+Complete requests:      1000000
+Failed requests:        0
+Non-2xx responses:      1000000
+Total transferred:      252000000 bytes
+HTML transferred:       138000000 bytes
+Requests per second:    23321.18 [#/sec] (mean)
+Time per request:       12.864 [ms] (mean)
+Time per request:       0.043 [ms] (mean, across all concurrent requests)
+Transfer rate:          5739.20 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    6   0.9      6      13
+Processing:     2    7   1.1      7      25
+Waiting:        0    5   1.1      5      25
+Total:          4   13   0.7     13      29
+
+Percentage of the requests served within a certain time (ms)
+  50%     13
+  66%     13
+  75%     13
+  80%     13
+  90%     14
+  95%     14
+  98%     15
+  99%     15
+ 100%     29 (longest request)
+
+```
+
 ### Others
 ##### 感谢塞老哥提供的支持
 ##### My nvim config:
