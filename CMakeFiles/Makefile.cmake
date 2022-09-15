@@ -57,6 +57,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/echo_server.dir/DependInfo.cmake"
+  "CMakeFiles/my_http_server.dir/DependInfo.cmake"
   "CMakeFiles/test_uri.dir/DependInfo.cmake"
   "CMakeFiles/test_http_connection.dir/DependInfo.cmake"
   "CMakeFiles/test_http_server2.dir/DependInfo.cmake"

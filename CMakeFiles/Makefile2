@@ -57,6 +57,7 @@ CMAKE_BINARY_DIR = /home/bobliew/data/bobliew
 
 # The main recursive "all" target.
 all: CMakeFiles/echo_server.dir/all
+all: CMakeFiles/my_http_server.dir/all
 all: CMakeFiles/test_uri.dir/all
 all: CMakeFiles/test_http_connection.dir/all
 all: CMakeFiles/test_http_server2.dir/all
@@ -86,6 +87,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/echo_server.dir/clean
+clean: CMakeFiles/my_http_server.dir/clean
 clean: CMakeFiles/test_uri.dir/clean
 clean: CMakeFiles/test_http_connection.dir/clean
 clean: CMakeFiles/test_http_server2.dir/clean
@@ -136,13 +138,40 @@ CMakeFiles/echo_server.dir/clean:
 .PHONY : CMakeFiles/echo_server.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/my_http_server.dir
+
+# All Build rule for target.
+CMakeFiles/my_http_server.dir/all: CMakeFiles/bobliew.dir/all
+	$(MAKE) -f CMakeFiles/my_http_server.dir/build.make CMakeFiles/my_http_server.dir/depend
+	$(MAKE) -f CMakeFiles/my_http_server.dir/build.make CMakeFiles/my_http_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=36,37 "Built target my_http_server"
+.PHONY : CMakeFiles/my_http_server.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/my_http_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 35
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/my_http_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bobliew/data/bobliew/CMakeFiles 0
+.PHONY : CMakeFiles/my_http_server.dir/rule
+
+# Convenience name for target.
+my_http_server: CMakeFiles/my_http_server.dir/rule
+
+.PHONY : my_http_server
+
+# clean rule for target.
+CMakeFiles/my_http_server.dir/clean:
+	$(MAKE) -f CMakeFiles/my_http_server.dir/build.make CMakeFiles/my_http_server.dir/clean
+.PHONY : CMakeFiles/my_http_server.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test_uri.dir
 
 # All Build rule for target.
 CMakeFiles/test_uri.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/depend
 	$(MAKE) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=68,69 "Built target test_uri"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=70,71 "Built target test_uri"
 .PHONY : CMakeFiles/test_uri.dir/all
 
 # Build rule for subdir invocation for target.
@@ -169,7 +198,7 @@ CMakeFiles/test_uri.dir/clean:
 CMakeFiles/test_http_connection.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/depend
 	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=52,53 "Built target test_http_connection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=54,55 "Built target test_http_connection"
 .PHONY : CMakeFiles/test_http_connection.dir/all
 
 # Build rule for subdir invocation for target.
@@ -196,7 +225,7 @@ CMakeFiles/test_http_connection.dir/clean:
 CMakeFiles/test_http_server2.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_http_server2.dir/build.make CMakeFiles/test_http_server2.dir/depend
 	$(MAKE) -f CMakeFiles/test_http_server2.dir/build.make CMakeFiles/test_http_server2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=56,57 "Built target test_http_server2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=58,59 "Built target test_http_server2"
 .PHONY : CMakeFiles/test_http_server2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -223,7 +252,7 @@ CMakeFiles/test_http_server2.dir/clean:
 CMakeFiles/test_tcp_server.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/depend
 	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=64,65 "Built target test_tcp_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=66,67 "Built target test_tcp_server"
 .PHONY : CMakeFiles/test_tcp_server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -250,7 +279,7 @@ CMakeFiles/test_tcp_server.dir/clean:
 CMakeFiles/test_parser.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/depend
 	$(MAKE) -f CMakeFiles/test_parser.dir/build.make CMakeFiles/test_parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=60,61 "Built target test_parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=62,63 "Built target test_parser"
 .PHONY : CMakeFiles/test_parser.dir/all
 
 # Build rule for subdir invocation for target.
@@ -277,7 +306,7 @@ CMakeFiles/test_parser.dir/clean:
 CMakeFiles/test.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=36,37 "Built target test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=38,39 "Built target test"
 .PHONY : CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -304,7 +333,7 @@ CMakeFiles/test.dir/clean:
 CMakeFiles/test_thread.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/depend
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=66,67 "Built target test_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=68,69 "Built target test_thread"
 .PHONY : CMakeFiles/test_thread.dir/all
 
 # Build rule for subdir invocation for target.
@@ -331,7 +360,7 @@ CMakeFiles/test_thread.dir/clean:
 CMakeFiles/test_config.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/depend
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=42,43 "Built target test_config"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=44,45 "Built target test_config"
 .PHONY : CMakeFiles/test_config.dir/all
 
 # Build rule for subdir invocation for target.
@@ -358,7 +387,7 @@ CMakeFiles/test_config.dir/clean:
 CMakeFiles/test_bytearray.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/depend
 	$(MAKE) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=40,41 "Built target test_bytearray"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=42,43 "Built target test_bytearray"
 .PHONY : CMakeFiles/test_bytearray.dir/all
 
 # Build rule for subdir invocation for target.
@@ -385,7 +414,7 @@ CMakeFiles/test_bytearray.dir/clean:
 CMakeFiles/test_configs.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_configs.dir/build.make CMakeFiles/test_configs.dir/depend
 	$(MAKE) -f CMakeFiles/test_configs.dir/build.make CMakeFiles/test_configs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=44,45 "Built target test_configs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=46,47 "Built target test_configs"
 .PHONY : CMakeFiles/test_configs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -412,7 +441,7 @@ CMakeFiles/test_configs.dir/clean:
 CMakeFiles/test_fiber.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/depend
 	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=46,47 "Built target test_fiber"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=48,49 "Built target test_fiber"
 .PHONY : CMakeFiles/test_fiber.dir/all
 
 # Build rule for subdir invocation for target.
@@ -439,7 +468,7 @@ CMakeFiles/test_fiber.dir/clean:
 CMakeFiles/test_http_server.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/depend
 	$(MAKE) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=54,55 "Built target test_http_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=56,57 "Built target test_http_server"
 .PHONY : CMakeFiles/test_http_server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -466,7 +495,7 @@ CMakeFiles/test_http_server.dir/clean:
 CMakeFiles/test_address.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/depend
 	$(MAKE) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=38,39 "Built target test_address"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=40,41 "Built target test_address"
 .PHONY : CMakeFiles/test_address.dir/all
 
 # Build rule for subdir invocation for target.
@@ -493,7 +522,7 @@ CMakeFiles/test_address.dir/clean:
 CMakeFiles/test_util.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/depend
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=70,71 "Built target test_util"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=72,73 "Built target test_util"
 .PHONY : CMakeFiles/test_util.dir/all
 
 # Build rule for subdir invocation for target.
@@ -520,7 +549,7 @@ CMakeFiles/test_util.dir/clean:
 CMakeFiles/test_scheduler.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/depend
 	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=62,63 "Built target test_scheduler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=64,65 "Built target test_scheduler"
 .PHONY : CMakeFiles/test_scheduler.dir/all
 
 # Build rule for subdir invocation for target.
@@ -547,7 +576,7 @@ CMakeFiles/test_scheduler.dir/clean:
 CMakeFiles/test_iomanager.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/depend
 	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=58,59 "Built target test_iomanager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=60,61 "Built target test_iomanager"
 .PHONY : CMakeFiles/test_iomanager.dir/all
 
 # Build rule for subdir invocation for target.
@@ -601,7 +630,7 @@ CMakeFiles/bobliew.dir/clean:
 CMakeFiles/test_hook.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/depend
 	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=48,49 "Built target test_hook"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=50,51 "Built target test_hook"
 .PHONY : CMakeFiles/test_hook.dir/all
 
 # Build rule for subdir invocation for target.
@@ -628,7 +657,7 @@ CMakeFiles/test_hook.dir/clean:
 CMakeFiles/test_http.dir/all: CMakeFiles/bobliew.dir/all
 	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/depend
 	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=50,51 "Built target test_http"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bobliew/data/bobliew/CMakeFiles --progress-num=52,53 "Built target test_http"
 .PHONY : CMakeFiles/test_http.dir/all
 
 # Build rule for subdir invocation for target.
