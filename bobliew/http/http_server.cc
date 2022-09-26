@@ -49,6 +49,7 @@ void HttpServer::handleClient(Socket::ptr client) {
         
         //rsp->setBody("Hello bobliew");
         if(!m_isKeepalive || req->isClose()) {
+            //std::cout<< "keep_alive=" << m_isKeepalive<< "close=" << req->isClose() << std::endl;
             break;
         }
     } while(true);

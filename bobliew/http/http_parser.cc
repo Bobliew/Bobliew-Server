@@ -139,7 +139,6 @@ HttpRequestParser::HttpRequestParser()
     :m_error(0) {
     m_data.reset(new bobliew::http::HttpRequest);
     http_parser_init(&m_parser);
-    http_parser_init(&m_parser);
     m_parser.request_method = on_request_method;
     m_parser.request_uri = on_request_uri;
     m_parser.fragment = on_request_fragment;

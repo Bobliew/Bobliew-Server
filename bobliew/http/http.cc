@@ -186,7 +186,7 @@ std::ostream& HttpRequest::dump(std::ostream& os) const {
 }
 
 void HttpRequest::init() {
-    std::string conn = getHeader("connection");
+    std::string conn = getHeader("Connection");
     if(!conn.empty()) {
         if(strcasecmp(conn.c_str(), "keep-alive") == 0) {
             m_close = false;
@@ -257,7 +257,7 @@ void HttpRequest::initCookies() {
 HttpResponse::HttpResponse(uint8_t version, bool close)
     :m_status(HttpStatus::OK)
     ,m_version(version)
-    ,m_close(close)
+    ,m_close(false)
     ,m_websocket(false) {
 }
 

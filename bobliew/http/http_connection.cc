@@ -225,8 +225,11 @@ HttpResult::ptr HttpConnection::DoRequest(HttpMethod method,
     req->setFragment(uri->getFragment());
     req->setMethod(method);
     bool has_host = false;
+    bool has_conn = false;
     for(auto& i : headers) {
         if(strcasecmp(i.first.c_str(), "connection") == 0) {
+            has_conn = !i.second.empty();
+            req->setHeader(i.first, i.second);
             if(strcasecmp(i.second.c_str(), "keep-alive") == 0) {
                 req->setClose(false);
             }
@@ -236,8 +239,10 @@ HttpResult::ptr HttpConnection::DoRequest(HttpMethod method,
         if(!has_host && strcasecmp(i.first.c_str(), "host") == 0) {
             has_host = !i.second.empty();
         }
-
         req->setHeader(i.first, i.second);
+    }
+    if(!has_conn) {
+        req->setHeader("Connection", "keep-alive");
     }
     if(!has_host) {
         req->setHeader("Host", uri->getHost());
@@ -371,8 +376,10 @@ HttpConnection::ptr HttpConnectionPool::getConnection() {
 
 void HttpConnectionPool::ReleasePtr(HttpConnection* ptr, HttpConnectionPool* pool) {
     ++ptr->m_request;
-    if(!ptr->isConnected() || ((ptr->m_createTime + pool->m_maxAliveTime) >= bobliew::GetCurrentMS())
+    if(!ptr->isConnected()
+       || ((ptr->m_createTime + pool->m_maxAliveTime) >= bobliew::GetCurrentMS())
        || (ptr->m_request >= pool->m_maxRequest)) {
+        //std::cout<< 112333 << std::endl;
         delete ptr;
         --pool->m_total;
         return;
@@ -431,8 +438,11 @@ HttpResult::ptr HttpConnectionPool::doRequest(HttpMethod method
     req->setMethod(method);
     req->setClose(false);
     bool has_host =false;
+    bool has_conn =false;
     for(auto& i : headers) {
         if(strcasecmp(i.first.c_str(), "connection") == 0) {
+            has_conn = !i.second.empty();
+            req->setHeader(i.first, i.second);
             if(strcasecmp(i.second.c_str(), "keep-alive") == 0) {
                 req->setClose(false);
             }
@@ -442,6 +452,9 @@ HttpResult::ptr HttpConnectionPool::doRequest(HttpMethod method
             has_host = !i.second.empty();
         }
         req->setHeader(i.first, i.second);
+    }
+    if(!has_conn) {
+        req->setHeader("Connection", "keep-alive");
     }
     if(!has_host) {
         if(m_vhost.empty()) {

@@ -63,13 +63,19 @@ HttpRequest::ptr HttpSession::recvRequest() {
         if(length > 0) {
             if(readFixSize(&body[len], length) <= 0) {
                 close();
-                BOBLIEW_LOG_DEBUG(g_logger) << "test4444444444444444444444444";
+               //BOBLIEW_LOG_DEBUG(g_logger) << "test4444444444444444444444444";
                 return nullptr;
             }
         }
         parser->getData()->setBody(body);
     }
+    //parser->getData()->setHeader("Connection", "keep_alive");
     parser->getData()->init();
+    //std::string keep_alive =  parser->getData()->getHeader("Connection");
+    //if(strcasecmp(keep_alive.c_str(), "Keep-Alive") == 0) {
+    //    parser->getData()->setClose(false);
+    //}
+    //parser->getData()->setClose(false);
     return parser->getData();
 }
 

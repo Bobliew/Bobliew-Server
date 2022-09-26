@@ -16,6 +16,7 @@ public:
     HttpRequest::ptr recvRequest();
 
     int sendResponse(HttpResponse::ptr rsp);
+
     
 };
 

@@ -11,7 +11,7 @@ void run() {
         return;
     }
 
-    bobliew::http::HttpServer::ptr http_server(new bobliew::http::HttpServer(true, worker.get()));
+    bobliew::http::HttpServer::ptr http_server(new bobliew::http::HttpServer(true));
     bool ssl = false;
     while(!http_server->bind(addr, ssl)) {
         BOBLIEW_LOG_ERROR(g_logger) << "bind " << *addr << " fail";
@@ -26,7 +26,7 @@ void run() {
 
 int main(int argc, char** argv) {
     bobliew::IOManager iom(3);
-    worker.reset(new bobliew::IOManager(4, false));
+    //worker.reset(new bobliew::IOManager(4, false));
     iom.schedule(run);
     return 0;
 }
